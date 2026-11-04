@@ -1,4 +1,4 @@
-export type Route = 'make' | 'book' | 'see'
+export type Route = 'make' | 'book' | 'see' | 'acuity'
 
 export function BottomNav({ route }: { route: Route }) {
   const item = (r: Route, label: string, href: string) => (
@@ -21,6 +21,7 @@ export function BottomNav({ route }: { route: Route }) {
       {item('make', 'Make', '#/')}
       {item('book', 'Book', '#/book/1')}
       {item('see', 'How to see', '#/see')}
+      {item('acuity', 'Depth test', '#/depth')}
     </nav>
   )
 }

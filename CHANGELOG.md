@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.3.0 — 2026-11-04
+
+Seven more signature moves Pavol picked the same evening: Comenius's spectacles (a plate that
+inverts between parallel and crossed viewing), the printed plate with its colophon on a Van de
+Graaf page, the relief shelf (SMK plaster casts, public domain; Smithsonian Open Access reliefs
+and busts, CC0), "How fine can you see depth" (a stereoacuity measurement that prints its own
+pixel floor and the 4.3× retest band, nothing stored or shared), the modrotlač tile, the
+Chartres labyrinth as a figure, and the Public Domain Day release (a scheduled task every
+1 January). The book's pairing of figures and patterns is now a seeded walk.
+
 ## 0.2.0 — 2026-11-04
 
 The three signature moves (docs/SIGNATURE.md, approved by Pavol the same evening):

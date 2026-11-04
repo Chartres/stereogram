@@ -17,7 +17,7 @@ describe('library provenance', () => {
   })
   it.each([...prov.figures, ...prov.patterns].map((e) => [e.id, e]))('%s carries licence, source url and credit, and its file exists', (_id, e) => {
     expect(['CC0', 'CC BY-SA 3.0', 'CC BY-SA 4.0', 'CC BY 4.0', 'Public domain']).toContain(e.licence)
-    if (e.licence !== 'CC0') expect(e.credit).toMatch(/by |CC BY/i)
+    if (e.licence.startsWith('CC BY')) expect(e.credit).toMatch(/by |CC BY/i) // attribution licences name the author
     expect(e.url).toMatch(/^https:\/\//)
     expect(e.credit).toContain(e.title)
     expect(existsSync('public' + e.file)).toBe(true)

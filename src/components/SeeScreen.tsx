@@ -54,6 +54,11 @@ export function SeeScreen() {
         their hidden-surface removal.
       </p>
 
+      <p className="mt-12">
+        Want a number? <a className="text-accent underline underline-offset-4" href="#/depth">How fine can you see depth</a> measures your
+        stereoacuity on this screen and prints its own limits.
+      </p>
+
       <Spectacles />
 
       <Ladder />

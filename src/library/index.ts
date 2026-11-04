@@ -5,6 +5,10 @@ import { depthFromRgba, type DepthMap, type Rgba } from '@/domain/depth'
 
 export interface Figure {
   id: string
+  /** bust · figure · animal · relief · object, so the book can interleave */
+  kind?: string
+  /** false keeps a figure in the picker but out of the book's walk */
+  book?: boolean
   title: string
   file: string
   source: string

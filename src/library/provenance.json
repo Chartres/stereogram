@@ -1,13 +1,48 @@
 {
   "figures": [
     {
+      "id": "si_lincoln_life_mask",
+      "title": "Abraham Lincoln, life mask by Clark Mills",
+      "file": "/library/figures/si_lincoln_life_mask.png",
+      "source": "Smithsonian Open Access",
+      "licence": "CC0",
+      "url": "https://3d.si.edu/object/3d/abraham-lincoln:c02c239d-5ebf-4a7a-a368-e2288bbf4b31",
+      "credit": "Abraham Lincoln, life mask by Clark Mills, Smithsonian Open Access, CC0",
+      "kind": "bust",
+      "book": true
+    },
+    {
+      "id": "si_lincoln_hands",
+      "title": "Abraham Lincoln's hands, cast",
+      "file": "/library/figures/si_lincoln_hands.png",
+      "source": "Smithsonian Open Access",
+      "licence": "CC0",
+      "url": "https://3d.si.edu/object/3d/abraham-lincoln:d8c642d6-4ebc-11ea-b77f-2e728ce88125",
+      "credit": "Abraham Lincoln's hands, cast, Smithsonian Open Access, CC0",
+      "kind": "relief",
+      "book": true
+    },
+    {
       "id": "antique_ceramic_vase_01",
       "title": "Antique ceramic vase",
       "file": "/library/figures/antique_ceramic_vase_01.png",
       "source": "Poly Haven",
       "licence": "CC0",
       "url": "https://polyhaven.com/a/antique_ceramic_vase_01",
-      "credit": "Antique ceramic vase, Poly Haven, CC0"
+      "credit": "Antique ceramic vase, Poly Haven, CC0",
+      "kind": "object",
+      "book": true
+    },
+    {
+      "id": "smk_apollo_belvedere",
+      "title": "Apollo Belvedere (cast)",
+      "file": "/library/figures/smk_apollo_belvedere.png",
+      "source": "SMK",
+      "licence": "Public domain",
+      "url": "https://open.smk.dk/en/artwork/image/KAS353",
+      "credit": "Apollo Belvedere (cast), SMK, Public domain",
+      "kind": "figure",
+      "book": true
     },
     {
       "id": "food_apple_01",
@@ -16,7 +51,9 @@
       "source": "Poly Haven",
       "licence": "CC0",
       "url": "https://polyhaven.com/a/food_apple_01",
-      "credit": "Apple, Poly Haven, CC0"
+      "credit": "Apple, Poly Haven, CC0",
+      "kind": "animal",
+      "book": true
     },
     {
       "id": "food_pears_asian_01",
@@ -25,7 +62,9 @@
       "source": "Poly Haven",
       "licence": "CC0",
       "url": "https://polyhaven.com/a/food_pears_asian_01",
-      "credit": "Asian pears, Poly Haven, CC0"
+      "credit": "Asian pears, Poly Haven, CC0",
+      "kind": "animal",
+      "book": true
     },
     {
       "id": "brass_vase_01",
@@ -34,7 +73,9 @@
       "source": "Poly Haven",
       "licence": "CC0",
       "url": "https://polyhaven.com/a/brass_vase_01",
-      "credit": "Brass vase, Poly Haven, CC0"
+      "credit": "Brass vase, Poly Haven, CC0",
+      "kind": "object",
+      "book": false
     },
     {
       "id": "bronze_ray_statue",
@@ -43,7 +84,9 @@
       "source": "Poly Haven",
       "licence": "CC0",
       "url": "https://polyhaven.com/a/bronze_ray_statue",
-      "credit": "Bronze ray statue, Poly Haven, CC0"
+      "credit": "Bronze ray statue, Poly Haven, CC0",
+      "kind": "animal",
+      "book": true
     },
     {
       "id": "bronze_shark_statue",
@@ -52,7 +95,9 @@
       "source": "Poly Haven",
       "licence": "CC0",
       "url": "https://polyhaven.com/a/bronze_shark_statue",
-      "credit": "Bronze shark statue, Poly Haven, CC0"
+      "credit": "Bronze shark statue, Poly Haven, CC0",
+      "kind": "animal",
+      "book": true
     },
     {
       "id": "bronze_whale_statue",
@@ -61,7 +106,9 @@
       "source": "Poly Haven",
       "licence": "CC0",
       "url": "https://polyhaven.com/a/bronze_whale_statue",
-      "credit": "Bronze whale statue, Poly Haven, CC0"
+      "credit": "Bronze whale statue, Poly Haven, CC0",
+      "kind": "animal",
+      "book": true
     },
     {
       "id": "bull_head",
@@ -70,7 +117,9 @@
       "source": "Poly Haven",
       "licence": "CC0",
       "url": "https://polyhaven.com/a/bull_head",
-      "credit": "Bull head, Poly Haven, CC0"
+      "credit": "Bull head, Poly Haven, CC0",
+      "kind": "bust",
+      "book": true
     },
     {
       "id": "carved_wooden_elephant",
@@ -79,7 +128,9 @@
       "source": "Poly Haven",
       "licence": "CC0",
       "url": "https://polyhaven.com/a/carved_wooden_elephant",
-      "credit": "Carved wooden elephant, Poly Haven, CC0"
+      "credit": "Carved wooden elephant, Poly Haven, CC0",
+      "kind": "animal",
+      "book": true
     },
     {
       "id": "chess_set",
@@ -88,7 +139,9 @@
       "source": "Poly Haven",
       "licence": "CC0",
       "url": "https://polyhaven.com/a/chess_set",
-      "credit": "Chess set, Poly Haven, CC0"
+      "credit": "Chess set, Poly Haven, CC0",
+      "kind": "object",
+      "book": true
     },
     {
       "id": "concrete_cat_statue",
@@ -97,7 +150,9 @@
       "source": "Poly Haven",
       "licence": "CC0",
       "url": "https://polyhaven.com/a/concrete_cat_statue",
-      "credit": "Concrete cat statue, Poly Haven, CC0"
+      "credit": "Concrete cat statue, Poly Haven, CC0",
+      "kind": "animal",
+      "book": true
     },
     {
       "id": "cross_pein_hammer",
@@ -106,7 +161,9 @@
       "source": "Poly Haven",
       "licence": "CC0",
       "url": "https://polyhaven.com/a/cross_pein_hammer",
-      "credit": "Cross-pein hammer, Poly Haven, CC0"
+      "credit": "Cross-pein hammer, Poly Haven, CC0",
+      "kind": "object",
+      "book": false
     },
     {
       "id": "dandelion_01",
@@ -115,7 +172,31 @@
       "source": "Poly Haven",
       "licence": "CC0",
       "url": "https://polyhaven.com/a/dandelion_01",
-      "credit": "Dandelion, Poly Haven, CC0"
+      "credit": "Dandelion, Poly Haven, CC0",
+      "kind": "object",
+      "book": true
+    },
+    {
+      "id": "smk_demosthenes",
+      "title": "Demosthenes (cast)",
+      "file": "/library/figures/smk_demosthenes.png",
+      "source": "SMK",
+      "licence": "Public domain",
+      "url": "https://open.smk.dk/en/artwork/image/KAS629",
+      "credit": "Demosthenes (cast), SMK, Public domain",
+      "kind": "bust",
+      "book": true
+    },
+    {
+      "id": "smk_discobolus",
+      "title": "Discobolus, Roman copy (cast)",
+      "file": "/library/figures/smk_discobolus.png",
+      "source": "SMK",
+      "licence": "Public domain",
+      "url": "https://open.smk.dk/en/artwork/image/KAS1549",
+      "credit": "Discobolus, Roman copy (cast), SMK, Public domain",
+      "kind": "figure",
+      "book": true
     },
     {
       "id": "fishermans_hat",
@@ -124,7 +205,20 @@
       "source": "Poly Haven",
       "licence": "CC0",
       "url": "https://polyhaven.com/a/fishermans_hat",
-      "credit": "Fisherman's hat, Poly Haven, CC0"
+      "credit": "Fisherman's hat, Poly Haven, CC0",
+      "kind": "object",
+      "book": true
+    },
+    {
+      "id": "si_washington_bust",
+      "title": "George Washington, bust after Houdon",
+      "file": "/library/figures/si_washington_bust.png",
+      "source": "Smithsonian Open Access",
+      "licence": "CC0",
+      "url": "https://3d.si.edu/object/3d/george-washington:ff28cb3a-ad00-43b3-a928-fa61ab0a288f",
+      "credit": "George Washington, bust after Houdon, Smithsonian Open Access, CC0",
+      "kind": "bust",
+      "book": false
     },
     {
       "id": "gothic_statue",
@@ -133,7 +227,9 @@
       "source": "Poly Haven",
       "licence": "CC0",
       "url": "https://polyhaven.com/a/gothic_statue",
-      "credit": "Gothic statue, Poly Haven, CC0"
+      "credit": "Gothic statue, Poly Haven, CC0",
+      "kind": "figure",
+      "book": true
     },
     {
       "id": "hatchet",
@@ -142,7 +238,31 @@
       "source": "Poly Haven",
       "licence": "CC0",
       "url": "https://polyhaven.com/a/hatchet",
-      "credit": "Hatchet, Poly Haven, CC0"
+      "credit": "Hatchet, Poly Haven, CC0",
+      "kind": "object",
+      "book": false
+    },
+    {
+      "id": "smk_hebe",
+      "title": "Hebe (cast)",
+      "file": "/library/figures/smk_hebe.png",
+      "source": "SMK",
+      "licence": "Public domain",
+      "url": "https://open.smk.dk/en/artwork/image/KAS2918",
+      "credit": "Hebe (cast), SMK, Public domain",
+      "kind": "bust",
+      "book": false
+    },
+    {
+      "id": "si_helen_keller",
+      "title": "Helen Keller, bust",
+      "file": "/library/figures/si_helen_keller.png",
+      "source": "Smithsonian Open Access",
+      "licence": "CC0",
+      "url": "https://3d.si.edu/object/3d/helen-adams-keller:d8c64ccc-4ebc-11ea-b77f-2e728ce88125",
+      "credit": "Helen Keller, bust, Smithsonian Open Access, CC0",
+      "kind": "bust",
+      "book": true
     },
     {
       "id": "horse_head",
@@ -151,7 +271,9 @@
       "source": "Poly Haven",
       "licence": "CC0",
       "url": "https://polyhaven.com/a/horse_head",
-      "credit": "Horse head, Poly Haven, CC0"
+      "credit": "Horse head, Poly Haven, CC0",
+      "kind": "bust",
+      "book": false
     },
     {
       "id": "horse_statue_01",
@@ -160,7 +282,20 @@
       "source": "Poly Haven",
       "licence": "CC0",
       "url": "https://polyhaven.com/a/horse_statue_01",
-      "credit": "Horse statue, Poly Haven, CC0"
+      "credit": "Horse statue, Poly Haven, CC0",
+      "kind": "figure",
+      "book": true
+    },
+    {
+      "id": "smk_zuccone",
+      "title": "Il Zuccone, after Donatello (cast)",
+      "file": "/library/figures/smk_zuccone.png",
+      "source": "SMK",
+      "licence": "Public domain",
+      "url": "https://open.smk.dk/en/artwork/image/KAS440",
+      "credit": "Il Zuccone, after Donatello (cast), SMK, Public domain",
+      "kind": "bust",
+      "book": true
     },
     {
       "id": "jug_01",
@@ -169,7 +304,31 @@
       "source": "Poly Haven",
       "licence": "CC0",
       "url": "https://polyhaven.com/a/jug_01",
-      "credit": "Jug, Poly Haven, CC0"
+      "credit": "Jug, Poly Haven, CC0",
+      "kind": "object",
+      "book": true
+    },
+    {
+      "id": "smk_julia_domna",
+      "title": "Julia Domna (cast)",
+      "file": "/library/figures/smk_julia_domna.png",
+      "source": "SMK",
+      "licence": "Public domain",
+      "url": "https://open.smk.dk/en/artwork/image/KAS1236",
+      "credit": "Julia Domna (cast), SMK, Public domain",
+      "kind": "bust",
+      "book": false
+    },
+    {
+      "id": "smk_kneeling_venus",
+      "title": "Kneeling Venus (cast)",
+      "file": "/library/figures/smk_kneeling_venus.png",
+      "source": "SMK",
+      "licence": "Public domain",
+      "url": "https://open.smk.dk/en/artwork/image/KAS618",
+      "credit": "Kneeling Venus (cast), SMK, Public domain",
+      "kind": "object",
+      "book": true
     },
     {
       "id": "lambis_shell",
@@ -178,7 +337,31 @@
       "source": "Poly Haven",
       "licence": "CC0",
       "url": "https://polyhaven.com/a/lambis_shell",
-      "credit": "Lambis shell, Poly Haven, CC0"
+      "credit": "Lambis shell, Poly Haven, CC0",
+      "kind": "animal",
+      "book": true
+    },
+    {
+      "id": "smk_laocoon",
+      "title": "Laocoön and his sons (cast)",
+      "file": "/library/figures/smk_laocoon.png",
+      "source": "SMK",
+      "licence": "Public domain",
+      "url": "https://open.smk.dk/en/artwork/image/KAS385",
+      "credit": "Laocoön and his sons (cast), SMK, Public domain",
+      "kind": "figure",
+      "book": true
+    },
+    {
+      "id": "smk_leda",
+      "title": "Leda and the Swan (cast)",
+      "file": "/library/figures/smk_leda.png",
+      "source": "SMK",
+      "licence": "Public domain",
+      "url": "https://open.smk.dk/en/artwork/image/KMS5808",
+      "credit": "Leda and the Swan (cast), SMK, Public domain",
+      "kind": "object",
+      "book": true
     },
     {
       "id": "lion_head",
@@ -187,7 +370,9 @@
       "source": "Poly Haven",
       "licence": "CC0",
       "url": "https://polyhaven.com/a/lion_head",
-      "credit": "Lion head, Poly Haven, CC0"
+      "credit": "Lion head, Poly Haven, CC0",
+      "kind": "bust",
+      "book": true
     },
     {
       "id": "marble_bust_01",
@@ -196,7 +381,20 @@
       "source": "Poly Haven",
       "licence": "CC0",
       "url": "https://polyhaven.com/a/marble_bust_01",
-      "credit": "Marble bust, Poly Haven, CC0"
+      "credit": "Marble bust, Poly Haven, CC0",
+      "kind": "bust",
+      "book": true
+    },
+    {
+      "id": "smk_moses",
+      "title": "Moses, after Michelangelo (cast)",
+      "file": "/library/figures/smk_moses.png",
+      "source": "SMK",
+      "licence": "Public domain",
+      "url": "https://open.smk.dk/en/artwork/image/KAS243",
+      "credit": "Moses, after Michelangelo (cast), SMK, Public domain",
+      "kind": "figure",
+      "book": true
     },
     {
       "id": "rubber_boots",
@@ -205,7 +403,9 @@
       "source": "Poly Haven",
       "licence": "CC0",
       "url": "https://polyhaven.com/a/rubber_boots",
-      "credit": "Rubber boots, Poly Haven, CC0"
+      "credit": "Rubber boots, Poly Haven, CC0",
+      "kind": "object",
+      "book": false
     },
     {
       "id": "rubber_duck_toy",
@@ -214,7 +414,20 @@
       "source": "Poly Haven",
       "licence": "CC0",
       "url": "https://polyhaven.com/a/rubber_duck_toy",
-      "credit": "Rubber duck, Poly Haven, CC0"
+      "credit": "Rubber duck, Poly Haven, CC0",
+      "kind": "animal",
+      "book": true
+    },
+    {
+      "id": "si_hayes_bust",
+      "title": "Rutherford B. Hayes, plaster bust",
+      "file": "/library/figures/si_hayes_bust.png",
+      "source": "Smithsonian Open Access",
+      "licence": "CC0",
+      "url": "https://3d.si.edu/object/3d/rutherford-b-hayes:1f3700e8-6d01-4488-8ab9-ea14031ef641",
+      "credit": "Rutherford B. Hayes, plaster bust, Smithsonian Open Access, CC0",
+      "kind": "bust",
+      "book": false
     },
     {
       "id": "seadogs_compass",
@@ -223,7 +436,75 @@
       "source": "Poly Haven",
       "licence": "CC0",
       "url": "https://polyhaven.com/a/seadogs_compass",
-      "credit": "Sea dog's compass, Poly Haven, CC0"
+      "credit": "Sea dog's compass, Poly Haven, CC0",
+      "kind": "object",
+      "book": true
+    },
+    {
+      "id": "smk_sophocles",
+      "title": "Sophocles (cast)",
+      "file": "/library/figures/smk_sophocles.png",
+      "source": "SMK",
+      "licence": "Public domain",
+      "url": "https://open.smk.dk/en/artwork/image/KAS633",
+      "credit": "Sophocles (cast), SMK, Public domain",
+      "kind": "bust",
+      "book": false
+    },
+    {
+      "id": "smk_sphinx",
+      "title": "Sphinx with the features of Amenemhat (cast)",
+      "file": "/library/figures/smk_sphinx.png",
+      "source": "SMK",
+      "licence": "Public domain",
+      "url": "https://open.smk.dk/en/artwork/image/KAS38",
+      "credit": "Sphinx with the features of Amenemhat (cast), SMK, Public domain",
+      "kind": "object",
+      "book": true
+    },
+    {
+      "id": "smk_apostle_peter",
+      "title": "The Apostle Peter (cast)",
+      "file": "/library/figures/smk_apostle_peter.png",
+      "source": "SMK",
+      "licence": "Public domain",
+      "url": "https://open.smk.dk/en/artwork/image/KAS2906/8",
+      "credit": "The Apostle Peter (cast), SMK, Public domain",
+      "kind": "figure",
+      "book": true
+    },
+    {
+      "id": "smk_barberini_faun",
+      "title": "The Barberini Faun (cast)",
+      "file": "/library/figures/smk_barberini_faun.png",
+      "source": "SMK",
+      "licence": "Public domain",
+      "url": "https://open.smk.dk/en/artwork/image/KAS208",
+      "credit": "The Barberini Faun (cast), SMK, Public domain",
+      "kind": "object",
+      "book": true
+    },
+    {
+      "id": "smk_belvedere_torso",
+      "title": "The Belvedere Torso (cast)",
+      "file": "/library/figures/smk_belvedere_torso.png",
+      "source": "SMK",
+      "licence": "Public domain",
+      "url": "https://open.smk.dk/en/artwork/image/KAS402",
+      "credit": "The Belvedere Torso (cast), SMK, Public domain",
+      "kind": "figure",
+      "book": true
+    },
+    {
+      "id": "smk_dying_gaul",
+      "title": "The Dying Gaul (cast)",
+      "file": "/library/figures/smk_dying_gaul.png",
+      "source": "SMK",
+      "licence": "Public domain",
+      "url": "https://open.smk.dk/en/artwork/image/KAS1312",
+      "credit": "The Dying Gaul (cast), SMK, Public domain",
+      "kind": "figure",
+      "book": true
     },
     {
       "id": "chartres",
@@ -232,7 +513,42 @@
       "source": "Wikimedia Commons",
       "licence": "CC BY-SA 3.0",
       "url": "https://commons.wikimedia.org/wiki/File:Labyrinthus.svg",
-      "credit": "The labyrinth of Chartres Cathedral (c. 1200), drawing by Ssolbergj, Wikimedia Commons, CC BY-SA 3.0"
+      "credit": "The labyrinth of Chartres Cathedral (c. 1200), drawing by Ssolbergj, Wikimedia Commons, CC BY-SA 3.0",
+      "kind": "relief",
+      "book": true
+    },
+    {
+      "id": "smk_risen_christ",
+      "title": "The Risen Christ (cast)",
+      "file": "/library/figures/smk_risen_christ.png",
+      "source": "SMK",
+      "licence": "Public domain",
+      "url": "https://open.smk.dk/en/artwork/image/KAS422",
+      "credit": "The Risen Christ (cast), SMK, Public domain",
+      "kind": "figure",
+      "book": true
+    },
+    {
+      "id": "si_roosevelt_relief",
+      "title": "Theodore Roosevelt, bronze relief",
+      "file": "/library/figures/si_roosevelt_relief.png",
+      "source": "Smithsonian Open Access",
+      "licence": "CC0",
+      "url": "https://3d.si.edu/object/3d/theodore-roosevelt:1788235b-d2bc-4287-8fb5-f2965a069fd9",
+      "credit": "Theodore Roosevelt, bronze relief, Smithsonian Open Access, CC0",
+      "kind": "relief",
+      "book": true
+    },
+    {
+      "id": "si_western_paradise",
+      "title": "Western Paradise of the Buddha Amitabha, stone relief",
+      "file": "/library/figures/si_western_paradise.png",
+      "source": "Smithsonian Open Access",
+      "licence": "CC0",
+      "url": "https://3d.si.edu/object/3d/western-paradise-buddha-amitabha:727b4bb6-ce87-40de-b07d-d492c1404221",
+      "credit": "Western Paradise of the Buddha Amitabha, stone relief, Smithsonian Open Access, CC0",
+      "kind": "relief",
+      "book": true
     },
     {
       "id": "wooden_bowl_01",
@@ -241,7 +557,9 @@
       "source": "Poly Haven",
       "licence": "CC0",
       "url": "https://polyhaven.com/a/wooden_bowl_01",
-      "credit": "Wooden bowl, Poly Haven, CC0"
+      "credit": "Wooden bowl, Poly Haven, CC0",
+      "kind": "object",
+      "book": true
     }
   ],
   "patterns": [
@@ -324,26 +642,6 @@
       "url": "https://www.metmuseum.org/art/collection/search/53913",
       "date": "19th century",
       "credit": "Horse trapping, 19th century, The Met, CC0"
-    },
-    {
-      "id": "katagami-61835",
-      "title": "Robe (Kosode) with Cherry Blossoms and Butterflies",
-      "file": "/library/patterns/katagami-61835.png",
-      "source": "The Metropolitan Museum of Art, Open Access",
-      "licence": "CC0",
-      "url": "https://www.metmuseum.org/art/collection/search/61835",
-      "date": "late 18th–early 19th century",
-      "credit": "Robe (Kosode) with Cherry Blossoms and Butterflies, late 18th–early 19th century, The Met, CC0"
-    },
-    {
-      "id": "katagami-61838",
-      "title": "Robe (Kosode) with Ferns",
-      "file": "/library/patterns/katagami-61838.png",
-      "source": "The Metropolitan Museum of Art, Open Access",
-      "licence": "CC0",
-      "url": "https://www.metmuseum.org/art/collection/search/61838",
-      "date": "late 18th–early 19th century",
-      "credit": "Robe (Kosode) with Ferns, late 18th–early 19th century, The Met, CC0"
     },
     {
       "id": "katagami-64388",

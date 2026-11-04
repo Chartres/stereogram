@@ -136,3 +136,24 @@ test('P10 Pavol: Comenius’s spectacles, the Chartres path, modrotlač and the 
   await expect(colophon).toContainText('seed 1200')
   await expect(colophon).toContainText('Thimbleby, Inglis and Witten')
 })
+
+test('P11 Pavol: measures how fine he can see depth, and the page prints its own floor', async ({ page }) => {
+  await page.goto('/#/depth')
+  await expect(page.getByRole('heading', { name: /How fine can you see depth/ })).toBeVisible()
+  await page.getByRole('button', { name: 'It matches' }).click()
+  await expect(page.getByRole('heading', { name: /blind spot/ })).toBeVisible()
+  await page.getByRole('button', { name: 'Skip, assume 50 cm' }).click()
+  await expect(page.getByTestId('stereo-pair')).toBeVisible()
+  await page.screenshot({ path: 'e2e/shots/persona-p11-acuity-trial.png' })
+  // answer until the staircase stops (max 40 trials)
+  for (let i = 0; i < 45; i++) {
+    const top = page.getByRole('button', { name: 'Top', exact: true })
+    if (!(await top.isVisible().catch(() => false))) break
+    await top.click()
+  }
+  const result = page.getByTestId('acuity-result')
+  await expect(result).toBeVisible()
+  await expect(result).toContainText(/one pixel here is \d+″/)
+  await expect(result).toContainText('not a failure of effort')
+  await page.screenshot({ path: 'e2e/shots/persona-p11-acuity-result.png', fullPage: true })
+})

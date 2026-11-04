@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { track } from './analytics'
 import { BottomNav, type Route } from './components/BottomNav'
+import { AcuityScreen } from './components/AcuityScreen'
 import { BookScreen } from './components/BookScreen'
 import { MakeScreen } from './components/MakeScreen'
 import { SeeScreen } from './components/SeeScreen'
@@ -8,6 +9,7 @@ import { SeeScreen } from './components/SeeScreen'
 function routeFromHash(): Route {
   if (location.hash.startsWith('#/see')) return 'see'
   if (location.hash.startsWith('#/book')) return 'book'
+  if (location.hash.startsWith('#/depth')) return 'acuity'
   return 'make'
 }
 
@@ -41,7 +43,7 @@ export function App() {
 
   return (
     <>
-      {route === 'see' ? <SeeScreen /> : route === 'book' ? <BookScreen n={plate} /> : <MakeScreen />}
+      {route === 'see' ? <SeeScreen /> : route === 'book' ? <BookScreen n={plate} /> : route === 'acuity' ? <AcuityScreen /> : <MakeScreen />}
       <BottomNav route={route} />
     </>
   )

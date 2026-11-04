@@ -5,6 +5,8 @@
 // Licences: Poly Haven CC0 (https://polyhaven.com/license); Met Open Access CC0 (isPublicDomain only).
 import { mkdirSync, existsSync, writeFileSync, readFileSync } from 'node:fs'
 import sharp from 'sharp'
+import { execFileSync } from 'node:child_process'
+import { readFileSync as readBin, unlinkSync } from 'node:fs'
 
 const SIZE = 512
 const OUT_F = 'public/library/figures'
@@ -18,7 +20,7 @@ const FIGURES = {
   bronze_ray_statue: [0, 30, 'Bronze ray statue'],
   bronze_whale_statue: [90, 10, 'Bronze whale statue'],
   bronze_shark_statue: [90, 10, 'Bronze shark statue'],
-  carved_wooden_elephant: [90, 10, 'Carved wooden elephant'],
+  carved_wooden_elephant: [120, 10, 'Carved wooden elephant'], // three-quarter view: Pavol, 4 Nov, "rotating it a bit would give more sense"
   concrete_cat_statue: [20, 10, 'Concrete cat statue'],
   gothic_statue: [0, 0, 'Gothic statue'],
   horse_head: [60, 0, 'Horse head'],
@@ -41,6 +43,98 @@ const FIGURES = {
   dandelion_01: [0, 0, 'Dandelion'],
   hatchet: [90, 90, 'Hatchet'],
   cross_pein_hammer: [90, 90, 'Cross-pein hammer'],
+}
+
+// The relief shelf (approved 2026-11-04): SMK plaster casts (Public Domain Mark, binary STL, Z-up)
+// and Smithsonian Open Access 3D (CC0, GLB; draco-compressed files are skipped).
+const CASTS = [
+  // id, url, title, yaw, pitch, source, licence, page
+  ['smk_discobolus', 'https://api.smk.dk/api/v1/download-3d/n583z0576_smk-discobolus.stl', 'Discobolus, Roman copy (cast)', 0, 0, 'SMK', 'Public domain', 'https://open.smk.dk/en/artwork/image/KAS1549'],
+  ['smk_dying_gaul', 'https://api.smk.dk/api/v1/download-3d/5t34sq60f_KAS1312_small.stl', 'The Dying Gaul (cast)', 0, 30, 'SMK', 'Public domain', 'https://open.smk.dk/en/artwork/image/KAS1312'],
+  ['smk_laocoon', 'https://api.smk.dk/api/v1/download-3d/d504rr247_KAS385_small.stl', 'Laocoön and his sons (cast)', 0, 0, 'SMK', 'Public domain', 'https://open.smk.dk/en/artwork/image/KAS385'],
+  ['smk_apollo_belvedere', 'https://api.smk.dk/api/v1/download-3d/wm117v118_smk-apollo-belvedere.stl', 'Apollo Belvedere (cast)', 0, 0, 'SMK', 'Public domain', 'https://open.smk.dk/en/artwork/image/KAS353'],
+  ['smk_barberini_faun', 'https://api.smk.dk/api/v1/download-3d/8w32rb332_KAS208_small.stl', 'The Barberini Faun (cast)', 0, 20, 'SMK', 'Public domain', 'https://open.smk.dk/en/artwork/image/KAS208'],
+  ['smk_hebe', 'https://api.smk.dk/api/v1/download-3d/7p88cn20v_KAS2918_small.stl', 'Hebe (cast)', 0, 0, 'SMK', 'Public domain', 'https://open.smk.dk/en/artwork/image/KAS2918'],
+  ['smk_belvedere_torso', 'https://api.smk.dk/api/v1/download-3d/zs25xf26x_KAS402_small.stl', 'The Belvedere Torso (cast)', 0, 0, 'SMK', 'Public domain', 'https://open.smk.dk/en/artwork/image/KAS402'],
+  ['smk_moses', 'https://api.smk.dk/api/v1/download-3d/pr76f835r_KAS243_small.stl', 'Moses, after Michelangelo (cast)', 0, 0, 'SMK', 'Public domain', 'https://open.smk.dk/en/artwork/image/KAS243'],
+  ['smk_risen_christ', 'https://api.smk.dk/api/v1/download-3d/k930c2765_KAS422_small.stl', 'The Risen Christ (cast)', 0, 0, 'SMK', 'Public domain', 'https://open.smk.dk/en/artwork/image/KAS422'],
+  ['smk_apostle_peter', 'https://api.smk.dk/api/v1/download-3d/8623j340n_KAS2906-8_small.stl', 'The Apostle Peter (cast)', 0, 0, 'SMK', 'Public domain', 'https://open.smk.dk/en/artwork/image/KAS2906/8'],
+  ['smk_sphinx', 'https://api.smk.dk/api/v1/download-3d/f7623j026_KAS38_small.stl', 'Sphinx with the features of Amenemhat (cast)', 0, 0, 'SMK', 'Public domain', 'https://open.smk.dk/en/artwork/image/KAS38'],
+  ['smk_leda', 'https://api.smk.dk/api/v1/download-3d/s7526j33z_KMS5808_small.stl', 'Leda and the Swan (cast)', 0, 0, 'SMK', 'Public domain', 'https://open.smk.dk/en/artwork/image/KMS5808'],
+  ['smk_demosthenes', 'https://api.smk.dk/api/v1/download-3d/v405sg31p_KAS629_small.stl', 'Demosthenes (cast)', 0, 0, 'SMK', 'Public domain', 'https://open.smk.dk/en/artwork/image/KAS629'],
+  ['smk_sophocles', 'https://api.smk.dk/api/v1/download-3d/rx913v90j_KAS633_small.stl', 'Sophocles (cast)', 0, 0, 'SMK', 'Public domain', 'https://open.smk.dk/en/artwork/image/KAS633'],
+  ['smk_julia_domna', 'https://api.smk.dk/api/v1/download-3d/4m90f115c_KAS1236_small.stl', 'Julia Domna (cast)', 0, 0, 'SMK', 'Public domain', 'https://open.smk.dk/en/artwork/image/KAS1236'],
+  ['smk_zuccone', 'https://api.smk.dk/api/v1/download-3d/0z709180b_KAS440_small.stl', 'Il Zuccone, after Donatello (cast)', 0, 0, 'SMK', 'Public domain', 'https://open.smk.dk/en/artwork/image/KAS440'],
+  ['smk_kneeling_venus', 'https://api.smk.dk/api/v1/download-3d/cj82kc853_KAS618_small.stl', 'Kneeling Venus (cast)', 0, 0, 'SMK', 'Public domain', 'https://open.smk.dk/en/artwork/image/KAS618'],
+  ['si_roosevelt_relief', 'https://3d-api.si.edu/content/document/3d_package:1788235b-d2bc-4287-8fb5-f2965a069fd9/resources/theodore-roosevelt-bronze-relief-150k-4096.glb', 'Theodore Roosevelt, bronze relief', 0, 0, 'Smithsonian Open Access', 'CC0', 'https://3d.si.edu/object/3d/theodore-roosevelt:1788235b-d2bc-4287-8fb5-f2965a069fd9'],
+  ['si_lincoln_life_mask', 'https://3d-api.si.edu/content/document/3d_package:c02c239d-5ebf-4a7a-a368-e2288bbf4b31/resources/abraham-lincoln-mills-life-mask-150k-4096.glb', 'Abraham Lincoln, life mask by Clark Mills', 0, 0, 'Smithsonian Open Access', 'CC0', 'https://3d.si.edu/object/3d/abraham-lincoln:c02c239d-5ebf-4a7a-a368-e2288bbf4b31'],
+  ['si_western_paradise', 'https://3d-api.si.edu/content/document/3d_package:727b4bb6-ce87-40de-b07d-d492c1404221/resources/f1921_2-high_res-150k-4096_std.glb', 'Western Paradise of the Buddha Amitabha, stone relief', 0, 0, 'Smithsonian Open Access', 'CC0', 'https://3d.si.edu/object/3d/western-paradise-buddha-amitabha:727b4bb6-ce87-40de-b07d-d492c1404221'],
+  ['si_hayes_bust', 'https://3d-api.si.edu/content/document/3d_package:1f3700e8-6d01-4488-8ab9-ea14031ef641/resources/rutherford-b-150k-4096.glb', 'Rutherford B. Hayes, plaster bust', 0, 0, 'Smithsonian Open Access', 'CC0', 'https://3d.si.edu/object/3d/rutherford-b-hayes:1f3700e8-6d01-4488-8ab9-ea14031ef641'],
+  ['si_washington_bust', 'https://3d-api.si.edu/content/document/3d_package:ff28cb3a-ad00-43b3-a928-fa61ab0a288f/resources/NPG_78_1-GeorgeWashington-150k-4096_std.glb', 'George Washington, bust after Houdon', 0, 0, 'Smithsonian Open Access', 'CC0', 'https://3d.si.edu/object/3d/george-washington:ff28cb3a-ad00-43b3-a928-fa61ab0a288f'],
+  ['si_helen_keller', 'https://3d-api.si.edu/content/document/3d_package:d8c64ccc-4ebc-11ea-b77f-2e728ce88125/resources/HK_NPG_75_16-150k-4096.glb', 'Helen Keller, bust', 0, 0, 'Smithsonian Open Access', 'CC0', 'https://3d.si.edu/object/3d/helen-adams-keller:d8c64ccc-4ebc-11ea-b77f-2e728ce88125'],
+  ['si_lincoln_hands', 'https://3d-api.si.edu/content/document/3d_package:d8c642d6-4ebc-11ea-b77f-2e728ce88125/resources/lincoln_hands-150k-4096.glb', "Abraham Lincoln's hands, cast", 0, 60, 'Smithsonian Open Access', 'CC0', 'https://3d.si.edu/object/3d/abraham-lincoln:d8c642d6-4ebc-11ea-b77f-2e728ce88125'],
+]
+
+/** Binary STL → triangles; STL from photogrammetry is usually Z-up, so (x, y, z) → (x, z, −y). */
+function stlTriangles(buf) {
+  const dv = new DataView(buf)
+  const n = dv.getUint32(80, true)
+  const tris = []
+  let o = 84
+  for (let i = 0; i < n; i++) {
+    o += 12
+    const t = []
+    for (let k = 0; k < 3; k++) {
+      const x = dv.getFloat32(o, true), y = dv.getFloat32(o + 4, true), z = dv.getFloat32(o + 8, true)
+      t.push([x, z, -y])
+      o += 12
+    }
+    tris.push(t)
+    o += 2
+  }
+  return tris
+}
+
+/** Binary GLB → { gltf JSON, bins }. Draco-compressed meshes are refused. */
+function parseGlb(buf) {
+  const dv = new DataView(buf)
+  if (dv.getUint32(0, true) !== 0x46546c67) throw new Error('not a glb')
+  let o = 12
+  let json = null
+  const bins = []
+  while (o < buf.byteLength) {
+    const len = dv.getUint32(o, true), type = dv.getUint32(o + 4, true)
+    const chunk = buf.slice(o + 8, o + 8 + len)
+    if (type === 0x4e4f534a) json = JSON.parse(Buffer.from(chunk).toString('utf8'))
+    else bins.push(chunk)
+    o += 8 + len
+  }
+  if (JSON.stringify(json.extensionsRequired || []).includes('draco')) throw new Error('draco-compressed')
+  return { g: json, bins }
+}
+
+async function bakeCasts() {
+  for (const [id, url, title, yaw, pitch, source, licence, page] of CASTS) {
+    const file = `${OUT_F}/${id}.png`
+    if (existsSync(file)) continue
+    try {
+      // large STL downloads get cut off by fetch ("terminated"); curl with retries is patient
+      const tmp = `/tmp/bake-${id}`
+      execFileSync('curl', ['-sL', '--retry', '5', '--retry-all-errors', '--max-time', '600', '-o', tmp, url], { stdio: 'ignore' })
+      const raw = readBin(tmp)
+      unlinkSync(tmp)
+      const buf = raw.buffer.slice(raw.byteOffset, raw.byteOffset + raw.byteLength)
+      const tris = url.endsWith('.stl') ? stlTriangles(buf) : (({ g, bins }) => triangles(g, bins))(parseGlb(buf))
+      const depth = rasterize(tris, yaw, pitch)
+      await sharp(depth, { raw: { width: SIZE, height: SIZE, channels: 1 } }).png({ compressionLevel: 9 }).toFile(file)
+      const keep = prov.figures.find((f) => f.id === id) ?? {}
+      prov.figures = prov.figures.filter((f) => f.id !== id)
+      prov.figures.push({ ...keep, id, title, file: `/library/figures/${id}.png`, source, licence, url: page, credit: `${title}, ${source}, ${licence}` })
+      console.log(`cast ${id} (${tris.length} tris)`)
+    } catch (e) {
+      console.warn(`skip ${id}: ${e.message}`)
+    }
+  }
 }
 
 // query → how many; the Met's full-text search is loose, so each hit is checked for isPublicDomain + an image
@@ -176,9 +270,13 @@ function rasterize(tris, yaw, pitch) {
 }
 
 async function bakeFigures() {
-  for (const [id, [yaw, pitch, title]] of Object.entries(FIGURES)) {
-    const file = `${OUT_F}/${id}.png`
-    if (existsSync(file)) continue
+  for (const [id, [yaw0, pitch0, title]] of Object.entries(FIGURES)) {
+    const only1 = process.env.ONLY
+    if (only1 && only1 !== id) continue
+    const yaw = process.env.YAW ? Number(process.env.YAW) : yaw0
+    const pitch = process.env.PITCH ? Number(process.env.PITCH) : pitch0
+    const file = process.env.OUT ? process.env.OUT : `${OUT_F}/${id}.png`
+    if (existsSync(file) && !process.env.OUT) continue
     try {
       const files = await json(`https://api.polyhaven.com/files/${id}`)
       const g1k = files.gltf?.['1k']?.gltf
@@ -193,8 +291,10 @@ async function bakeFigures() {
       const tris = triangles(g, bins)
       const depth = rasterize(tris, yaw, pitch)
       await sharp(depth, { raw: { width: SIZE, height: SIZE, channels: 1 } }).png({ compressionLevel: 9 }).toFile(file)
+      if (process.env.OUT) { console.log(`review ${id} yaw ${yaw} pitch ${pitch}`); continue }
+      const keep = prov.figures.find((f) => f.id === id) ?? {}
       prov.figures = prov.figures.filter((f) => f.id !== id)
-      prov.figures.push({ id, title, file: `/library/figures/${id}.png`, source: 'Poly Haven', licence: 'CC0', url: `https://polyhaven.com/a/${id}`, credit: `${title}, Poly Haven, CC0` })
+      prov.figures.push({ ...keep, id, title, file: `/library/figures/${id}.png`, source: 'Poly Haven', licence: 'CC0', url: `https://polyhaven.com/a/${id}`, credit: `${title}, Poly Haven, CC0` })
       console.log(`figure ${id} (${tris.length} tris)`)
     } catch (e) {
       console.warn(`skip ${id}: ${e.message}`)
@@ -240,6 +340,7 @@ async function bakePatterns() {
 }
 
 if (only !== '--patterns-only') await bakeFigures()
+if (only !== '--patterns-only') await bakeCasts()
 if (only !== '--figures-only') await bakePatterns()
 prov.figures.sort((a, b) => a.title.localeCompare(b.title))
 prov.patterns.sort((a, b) => a.id.localeCompare(b.id))
