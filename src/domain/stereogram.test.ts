@@ -140,6 +140,7 @@ describe('patterns and helpers', () => {
     const a = proceduralTile(tile, 32, 9)
     const b = proceduralTile(tile, 32, 9)
     expect(a.width).toBe(32)
+    if (tile === 'truchet') expect(a.height).toBeGreaterThan(16)
     expect(same(a.data, b.data)).toBe(true)
     for (let i = 3; i < a.data.length; i += 4) expect(a.data[i]).toBe(255)
   })

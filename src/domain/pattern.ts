@@ -2,7 +2,7 @@
 import type { Rgba } from './depth'
 import { mulberry32 } from './prng'
 
-export const TILES = ['confetti', 'pebbles', 'weave', 'modrotlac'] as const
+export const TILES = ['truchet', 'confetti', 'pebbles', 'weave', 'modrotlac'] as const
 export type Tile = (typeof TILES)[number]
 
 export const TILE_LABELS: Record<Tile, string> = {
@@ -10,6 +10,7 @@ export const TILE_LABELS: Record<Tile, string> = {
   pebbles: 'Pebbles',
   weave: 'Weave',
   modrotlac: 'Modrotlač (blueprint)',
+  truchet: 'Hex Truchet',
 }
 
 const PALETTES: Record<Tile, [number, number, number][]> = {
@@ -40,6 +41,10 @@ const PALETTES: Record<Tile, [number, number, number][]> = {
     [244, 241, 234],
     [27, 58, 107],
   ],
+  truchet: [
+    [28, 26, 22],
+    [243, 239, 230],
+  ],
 }
 
 function fill(data: Uint8ClampedArray, i: number, c: [number, number, number]) {
@@ -49,8 +54,95 @@ function fill(data: Uint8ClampedArray, i: number, c: [number, number, number]) {
   data[i + 3] = 255
 }
 
-/** A square tile `size` px wide. Width is later fitted to the stereogram's strip width by `fitTile`. */
+// ---- hexagonal Truchet (from Pavol's Truchet Studio, 2026): flat-top hexes, the "C + X" matching
+// [[0,1],[2,4],[3,5]] in one of six random orientations, strands as cubic curves that leave each
+// edge perpendicular, so seams between hexes are smooth. The tile is 4 columns × 3 rows of hexes,
+// which repeats exactly, so the stereogram strip shows no joins.
+const CX: [number, number][] = [
+  [0, 1],
+  [2, 4],
+  [3, 5],
+]
+function hexTruchet(width: number, seed: number, bands = 2, weight = 2.6): Rgba {
+  const cols = 4
+  const rows = 3
+  const R = width / (1.5 * cols)
+  const vStep = Math.sqrt(3) * R
+  const height = Math.round(vStep * rows)
+  const data = new Uint8ClampedArray(width * height * 4)
+  const [ink, paper] = PALETTES.truchet
+  for (let i = 0; i < width * height; i++) fill(data, i * 4, paper)
+  const rnd = mulberry32(seed)
+  const rot: number[] = []
+  for (let i = 0; i < cols * rows; i++) rot.push(Math.floor(rnd() * 6))
+  const vtx = (cx: number, cy: number, j: number): [number, number] => [cx + R * Math.cos((Math.PI / 3) * j), cy + R * Math.sin((Math.PI / 3) * j)]
+  const lerp = (a: [number, number], b: [number, number], t: number): [number, number] => [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t]
+  const inNorm = (cx: number, cy: number, e: number): [number, number] => {
+    const va = vtx(cx, cy, e), vb = vtx(cx, cy, (e + 1) % 6)
+    let nx = -(vb[1] - va[1]), ny = vb[0] - va[0]
+    const l = Math.hypot(nx, ny) || 1
+    nx /= l
+    ny /= l
+    const mx = (va[0] + vb[0]) / 2, my = (va[1] + vb[1]) / 2
+    if (nx * (cx - mx) + ny * (cy - my) < 0) { nx = -nx; ny = -ny }
+    return [nx, ny]
+  }
+  const stamp = (x: number, y: number) => {
+    const r = weight / 2
+    for (let yy = Math.floor(y - r); yy <= y + r; yy++)
+      for (let xx = Math.floor(x - r); xx <= x + r; xx++) {
+        if ((xx - x) ** 2 + (yy - y) ** 2 > r * r) continue
+        const px = ((xx % width) + width) % width
+        const py = ((yy % height) + height) % height
+        fill(data, (py * width + px) * 4, ink)
+      }
+  }
+  for (let col = -1; col <= cols; col++)
+    for (let row = -1; row <= rows; row++) {
+      const cx = R + col * 1.5 * R
+      const cy = (col & 1 ? vStep / 2 : 0) + row * vStep + vStep / 2
+      const r = rot[((((row % rows) + rows) % rows) * cols) + (((col % cols) + cols) % cols)]
+      for (const [a0, b0] of CX) {
+        const a = (a0 + r) % 6, b = (b0 + r) % 6
+        for (let k = 1; k <= bands; k++) {
+          const f = (2 * k - 1) / (2 * bands)
+          const adj = (a - b + 6) % 6 === 1 || (b - a + 6) % 6 === 1
+          let pa: [number, number], pb: [number, number]
+          if (adj) {
+            const sv = (b - a + 6) % 6 === 1 ? b : a
+            pa = lerp(vtx(cx, cy, sv), vtx(cx, cy, (sv + 5) % 6), f)
+            pb = lerp(vtx(cx, cy, sv), vtx(cx, cy, (sv + 1) % 6), f)
+          } else {
+            pa = lerp(vtx(cx, cy, a), vtx(cx, cy, (a + 1) % 6), f)
+            pb = lerp(vtx(cx, cy, b), vtx(cx, cy, (b + 1) % 6), f)
+          }
+          const na = inNorm(cx, cy, a), nb = inNorm(cx, cy, b)
+          const L = Math.hypot(pb[0] - pa[0], pb[1] - pa[1]) || 1e-6
+          const h = L * 0.55
+          const c1: [number, number] = [pa[0] + na[0] * h, pa[1] + na[1] * h]
+          const c2: [number, number] = [pb[0] + nb[0] * h, pb[1] + nb[1] * h]
+          const SEG = Math.max(12, Math.round(L))
+          for (let i = 0; i <= SEG; i++) {
+            const t = i / SEG, u = 1 - t
+            const x = u * u * u * pa[0] + 3 * u * u * t * c1[0] + 3 * u * t * t * c2[0] + t * t * t * pb[0]
+            const y = u * u * u * pa[1] + 3 * u * u * t * c1[1] + 3 * u * t * t * c2[1] + t * t * t * pb[1]
+            stamp(x, y)
+          }
+        }
+      }
+    }
+  // a little paper speckle so flat areas still carry texture for the eye to lock onto
+  const n = Math.round(width * height * 0.01)
+  for (let k = 0; k < n; k++) {
+    const i = (Math.floor(rnd() * height) * width + Math.floor(rnd() * width)) * 4
+    fill(data, i, [150, 144, 132])
+  }
+  return { width, height, data }
+}
+
+/** A square tile `size` px wide (Hex Truchet: `size` wide, 3 hex rows high). Width is later fitted to the stereogram's strip width by `fitTile`. */
 export function proceduralTile(tile: Tile, size: number, seed: number): Rgba {
+  if (tile === 'truchet') return hexTruchet(size, seed)
   const data = new Uint8ClampedArray(size * size * 4)
   const rnd = mulberry32(seed)
   const pal = PALETTES[tile]

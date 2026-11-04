@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.4.0 — 2026-11-04
+
+Book, See and the depth test take the Make page's shape (one slab, icon actions, reading folded
+under rows, the ladder leads the See page). Every figure is lifted off the page (its farthest
+point at 47 % depth, not 16 %) so the silhouette is a clear step; every tile is levelled and
+seamed (edges cross-faded, bottom half mirrored) so rows no longer show joins; 32 floral tiles
+from The Met (chintz, palampore, brocade, kimono, embroidery); a hexagonal Truchet tile from
+Pavol's Truchet Studio (the C + X matching in six orientations, two bands).
+
 ## 0.3.1 — 2026-11-04
 
 The Make page as an app, from Pavol's phone pass: the picture, one Download slab, five icon

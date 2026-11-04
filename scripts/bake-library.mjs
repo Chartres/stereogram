@@ -147,6 +147,14 @@ const PATTERNS = [
   ['wallpaper 18th century', 4, 'wallpaper'],
   ['Ottoman textile fragment', 4, 'ottoman'],
   ['Coptic textile', 3, 'coptic'],
+  // floral (Pavol, 4 Nov: "can we get more floral ones?")
+  ['chintz floral textile', 6, 'floral'],
+  ['palampore', 4, 'floral'],
+  ['brocade flowers silk', 5, 'floral'],
+  ['floral wallpaper', 6, 'floral'],
+  ['kimono flowers', 4, 'floral'],
+  ['Morris Acanthus', 3, 'floral'],
+  ['embroidered flowers linen', 4, 'floral'],
 ]
 
 const only = process.argv[2]
