@@ -48,21 +48,21 @@
       {
         "name": "The museum's hidden figures: ~50 CC0 sculptures and ~40 ornament tiles with provenance",
         "from": "Met Open Access, Smithsonian, Poly Haven; ad fontes",
-        "status": "building",
+        "status": "live",
         "metric": "key_action pick_figure",
         "approved_on": "2026-11-04"
       },
       {
         "name": "A book of plates: ~100 pre-generated stereograms paged like a book, answer and share-a-guess links",
         "from": "London Stereoscopic Company 1862; Magic Eye books; Holbein",
-        "status": "building",
+        "status": "live",
         "metric": "key_action plate_open",
         "approved_on": "2026-11-04"
       },
       {
         "name": "The patient eye: six-step viewing course with relax step and shimmer, self-marked",
         "from": "Wheatstone 1838; NHS orthoptics; Thimbleby 1993; Montessori",
-        "status": "building",
+        "status": "live",
         "metric": "key_action ladder_step",
         "approved_on": "2026-11-04"
       },
@@ -86,5 +86,5 @@
     "set": "2026-11-04",
     "statement": "building → soft-launch: live at stereogram.dravec.org, CI green, one approved signature move live and measured, analytics verified in flywheel-core, ≥1 feedback row; decide by 2026-11-18."
   },
-  "notes": "Scaffolded 2026-11-04 per /flywheel:scaffold. Algorithm: Thimbleby–Inglis–Witten 1994 with hidden-surface removal, pure TS in src/domain, rendered in a Web Worker. Signature proposal (3 options, recommendation A \"The patient eye\") awaits Pavol; the core generator is the obvious part and shipped. One-liner and track were set by the agent as defaults; Pavol to confirm. Deployed 2026-11-04 to the Cloudflare Pages project (stereogram.pages.dev, tag deploy-2026-11-04); the custom domain waits on the hub token gaining Zone·DNS·Edit (inbox cf-token-dns-edit). Landscape 2026-11-04 (docs/discovery/stereogram-landscape.md): crowded market (Owl3D, Tembrica 2026); unclaimed: real-sculpture library with provenance, book of plates, orthoptic viewing course. Decision pending: A library+book (default) / B course / C all."
+  "notes": "Scaffolded 2026-11-04 per /flywheel:scaffold. Algorithm: Thimbleby–Inglis–Witten 1994 with hidden-surface removal, pure TS in src/domain, rendered in a Web Worker. Signature proposal (3 options, recommendation A \"The patient eye\") awaits Pavol; the core generator is the obvious part and shipped. One-liner and track were set by the agent as defaults; Pavol to confirm. Deployed 2026-11-04 to the Cloudflare Pages project (stereogram.pages.dev, tag deploy-2026-11-04); the custom domain waits on the hub token gaining Zone·DNS·Edit (inbox cf-token-dns-edit). Landscape 2026-11-04 (docs/discovery/stereogram-landscape.md): crowded market (Owl3D, Tembrica 2026); unclaimed: real-sculpture library with provenance, book of plates, orthoptic viewing course. Decision pending: A library+book (default) / B course / C all. 0.2.0 deployed 2026-11-04 (tag deploy-2026-11-04-2): all three moves live, measured by key_action pick_figure/pick_pattern/plate_open/ladder_step."
 }
