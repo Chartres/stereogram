@@ -22,6 +22,9 @@ export interface Pattern extends Figure {
 
 export const FIGURES: Figure[] = prov.figures
 export const PATTERNS: Pattern[] = prov.patterns
+/** The picker opens on the pieces worth opening on (mobile-ux: every picker opens at the probable answer), then the rest by title. */
+const FEATURED = ['smk_discobolus', 'carved_wooden_elephant', 'chartres', 'smk_dying_gaul', 'bull_head', 'si_roosevelt_relief', 'smk_laocoon', 'bronze_ray_statue', 'marble_bust_01', 'smk_apollo_belvedere', 'lion_head', 'si_western_paradise', 'gothic_statue', 'smk_moses', 'concrete_cat_statue', 'si_lincoln_hands', 'lambis_shell', 'smk_belvedere_torso']
+export const FEATURED_FIRST: Figure[] = [...FEATURED.map((id) => FIGURES.find((f) => f.id === id)).filter((f): f is Figure => !!f), ...FIGURES.filter((f) => !FEATURED.includes(f.id))]
 export const FIGURE_IDS = FIGURES.map((f) => f.id)
 export const PATTERN_IDS = PATTERNS.map((p) => p.id)
 

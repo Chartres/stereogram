@@ -67,7 +67,7 @@ export const LIMITS = {
 }
 
 export const DEFAULT_PARAMS: Params = {
-  scene: { kind: 'shape', shape: 'sphere' },
+  scene: { kind: 'shape', shape: 'sphere' }, // founder case #4: a bare link is the default sphere
   width: 960,
   height: 600,
   eyeSeparation: 180,

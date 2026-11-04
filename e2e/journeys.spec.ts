@@ -49,6 +49,7 @@ test('P1 Marek: hides a word for a friend and copies the link', async ({ page, c
 test('P2 Lenka: downloads an A4 print at 300 dpi', async ({ page }) => {
   await page.goto('/')
   await rendered(page)
+  await page.getByText('Fine-tune').click()
   await page.getByRole('combobox', { name: 'Size' }).selectOption('a4')
   await rendered(page)
   await expect(page.getByText(/3508 × 2480 px, shown at/)).toBeVisible()
@@ -82,7 +83,7 @@ test('P3 Tom: uploads his own depth map and inverts it', async ({ page }) => {
   })
   await page.getByTestId('depth-file').setInputFiles({ name: 'depth.png', mimeType: 'image/png', buffer: Buffer.from(dataUrl.split(',')[1], 'base64') })
   await rendered(page)
-  await page.getByLabel('Show the depth map').check()
+  await page.getByRole('button', { name: 'Show the depth map' }).click()
   await rendered(page)
   await shot(page, 'persona-p3-depth-reveal')
   // the revealed map carries the disc: a bright centre on a dark page
@@ -98,7 +99,7 @@ test('P3 Tom: uploads his own depth map and inverts it', async ({ page }) => {
   await rendered(page)
   const inverted = await page.getByTestId('stereogram').evaluate((c: HTMLCanvasElement) => c.getContext('2d')!.getImageData(2, 2, 1, 1).data[0])
   expect(inverted).toBeGreaterThan(200)
-  await page.getByLabel('Show the depth map').uncheck()
+  await page.getByRole('button', { name: 'Show the depth map' }).click()
   await rendered(page)
   await shot(page, 'persona-p3-upload', true)
 })
@@ -160,7 +161,7 @@ test('P6 Klára: paints a relief with the brush', async ({ page }) => {
   await page.mouse.move(box.x + box.width * 0.7, box.y + box.height * 0.5, { steps: 12 })
   await page.mouse.up()
   await rendered(page)
-  await page.getByLabel('Show the depth map').check()
+  await page.getByRole('button', { name: 'Show the depth map' }).click()
   await rendered(page)
   const mid = await page.getByTestId('stereogram').evaluate((c: HTMLCanvasElement) => c.getContext('2d')!.getImageData(Math.floor(c.width / 2), Math.floor(c.height / 2), 1, 1).data[0])
   expect(mid).toBeGreaterThan(100)
@@ -173,10 +174,10 @@ test('desktop: default page and every shape render', async ({ page }) => {
   await rendered(page)
   await shot(page, 'desktop-make', true)
   for (const shape of ['torus', 'pyramid', 'ripple', 'stairs', 'hills', 'heart']) {
-    await page.getByRole('combobox', { name: 'Shape' }).selectOption(shape)
+    await page.locator(`[role=radiogroup][aria-label="Shape"] [data-id="${shape}"]`).click()
     await rendered(page)
   }
-  await page.getByRole('combobox', { name: 'Pattern' }).selectOption('confetti')
+  await page.locator('[role=radiogroup][aria-label="Pattern"] [data-id="confetti"]').click()
   await rendered(page)
   await shot(page, 'desktop-heart-confetti')
 })

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.1 — 2026-11-04
+
+The Make page as an app, from Pavol's phone pass: the picture, one Download slab, five icon
+actions, visual strips for figures, shapes and patterns (you see what you pick; the figure strip
+opens on Discobolus, the elephant, the labyrinth), fine-tuning folded under one row. Hidden text
+is heavy, wide and wraps into lines so letters stay taller than a strip.
+
 ## 0.3.0 — 2026-11-04
 
 Seven more signature moves Pavol picked the same evening: Comenius's spectacles (a plate that
