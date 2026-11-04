@@ -35,19 +35,19 @@ function heightFn(shape: Shape): (u: number, v: number) => number {
   switch (shape) {
     case 'sphere':
       return (u, v) => {
-        const d2 = (u * u + v * v) / (0.7 * 0.7)
+        const d2 = (u * u + v * v) / (0.82 * 0.82)
         return d2 < 1 ? Math.sqrt(1 - d2) : 0
       }
     case 'torus':
       return (u, v) => {
         const r = Math.sqrt(u * u + v * v)
-        const t = (r - 0.55) / 0.22
+        const t = (r - 0.62) / 0.26
         return t * t < 1 ? Math.sqrt(1 - t * t) : 0
       }
     case 'pyramid':
-      return (u, v) => clamp01(1 - Math.max(Math.abs(u), Math.abs(v)) / 0.75)
+      return (u, v) => clamp01(1 - Math.max(Math.abs(u), Math.abs(v)) / 0.88)
     case 'cone':
-      return (u, v) => clamp01(1 - Math.sqrt(u * u + v * v) / 0.75)
+      return (u, v) => clamp01(1 - Math.sqrt(u * u + v * v) / 0.88)
     case 'ripple':
       return (u, v) => {
         const r = Math.sqrt(u * u + v * v)
@@ -60,8 +60,8 @@ function heightFn(shape: Shape): (u: number, v: number) => number {
     case 'heart':
       return (u, v) => {
         // Classic implicit heart: (x² + y² − 1)³ − x² y³ < 0 is inside. Scaled to fit.
-        const x = u / 0.72
-        const y = -v / 0.72 + 0.1
+        const x = u / 0.8
+        const y = -v / 0.8 + 0.1
         const a = x * x + y * y - 1
         const inside = a * a * a - x * x * y * y * y
         if (inside > 0) return 0
@@ -163,7 +163,7 @@ export function resampleDepth(d: DepthMap, width: number, height: number): Depth
 }
 
 /** Contain-fit a depth map (a baked figure) into width × height, centred on the far plane; `fill` is the share of the shorter side it occupies. */
-export function fitDepth(d: DepthMap, width: number, height: number, fill = 0.86): DepthMap {
+export function fitDepth(d: DepthMap, width: number, height: number, fill = 0.96): DepthMap {
   const s = Math.min(width / d.width, height / d.height) * fill
   const w = Math.max(1, Math.round(d.width * s))
   const h = Math.max(1, Math.round(d.height * s))

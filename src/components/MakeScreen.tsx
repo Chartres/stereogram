@@ -16,7 +16,7 @@ const seg = (on: boolean) => `min-h-11 min-w-0 rounded-md px-2 ${on ? 'bg-ink te
 
 function screenSize(cw: number): { width: number; height: number } {
   const width = Math.max(LIMITS.width[0], Math.min(LIMITS.width[1], Math.round(cw)))
-  return { width, height: Math.round(width * (width < 600 ? 0.9 : 0.6)) }
+  return { width, height: Math.round(width * (width < 600 ? 1.1 : 0.6)) }
 }
 
 /** The credit line under a picture: who made the figure and the pattern, when the library did. */
@@ -154,16 +154,16 @@ export function MakeScreen() {
       )}
 
       <div className="mt-3 flex flex-wrap gap-2">
-        <button type="button" onClick={download} className="min-h-12 min-w-0 flex-1 rounded-md bg-accent px-5 font-display text-title text-paper">
+        <button type="button" onClick={download} className="min-h-12 basis-full whitespace-nowrap rounded-md bg-accent px-5 font-display text-title text-paper sm:basis-auto sm:flex-1">
           Download PNG
         </button>
-        <button type="button" onClick={copyImage} className="min-h-12 rounded-md border border-edge px-4">
+        <button type="button" onClick={copyImage} className="min-h-12 flex-1 whitespace-nowrap rounded-md border border-edge px-3 sm:flex-none sm:px-4">
           Copy picture
         </button>
-        <button type="button" onClick={copyLink} disabled={!isShareable(params)} title={isShareable(params) ? undefined : 'Drawings and uploads cannot travel in a link'} className="min-h-12 rounded-md border border-edge px-4 disabled:opacity-50">
+        <button type="button" onClick={copyLink} disabled={!isShareable(params)} title={isShareable(params) ? undefined : 'Drawings and uploads cannot travel in a link'} className="min-h-12 flex-1 whitespace-nowrap rounded-md border border-edge px-3 disabled:opacity-50 sm:flex-none sm:px-4">
           Copy link
         </button>
-        <button type="button" onClick={() => set('seed', randomSeed())} className="min-h-12 rounded-md border border-edge px-4">
+        <button type="button" onClick={() => set('seed', randomSeed())} className="min-h-12 flex-1 whitespace-nowrap rounded-md border border-edge px-3 sm:flex-none sm:px-4">
           Shuffle
         </button>
       </div>

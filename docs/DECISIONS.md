@@ -12,3 +12,4 @@
 | 2026-11-04 | Figures: Poly Haven only tonight; Smithsonian, Kenney and Met scans deferred | si.edu refused automated fetches and Kenney is zip-only; the bake script takes more sources when they are added to its table. |
 | 2026-11-04 | Met tiles are the central 60 % of the image at 512 px, palette PNG | Keeps the ornament and drops the mount; 7.6 MB total, fetched on first use and runtime-cached, not precached. |
 | 2026-11-04 | Signature moves recorded `building`, flipped to `live` after the deploy read-back | signature.md: live needs approved_on, which is 2026-11-04 ("all three please"). |
+| 2026-11-04 | Figures fill 96 % of the shorter side (was 86 %), shapes enlarged, phone pictures 1.1× taller than wide | Pavol's phone shot: the hidden thing was too small to find at 359 px wide. Founder case #2 (row 0 of a 2-row map) is unaffected. |

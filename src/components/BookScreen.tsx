@@ -24,7 +24,7 @@ export function BookScreen({ n }: { n: number }) {
     if (!el) return
     const apply = () => {
       const w = Math.max(64, Math.min(4096, el.clientWidth))
-      setSize({ width: w, height: Math.round(w * (w < 600 ? 0.9 : 0.6)) })
+      setSize({ width: w, height: Math.round(w * (w < 600 ? 1.1 : 0.6)) })
     }
     apply()
     const ro = new ResizeObserver(apply)
@@ -88,15 +88,15 @@ export function BookScreen({ n }: { n: number }) {
             setAnswer((a) => !a)
             if (!answer) track('key_action', { action: 'plate_answer', plate: plate.n })
           }}
-          className="min-h-12 flex-1 rounded-md bg-accent px-5 font-display text-title text-paper"
+          className="min-h-12 basis-full whitespace-nowrap rounded-md bg-accent px-5 font-display text-title text-paper sm:basis-auto sm:flex-1"
         >
           {answer ? 'Hide the answer' : 'Show the answer'}
         </button>
-        <a href={makeHref} className={`${btn} flex items-center`} onClick={() => track('key_action', { action: 'plate_make', plate: plate.n })}>
-          Make your own from this plate
+        <a href={makeHref} className={`${btn} flex flex-1 items-center justify-center whitespace-nowrap sm:flex-none`} onClick={() => track('key_action', { action: 'plate_make', plate: plate.n })}>
+          Make your own
         </a>
-        <button type="button" onClick={share} className={btn}>
-          Share this plate
+        <button type="button" onClick={share} className={`${btn} flex-1 whitespace-nowrap sm:flex-none`}>
+          Share
         </button>
       </div>
 

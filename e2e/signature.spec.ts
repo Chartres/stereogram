@@ -72,7 +72,7 @@ test('P8 Ondřej: opens the book, reads a plate, shows the answer, turns the pag
   await page.getByRole('link', { name: 'Next plate' }).click()
   await expect(page.getByRole('heading', { name: /Plate 2/ })).toBeVisible()
   await settled(page)
-  const href = await page.getByRole('link', { name: 'Make your own from this plate' }).getAttribute('href')
+  const href = await page.getByRole('link', { name: 'Make your own' }).getAttribute('href')
   expect(href).toMatch(/figure=.*pattern=lib%3A/)
   await page.goto(href!)
   await settled(page)
