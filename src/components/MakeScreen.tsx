@@ -12,7 +12,7 @@ import { FeedbackCard } from './FeedbackCard'
 
 const field = 'mt-1 block w-full min-h-11 rounded-md bg-paper-2 px-3 py-2'
 const label = 'text-label uppercase tracking-wide text-ink-soft'
-const seg = (on: boolean) => `min-h-11 flex-1 rounded-md px-3 ${on ? 'bg-ink text-paper' : 'bg-paper-2 text-ink'}`
+const seg = (on: boolean) => `min-h-11 min-w-0 rounded-md px-2 ${on ? 'bg-ink text-paper' : 'bg-paper-2 text-ink'}`
 
 function screenSize(cw: number): { width: number; height: number } {
   const width = Math.max(LIMITS.width[0], Math.min(LIMITS.width[1], Math.round(cw)))
@@ -185,7 +185,7 @@ export function MakeScreen() {
   const needsSmooth = sceneKind !== 'shape'
 
   return (
-    <main className="mx-auto max-w-5xl px-4 pb-28 pt-3">
+    <main className="mx-auto max-w-5xl overflow-x-hidden px-4 pb-28 pt-3">
       <header className="flex items-baseline justify-between">
         <h1 className="font-display text-title">Stereogram</h1>
         <FeedbackCard context="make" />
@@ -203,12 +203,12 @@ export function MakeScreen() {
           style={{ aspectRatio: `${params.width} / ${params.height}` }}
         />
       </div>
-      <p className="mt-2 text-label uppercase tracking-wide text-ink-soft" aria-live="polite">
+      <p className="mt-2 break-words text-label uppercase tracking-wide text-ink-soft" aria-live="polite">
         {note ?? (busy ? 'Rendering…' : shownAt < 100 ? `${params.width} × ${params.height} px, shown at ${shownAt} %. The download is full size.` : `${params.width} × ${params.height} px`)}
       </p>
 
       <div className="mt-3 flex flex-wrap gap-2">
-        <button type="button" onClick={download} className="min-h-12 flex-1 rounded-md bg-accent px-5 font-display text-title text-paper">
+        <button type="button" onClick={download} className="min-h-12 min-w-0 flex-1 rounded-md bg-accent px-5 font-display text-title text-paper">
           Download PNG
         </button>
         <button type="button" onClick={copyImage} className="min-h-12 rounded-md border border-edge px-4">
@@ -224,7 +224,7 @@ export function MakeScreen() {
 
       <section aria-label="Scene" className="mt-12">
         <h2 className={label}>Scene</h2>
-        <div className="mt-1 flex gap-2" role="group" aria-label="Scene type">
+        <div className="mt-1 grid grid-cols-2 gap-2 sm:grid-cols-4" role="group" aria-label="Scene type">
           <button type="button" aria-pressed={sceneKind === 'shape'} className={seg(sceneKind === 'shape')} onClick={() => set('scene', { kind: 'shape', shape: 'sphere' })}>Shape</button>
           <button type="button" aria-pressed={sceneKind === 'text'} className={seg(sceneKind === 'text')} onClick={() => set('scene', { kind: 'text', text: 'HELLO' })}>Text</button>
           <button type="button" aria-pressed={sceneKind === 'draw'} className={seg(sceneKind === 'draw')} onClick={() => set('scene', { kind: 'draw' })}>Draw</button>
@@ -312,7 +312,7 @@ export function MakeScreen() {
         </label>
         <div>
           <span className={label}>Viewing</span>
-          <div className="mt-1 flex gap-2" role="group" aria-label="Viewing mode">
+          <div className="mt-1 grid grid-cols-2 gap-2" role="group" aria-label="Viewing mode">
             <button type="button" aria-pressed={params.mode === 'parallel'} className={seg(params.mode === 'parallel')} onClick={() => set('mode', 'parallel')}>Parallel</button>
             <button type="button" aria-pressed={params.mode === 'cross'} className={seg(params.mode === 'cross')} onClick={() => set('mode', 'cross')}>Cross-eyed</button>
           </div>
