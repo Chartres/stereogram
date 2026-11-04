@@ -18,7 +18,9 @@
   "kpi_source": "supabase",
   "north_star": null,
   "links": {
-    "repo": "https://github.com/Chartres/stereogram"
+    "repo": "https://github.com/Chartres/stereogram",
+    "live": "https://stereogram.dravec.org",
+    "pages": "https://stereogram.pages.dev"
   },
   "decisions": [],
   "tags": [
@@ -74,5 +76,5 @@
     "set": "2026-11-04",
     "statement": "building → soft-launch: live at stereogram.dravec.org, CI green, one approved signature move live and measured, analytics verified in flywheel-core, ≥1 feedback row; decide by 2026-11-18."
   },
-  "notes": "Scaffolded 2026-11-04 per /flywheel:scaffold. Algorithm: Thimbleby–Inglis–Witten 1994 with hidden-surface removal, pure TS in src/domain, rendered in a Web Worker. Signature proposal (3 options, recommendation A \"The patient eye\") awaits Pavol; the core generator is the obvious part and shipped. One-liner and track were set by the agent as defaults; Pavol to confirm."
+  "notes": "Scaffolded 2026-11-04 per /flywheel:scaffold. Algorithm: Thimbleby–Inglis–Witten 1994 with hidden-surface removal, pure TS in src/domain, rendered in a Web Worker. Signature proposal (3 options, recommendation A \"The patient eye\") awaits Pavol; the core generator is the obvious part and shipped. One-liner and track were set by the agent as defaults; Pavol to confirm. Deployed 2026-11-04 to the Cloudflare Pages project (stereogram.pages.dev, tag deploy-2026-11-04); the custom domain waits on the hub token gaining Zone·DNS·Edit (inbox cf-token-dns-edit)."
 }
