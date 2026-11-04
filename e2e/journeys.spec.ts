@@ -127,7 +127,7 @@ test('P4 Eva on a phone: the picture leads, the action is under it, then she rea
   await page.getByRole('link', { name: 'How to see', exact: true }).click()
   await expect(page.getByRole('heading', { name: 'How to see it' })).toBeVisible()
   await page.waitForTimeout(400) // let the view transition finish: a mid-animation shot is not evidence
-  await expect(page.getByText(/one adult in fourteen/)).toBeVisible()
+  await expect(page.getByText(/one adult in fourteen/).first()).toBeVisible()
   await shot(page, 'persona-p4-phone-see', true)
 })
 

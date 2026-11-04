@@ -3,14 +3,20 @@
 import { SHAPES, type Shape } from './depth'
 import { TILES, type Tile } from './pattern'
 import type { ViewMode } from './stereogram'
+import prov from '../library/provenance.json'
+
+const FIGURE_IDS: readonly string[] = prov.figures.map((f: { id: string }) => f.id)
+const PATTERN_IDS: readonly string[] = prov.patterns.map((p: { id: string }) => p.id)
 
 export type Scene =
   | { kind: 'shape'; shape: Shape }
+  | { kind: 'figure'; id: string } // a baked sculpture from the library
   | { kind: 'text'; text: string }
   | { kind: 'draw' }
   | { kind: 'image' }
 
-export type PatternChoice = 'dots' | 'color' | Tile | 'image'
+/** 'lib:<id>' is an ornament tile from the library. */
+export type PatternChoice = 'dots' | 'color' | Tile | 'image' | `lib:${string}`
 
 export interface Params {
   scene: Scene
@@ -79,17 +85,21 @@ export const DEFAULT_PARAMS: Params = {
 const clamp = (v: number, [lo, hi]: readonly [number, number]) => Math.min(hi, Math.max(lo, v))
 
 export function isPatternChoice(v: string): v is PatternChoice {
+  if (v.startsWith('lib:')) return PATTERN_IDS.includes(v.slice(4))
   return v === 'dots' || v === 'color' || v === 'image' || (TILES as readonly string[]).includes(v)
 }
 
+export const isFigureId = (id: string) => FIGURE_IDS.includes(id)
+
 /** True when the params can be reproduced from a link alone (no file involved). */
 export function isShareable(p: Params): boolean {
-  return (p.scene.kind === 'shape' || p.scene.kind === 'text') && p.pattern !== 'image'
+  return (p.scene.kind === 'shape' || p.scene.kind === 'text' || p.scene.kind === 'figure') && p.pattern !== 'image'
 }
 
 export function encodeParams(p: Params): string {
   const q = new URLSearchParams()
   if (p.scene.kind === 'shape') q.set('shape', p.scene.shape)
+  else if (p.scene.kind === 'figure') q.set('figure', p.scene.id)
   else if (p.scene.kind === 'text') q.set('text', p.scene.text)
   else q.set('scene', p.scene.kind)
   q.set('w', String(p.width))
@@ -118,8 +128,10 @@ export function decodeParams(query: string, base: Params = DEFAULT_PARAMS): Para
   }
   const p: Params = { ...base, scene: { ...base.scene } }
   const shape = q.get('shape')
+  const figure = q.get('figure')
   const text = q.get('text')
   if (shape && (SHAPES as readonly string[]).includes(shape)) p.scene = { kind: 'shape', shape: shape as Shape }
+  else if (figure && isFigureId(figure)) p.scene = { kind: 'figure', id: figure }
   else if (text !== null) p.scene = { kind: 'text', text: text.slice(0, LIMITS.text) }
   p.width = Math.round(num('w', LIMITS.width, base.width))
   p.height = Math.round(num('h', LIMITS.height, base.height))

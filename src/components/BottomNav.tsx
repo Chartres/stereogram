@@ -1,4 +1,4 @@
-export type Route = 'make' | 'see'
+export type Route = 'make' | 'book' | 'see'
 
 export function BottomNav({ route }: { route: Route }) {
   const item = (r: Route, label: string, href: string) => (
@@ -19,6 +19,7 @@ export function BottomNav({ route }: { route: Route }) {
       style={{ paddingBottom: 'env(safe-area-inset-bottom)', borderTop: '1px solid var(--color-edge)' }}
     >
       {item('make', 'Make', '#/')}
+      {item('book', 'Book', '#/book/1')}
       {item('see', 'How to see', '#/see')}
     </nav>
   )

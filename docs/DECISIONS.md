@@ -8,3 +8,7 @@
 | 2026-11-04 | Tile patterns are refitted to the far-plane strip width | The tile then repeats exactly once per strip on the background, which is what textured stereograms need to read. |
 | 2026-11-04 | Conversion = first download or copy per session | The aha moment is taking a picture away, which the page can observe; "I saw it" cannot be observed without the ladder (signature move A). |
 | 2026-11-04 | Founder case #2 fingerprint pinned at `0001101001000010` | First render of the shipped algorithm; any change to the PRNG, link loop or paint order must show up here. |
+| 2026-11-04 | The book's plates are rendered on the client from fixed (figure, pattern, seed) specs, not shipped as PNGs | Same pixels every time, 100 plates cost a few hundred bytes instead of 20–40 MB; a static plate image for social unfurls can be added per plate later. |
+| 2026-11-04 | Figures: Poly Haven only tonight; Smithsonian, Kenney and Met scans deferred | si.edu refused automated fetches and Kenney is zip-only; the bake script takes more sources when they are added to its table. |
+| 2026-11-04 | Met tiles are the central 60 % of the image at 512 px, palette PNG | Keeps the ornament and drops the mount; 7.6 MB total, fetched on first use and runtime-cached, not precached. |
+| 2026-11-04 | Signature moves recorded `building`, flipped to `live` after the deploy read-back | signature.md: live needs approved_on, which is 2026-11-04 ("all three please"). |

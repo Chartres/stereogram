@@ -1,14 +1,14 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { conversion, track } from '@/analytics'
-import { createRenderer } from '@/app/renderer'
-import { canvasToBlob, fileToRgba, fileToTile, textDepth } from '@/app/sources'
-import { blurDepth, depthFromRgba, depthToRgba, flatDepth, resampleDepth, SHAPE_LABELS, SHAPES, shapeDepth, type DepthMap, type Rgba } from '@/domain/depth'
+import { canvasToBlob, fileToRgba, fileToTile } from '@/app/sources'
+import { SHAPE_LABELS, SHAPES, type DepthMap, type Rgba } from '@/domain/depth'
 import { DEFAULT_PARAMS, decodeParams, encodeParams, isShareable, LIMITS, SIZE_PRESETS, type Params, type PatternChoice } from '@/domain/params'
-import { proceduralTile, TILE_LABELS, TILES } from '@/domain/pattern'
-import { helperDots, type PatternSpec } from '@/domain/stereogram'
+import { TILE_LABELS, TILES } from '@/domain/pattern'
 import { randomSeed } from '@/domain/prng'
+import { FIGURES, PATTERNS, figureById, patternById } from '@/library'
 import { DepthPainter } from './DepthPainter'
 import { FeedbackCard } from './FeedbackCard'
+import { StereogramView } from './StereogramView'
 
 const field = 'mt-1 block w-full min-h-11 rounded-md bg-paper-2 px-3 py-2'
 const label = 'text-label uppercase tracking-wide text-ink-soft'
@@ -19,6 +19,14 @@ function screenSize(cw: number): { width: number; height: number } {
   return { width, height: Math.round(width * (width < 600 ? 0.9 : 0.6)) }
 }
 
+/** The credit line under a picture: who made the figure and the pattern, when the library did. */
+export function provenanceLine(p: Params): string | null {
+  const parts: string[] = []
+  if (p.scene.kind === 'figure') parts.push(`Figure: ${figureById(p.scene.id)?.credit ?? p.scene.id}`)
+  if (p.pattern.startsWith('lib:')) parts.push(`Pattern: ${patternById(p.pattern.slice(4))?.credit ?? p.pattern}`)
+  return parts.length ? parts.join(' · ') : null
+}
+
 export function MakeScreen() {
   const [params, setParams] = useState<Params>(() => decodeParams(location.search))
   const [presetId, setPresetId] = useState(() => (new URLSearchParams(location.search).has('w') ? 'custom' : 'screen'))
@@ -27,13 +35,9 @@ export function MakeScreen() {
   const [drawDepth, setDrawDepth] = useState<DepthMap | null>(null)
   const [tileRgba, setTileRgba] = useState<Rgba | null>(null)
   const [reveal, setReveal] = useState(false)
-  const [renders, setRenders] = useState(0)
-  const [busy, setBusy] = useState(false)
   const [note, setNote] = useState<string | null>(null)
   const frame = useRef<HTMLDivElement>(null)
   const canvas = useRef<HTMLCanvasElement>(null)
-  const renderer = useMemo(createRenderer, [])
-  useEffect(() => () => renderer.dispose(), [renderer])
 
   const set = useCallback(<K extends keyof Params>(key: K, value: Params[K]) => setParams((p) => ({ ...p, [key]: value })), [])
 
@@ -67,68 +71,7 @@ export function MakeScreen() {
     history.replaceState(null, '', `?${encodeParams(params)}${location.hash}`)
   }, [params])
 
-  const depth = useMemo<DepthMap>(() => {
-    const { width, height, scene, smooth, invert } = params
-    switch (scene.kind) {
-      case 'shape':
-        return shapeDepth(scene.shape, width, height)
-      case 'text':
-        return blurDepth(textDepth(scene.text, width, height), smooth)
-      case 'image':
-        return imageRgba ? depthFromRgba(imageRgba, { invert, smooth }) : flatDepth(width, height)
-      case 'draw':
-        return drawDepth ? blurDepth(resampleDepth(drawDepth, width, height), smooth) : flatDepth(width, height)
-    }
-  }, [params, imageRgba, drawDepth])
-
-  const pattern = useMemo<PatternSpec>(() => {
-    const p = params.pattern
-    if (p === 'dots') return { kind: 'dots', density: params.density }
-    if (p === 'color') return { kind: 'color' }
-    if (p === 'image') return tileRgba ? { kind: 'tile', tile: tileRgba } : { kind: 'dots', density: params.density }
-    return { kind: 'tile', tile: proceduralTile(p, 128, params.seed) }
-  }, [params.pattern, params.density, params.seed, tileRgba])
-
-  useEffect(() => {
-    const c = canvas.current
-    if (!c) return
-    setBusy(true)
-    const t = setTimeout(async () => {
-      const img = reveal
-        ? depthToRgba(depth)
-        : await renderer.render(depth, {
-            eyeSeparation: params.eyeSeparation,
-            depthOfField: params.depth,
-            mode: params.mode,
-            hiddenSurface: params.hiddenSurface,
-            seed: params.seed,
-            pattern,
-          })
-      if (!canvas.current) return
-      c.width = img.width
-      c.height = img.height
-      const ctx = c.getContext('2d')!
-      ctx.putImageData(new ImageData(img.data as Uint8ClampedArray<ArrayBuffer>, img.width, img.height), 0, 0)
-      if (params.helpers && !reveal) {
-        const { left, right } = helperDots(img.width, params.eyeSeparation, params.depth)
-        const r = Math.max(5, Math.round(img.width / 120))
-        for (const x of [left, right]) {
-          ctx.beginPath()
-          ctx.arc(x, r * 3, r, 0, Math.PI * 2)
-          ctx.fillStyle = '#0f5a63'
-          ctx.fill()
-          ctx.lineWidth = Math.max(1, r / 3)
-          ctx.strokeStyle = '#f4f1ea'
-          ctx.stroke()
-        }
-      }
-      setBusy(false)
-      setRenders((n) => n + 1)
-    }, 40)
-    return () => clearTimeout(t)
-  }, [depth, pattern, params.eyeSeparation, params.depth, params.mode, params.hiddenSurface, params.seed, params.helpers, reveal, renderer])
-
-  const sceneName = params.scene.kind === 'shape' ? params.scene.shape : params.scene.kind
+  const sceneName = params.scene.kind === 'shape' ? params.scene.shape : params.scene.kind === 'figure' ? params.scene.id : params.scene.kind
   const fileName = `stereogram-${sceneName}-${params.seed}.png`
 
   async function download() {
@@ -180,9 +123,10 @@ export function MakeScreen() {
     track('key_action', { action: 'preset', preset: id })
   }
 
-  const shownAt = frame.current && canvas.current ? Math.min(100, Math.round((frame.current.clientWidth / params.width) * 100)) : 100
+  const shownAt = frame.current ? Math.min(100, Math.round((frame.current.clientWidth / params.width) * 100)) : 100
   const sceneKind = params.scene.kind
-  const needsSmooth = sceneKind !== 'shape'
+  const needsSmooth = sceneKind !== 'shape' && sceneKind !== 'figure'
+  const credit = provenanceLine(params)
 
   return (
     <main className="mx-auto max-w-5xl overflow-x-hidden px-4 pb-28 pt-3">
@@ -192,20 +136,22 @@ export function MakeScreen() {
       </header>
 
       <div ref={frame} className="mt-3">
-        <canvas
-          ref={canvas}
-          data-testid="stereogram"
-          data-renders={renders}
-          data-busy={busy ? '1' : '0'}
-          role="img"
-          aria-label={`Stereogram of ${sceneName}. Relax your eyes to see it in depth.`}
-          className="block w-full rounded-md bg-paper-2"
-          style={{ aspectRatio: `${params.width} / ${params.height}` }}
+        <StereogramView
+          params={params}
+          sources={{ imageRgba, drawDepth, tileRgba }}
+          reveal={reveal}
+          canvasRef={canvas}
+          label={`Stereogram of ${sceneName}. Relax your eyes to see it in depth.`}
         />
       </div>
       <p className="mt-2 break-words text-label uppercase tracking-wide text-ink-soft" aria-live="polite">
-        {note ?? (busy ? 'Rendering…' : shownAt < 100 ? `${params.width} × ${params.height} px, shown at ${shownAt} %. The download is full size.` : `${params.width} × ${params.height} px`)}
+        {note ?? (shownAt < 100 ? `${params.width} × ${params.height} px, shown at ${shownAt} %. The download is full size.` : `${params.width} × ${params.height} px`)}
       </p>
+      {credit && (
+        <p data-testid="provenance" className="mt-1 break-words text-ink-soft">
+          {credit}
+        </p>
+      )}
 
       <div className="mt-3 flex flex-wrap gap-2">
         <button type="button" onClick={download} className="min-h-12 min-w-0 flex-1 rounded-md bg-accent px-5 font-display text-title text-paper">
@@ -224,13 +170,24 @@ export function MakeScreen() {
 
       <section aria-label="Scene" className="mt-12">
         <h2 className={label}>Scene</h2>
-        <div className="mt-1 grid grid-cols-2 gap-2 sm:grid-cols-4" role="group" aria-label="Scene type">
+        <div className="mt-1 grid grid-cols-3 gap-2 sm:grid-cols-5" role="group" aria-label="Scene type">
+          <button type="button" aria-pressed={sceneKind === 'figure'} className={seg(sceneKind === 'figure')} onClick={() => FIGURES[0] && set('scene', { kind: 'figure', id: FIGURES[0].id })}>Figure</button>
           <button type="button" aria-pressed={sceneKind === 'shape'} className={seg(sceneKind === 'shape')} onClick={() => set('scene', { kind: 'shape', shape: 'sphere' })}>Shape</button>
           <button type="button" aria-pressed={sceneKind === 'text'} className={seg(sceneKind === 'text')} onClick={() => set('scene', { kind: 'text', text: 'HELLO' })}>Text</button>
           <button type="button" aria-pressed={sceneKind === 'draw'} className={seg(sceneKind === 'draw')} onClick={() => set('scene', { kind: 'draw' })}>Draw</button>
           <button type="button" aria-pressed={sceneKind === 'image'} className={seg(sceneKind === 'image')} onClick={() => set('scene', { kind: 'image' })}>Picture</button>
         </div>
 
+        {params.scene.kind === 'figure' && (
+          <label className="mt-6 block">
+            <span className={label}>Figure (real sculpture, CC0)</span>
+            <select className={field} value={params.scene.id} onChange={(e) => { set('scene', { kind: 'figure', id: e.target.value }); track('key_action', { action: 'pick_figure', id: e.target.value }) }}>
+              {FIGURES.map((f) => (
+                <option key={f.id} value={f.id}>{f.title}</option>
+              ))}
+            </select>
+          </label>
+        )}
         {params.scene.kind === 'shape' && (
           <label className="mt-6 block">
             <span className={label}>Shape</span>
@@ -278,13 +235,20 @@ export function MakeScreen() {
       <section aria-label="Pattern" className="mt-12 grid gap-6 sm:grid-cols-2">
         <label className="block">
           <span className={label}>Pattern</span>
-          <select className={field} value={params.pattern} onChange={(e) => set('pattern', e.target.value as PatternChoice)}>
+          <select className={field} value={params.pattern} onChange={(e) => { set('pattern', e.target.value as PatternChoice); if (e.target.value.startsWith('lib:')) track('key_action', { action: 'pick_pattern', id: e.target.value.slice(4) }) }}>
             <option value="dots">Random dots</option>
             <option value="color">Random colour dots</option>
             {TILES.map((t) => (
               <option key={t} value={t}>{TILE_LABELS[t]}</option>
             ))}
             <option value="image">Your own picture</option>
+            {PATTERNS.length > 0 && (
+              <optgroup label="Ornament from The Met (CC0)">
+                {PATTERNS.map((p) => (
+                  <option key={p.id} value={`lib:${p.id}`}>{p.title}{p.date ? `, ${p.date}` : ''}</option>
+                ))}
+              </optgroup>
+            )}
           </select>
         </label>
         {params.pattern === 'dots' && (
@@ -364,7 +328,8 @@ export function MakeScreen() {
 
       <p className="mt-12 text-ink-soft">
         Everything happens in your browser. Nothing is uploaded, nothing is stored, and the page works offline.
-        New here? Read <a className="text-accent underline underline-offset-4" href="#/see">how to see it</a>.
+        New here? Read <a className="text-accent underline underline-offset-4" href="#/see">how to see it</a>, or open{' '}
+        <a className="text-accent underline underline-offset-4" href="#/book/1">the book of plates</a>.
         Defaults follow Thimbleby, Inglis and Witten (1994): eye separation {DEFAULT_PARAMS.eyeSeparation} px, depth of field ⅓.
       </p>
     </main>

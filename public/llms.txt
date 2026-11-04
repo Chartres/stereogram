@@ -7,18 +7,19 @@
 
 ## What it is
 - Single-image stereograms (autostereograms) after Thimbleby, Inglis & Witten (IEEE Computer, 1994), with hidden-surface removal, parallel or cross-eyed viewing, adjustable eye separation and depth of field.
-- Depth sources: eight built-in shapes, hidden text, a soft-brush drawing, or any greyscale picture (white = near).
-- Patterns: black-and-white random dots with adjustable density, colour dots, three procedural tiles, or a picture of your own.
+- Depth sources: 26 real sculptures (CC0, Poly Haven) baked to depth maps, eight built-in shapes, hidden text, a soft-brush drawing, or any greyscale picture (white = near).
+- Patterns: 36 ornament tiles from The Metropolitan Museum of Art's Open Access collection (CC0: katagami stencils, Iznik tiles, Coptic textiles, wallpapers), black-and-white random dots with adjustable density, colour dots, three procedural tiles, or a picture of your own. Every picture prints the provenance of its figure and pattern.
 - Reproducible: a seed and a shareable link recreate the same picture pixel for pixel.
 - Open source, MIT.
 
 ## How to use it
 - https://stereogram.dravec.org/ — make one; the first picture appears without any input.
 - https://stereogram.dravec.org/?text=HELLO — a link with parameters opens that exact picture (shape, text, seed, size, pattern, depth, mode).
-- https://stereogram.dravec.org/#/see — how to see a stereogram, including the honest note that about one adult in fourteen cannot.
+- https://stereogram.dravec.org/#/book/1 — a book of 100 plates, one per screen, with the answer one tap away and a link to make your own from any plate.
+- https://stereogram.dravec.org/#/see — how to see a stereogram, a six-step practice ladder, and the honest note that about one adult in fourteen cannot.
 
 ## Data & provenance
-- No data set. All rendering is deterministic code in the page; nothing leaves the browser except anonymous first-party usage counts (no cookies).
+- Figures: Poly Haven models (CC0), baked at build time by scripts/bake-library.mjs. Patterns: The Met Open Access API, isPublicDomain items only (CC0). The provenance of every asset is in src/library/provenance.json and printed under each picture. Rendering is deterministic code in the page; nothing leaves the browser except anonymous first-party usage counts (no cookies).
 
 ## Links
 - App: https://stereogram.dravec.org/

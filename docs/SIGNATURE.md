@@ -30,9 +30,9 @@ Landscape: flywheel `docs/discovery/stereogram-landscape.md` (4 Nov 2026).
 
 | Move | What the user sees | From | Metric | Status |
 |---|---|---|---|---|
-| The museum's hidden figures | A shape picker of ~50 real sculptures (bronze ray, marble bust, gothic statue, Smithsonian casts, Kenney animals) and ~40 patterns (katagami, Morris, Iznik, Grammar of Ornament, fabric, bark, in-house tilings), each with a provenance line that prints under the picture. | Met Open Access, Smithsonian, Poly Haven; *ad fontes* | `key_action` action=`pick_figure` / `pick_pattern` with the asset id | proposed |
-| A book of plates | `#/book`: ~100 pre-generated plates at deploy time, paged like a book, one plate per screen with a caption, a "find the angle" line, a one-tap answer and "make your own from this plate". Share-a-guess links carry parameters only. | London Stereoscopic Company 1862; the Magic Eye books; Holbein | `key_action` action=`plate_open`, `plate_answer`; `conversion` via=`book` | proposed |
-| The patient eye | A six-step course on the See page: shallow wide sphere → bucket-like block → letters → the default → a plate from the book → a drawn one; a relax step between; shimmer toggle; the viewer marks "seen it" themself; the last rung says the 7 % figure. | Wheatstone 1838; NHS orthoptics; Thimbleby 1993; Montessori | `key_action` action=`ladder_step`; `conversion` via=`ladder` | proposed |
+| The museum's hidden figures | A shape picker of ~50 real sculptures (bronze ray, marble bust, gothic statue, Smithsonian casts, Kenney animals) and ~40 patterns (katagami, Morris, Iznik, Grammar of Ornament, fabric, bark, in-house tilings), each with a provenance line that prints under the picture. | Met Open Access, Smithsonian, Poly Haven; *ad fontes* | `key_action` action=`pick_figure` / `pick_pattern` with the asset id | approved 2026-11-04 |
+| A book of plates | `#/book`: ~100 pre-generated plates at deploy time, paged like a book, one plate per screen with a caption, a "find the angle" line, a one-tap answer and "make your own from this plate". Share-a-guess links carry parameters only. | London Stereoscopic Company 1862; the Magic Eye books; Holbein | `key_action` action=`plate_open`, `plate_answer`; `conversion` via=`book` | approved 2026-11-04 |
+| The patient eye | A six-step course on the See page: shallow wide sphere → bucket-like block → letters → the default → a plate from the book → a drawn one; a relax step between; shimmer toggle; the viewer marks "seen it" themself; the last rung says the 7 % figure. | Wheatstone 1838; NHS orthoptics; Thimbleby 1993; Montessori | `key_action` action=`ladder_step`; `conversion` via=`ladder` | approved 2026-11-04 |
 | Landscapes from the Earth and the Moon | Hidden reliefs from public-domain elevation tiles: Grand Canyon, Etna, Tatras, Tycho crater. | USGS 3DEP / SRTM, LRO LOLA | `key_action` action=`pick_figure` (landscape ids) | proposed, later |
 
 Status: `proposed` → `approved` (dated) → `live` → or `changed` / `reverted`.
@@ -75,4 +75,4 @@ see it, no AI-depth headline, no watermark, no trademark borrowed.
 | Date | Options shown | Pavol chose | Note |
 |---|---|---|---|
 | 2026-11-04 | first proposal: patient eye / from the paper / message card | — | superseded the same evening by the landscape research |
-| 2026-11-04 | A library + book / B course first / C all three | — | awaiting review; recommendation A then B |
+| 2026-11-04 | A library + book / B course first / C all three | **C, all three**, 50-minute box | "Great, all three please" (21:06 CET) |

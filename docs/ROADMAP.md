@@ -15,8 +15,10 @@ Reading order for a cold start: `AGENTS.md` → this file → `BACKLOG.md` → `
 - **Landscape done (4 Nov, evening):** `flywheel/docs/discovery/stereogram-landscape.md` and the
   page `docs/landscape-2026-11-04.html`. Verdict: crowded (Owl3D, Tembrica, KilledByAPixel in 2026);
   nobody has a library of real sculpture, pattern provenance, a book of plates or a viewing course.
-- **Open decisions (Pavol):** which signature move first (`docs/SIGNATURE.md`: A library + book,
-  B course, C all three; default A); confirm the one-liner and the `community` track.
+- **Signature moves (Pavol picked C, all three, 21:06):** shipped the same evening as 0.2.0: the
+  library (26 figures, 36 Met tiles, provenance under every picture), `#/book` (100 plates), the
+  patient eye ladder on See. Smithsonian, Kenney and Met-scan figures and Terrarium landscapes
+  are the next bake sources. Open: confirm the one-liner and the `community` track.
 
 ## Next (each with its test)
 

@@ -162,6 +162,19 @@ export function resampleDepth(d: DepthMap, width: number, height: number): Depth
   return { width, height, data: out }
 }
 
+/** Contain-fit a depth map (a baked figure) into width × height, centred on the far plane; `fill` is the share of the shorter side it occupies. */
+export function fitDepth(d: DepthMap, width: number, height: number, fill = 0.86): DepthMap {
+  const s = Math.min(width / d.width, height / d.height) * fill
+  const w = Math.max(1, Math.round(d.width * s))
+  const h = Math.max(1, Math.round(d.height * s))
+  const r = resampleDepth(d, w, h)
+  const out = flatDepth(width, height)
+  const ox = Math.round((width - w) / 2)
+  const oy = Math.round((height - h) / 2)
+  for (let y = 0; y < h; y++) out.data.set(r.data.subarray(y * w, (y + 1) * w), (oy + y) * width + ox)
+  return out
+}
+
 export function invertDepth(d: DepthMap): DepthMap {
   const data = new Float32Array(d.data.length)
   for (let i = 0; i < data.length; i++) data[i] = 1 - d.data[i]

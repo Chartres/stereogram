@@ -43,25 +43,28 @@
   "natural_frequency": "episodic",
   "signature": {
     "doc": "docs/SIGNATURE.md",
-    "reviewed_on": null,
+    "reviewed_on": "2026-11-04",
     "moves": [
       {
         "name": "The museum's hidden figures: ~50 CC0 sculptures and ~40 ornament tiles with provenance",
         "from": "Met Open Access, Smithsonian, Poly Haven; ad fontes",
-        "status": "proposed",
-        "metric": "key_action pick_figure"
+        "status": "building",
+        "metric": "key_action pick_figure",
+        "approved_on": "2026-11-04"
       },
       {
         "name": "A book of plates: ~100 pre-generated stereograms paged like a book, answer and share-a-guess links",
         "from": "London Stereoscopic Company 1862; Magic Eye books; Holbein",
-        "status": "proposed",
-        "metric": "key_action plate_open"
+        "status": "building",
+        "metric": "key_action plate_open",
+        "approved_on": "2026-11-04"
       },
       {
         "name": "The patient eye: six-step viewing course with relax step and shimmer, self-marked",
         "from": "Wheatstone 1838; NHS orthoptics; Thimbleby 1993; Montessori",
-        "status": "proposed",
-        "metric": "key_action ladder_step"
+        "status": "building",
+        "metric": "key_action ladder_step",
+        "approved_on": "2026-11-04"
       },
       {
         "name": "Landscapes from the Earth and the Moon (elevation tiles)",

@@ -8,6 +8,8 @@ offline once loaded.
 
 ## What it does
 
+- 26 real sculptures (Poly Haven, CC0) as hidden figures and 36 ornament tiles from The Met's Open Access collection as backgrounds; every picture prints where both came from. A book of 100 plates at `#/book`, and a six-step viewing course on the See page.
+
 - Depth from eight built-in shapes, hidden text, a soft-brush drawing, or any greyscale picture
   (white is near; invert if your map is the other way round; smooth the edges of 8-bit maps).
 - Patterns: black-and-white random dots with adjustable density, colour dots, three procedural

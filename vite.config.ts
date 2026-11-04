@@ -33,8 +33,17 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,woff2,png}'],
+        // the ornament tiles are 7.6 MB: fetched on first use and kept, not precached on first visit
+        globIgnores: ['**/library/patterns/**'],
         navigateFallback: '/index.html',
         cleanupOutdatedCaches: true,
+        runtimeCaching: [
+          {
+            urlPattern: ({ url }) => url.pathname.startsWith('/library/'),
+            handler: 'CacheFirst',
+            options: { cacheName: 'library', expiration: { maxEntries: 200, maxAgeSeconds: 60 * 60 * 24 * 365 } },
+          },
+        ],
       },
     }),
   ],

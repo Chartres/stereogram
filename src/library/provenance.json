@@ -1,0 +1,600 @@
+{
+  "figures": [
+    {
+      "id": "antique_ceramic_vase_01",
+      "title": "Antique ceramic vase",
+      "file": "/library/figures/antique_ceramic_vase_01.png",
+      "source": "Poly Haven",
+      "licence": "CC0",
+      "url": "https://polyhaven.com/a/antique_ceramic_vase_01",
+      "credit": "Antique ceramic vase, Poly Haven, CC0"
+    },
+    {
+      "id": "food_apple_01",
+      "title": "Apple",
+      "file": "/library/figures/food_apple_01.png",
+      "source": "Poly Haven",
+      "licence": "CC0",
+      "url": "https://polyhaven.com/a/food_apple_01",
+      "credit": "Apple, Poly Haven, CC0"
+    },
+    {
+      "id": "food_pears_asian_01",
+      "title": "Asian pears",
+      "file": "/library/figures/food_pears_asian_01.png",
+      "source": "Poly Haven",
+      "licence": "CC0",
+      "url": "https://polyhaven.com/a/food_pears_asian_01",
+      "credit": "Asian pears, Poly Haven, CC0"
+    },
+    {
+      "id": "brass_vase_01",
+      "title": "Brass vase",
+      "file": "/library/figures/brass_vase_01.png",
+      "source": "Poly Haven",
+      "licence": "CC0",
+      "url": "https://polyhaven.com/a/brass_vase_01",
+      "credit": "Brass vase, Poly Haven, CC0"
+    },
+    {
+      "id": "bronze_ray_statue",
+      "title": "Bronze ray statue",
+      "file": "/library/figures/bronze_ray_statue.png",
+      "source": "Poly Haven",
+      "licence": "CC0",
+      "url": "https://polyhaven.com/a/bronze_ray_statue",
+      "credit": "Bronze ray statue, Poly Haven, CC0"
+    },
+    {
+      "id": "bronze_shark_statue",
+      "title": "Bronze shark statue",
+      "file": "/library/figures/bronze_shark_statue.png",
+      "source": "Poly Haven",
+      "licence": "CC0",
+      "url": "https://polyhaven.com/a/bronze_shark_statue",
+      "credit": "Bronze shark statue, Poly Haven, CC0"
+    },
+    {
+      "id": "bronze_whale_statue",
+      "title": "Bronze whale statue",
+      "file": "/library/figures/bronze_whale_statue.png",
+      "source": "Poly Haven",
+      "licence": "CC0",
+      "url": "https://polyhaven.com/a/bronze_whale_statue",
+      "credit": "Bronze whale statue, Poly Haven, CC0"
+    },
+    {
+      "id": "bull_head",
+      "title": "Bull head",
+      "file": "/library/figures/bull_head.png",
+      "source": "Poly Haven",
+      "licence": "CC0",
+      "url": "https://polyhaven.com/a/bull_head",
+      "credit": "Bull head, Poly Haven, CC0"
+    },
+    {
+      "id": "carved_wooden_elephant",
+      "title": "Carved wooden elephant",
+      "file": "/library/figures/carved_wooden_elephant.png",
+      "source": "Poly Haven",
+      "licence": "CC0",
+      "url": "https://polyhaven.com/a/carved_wooden_elephant",
+      "credit": "Carved wooden elephant, Poly Haven, CC0"
+    },
+    {
+      "id": "chess_set",
+      "title": "Chess set",
+      "file": "/library/figures/chess_set.png",
+      "source": "Poly Haven",
+      "licence": "CC0",
+      "url": "https://polyhaven.com/a/chess_set",
+      "credit": "Chess set, Poly Haven, CC0"
+    },
+    {
+      "id": "concrete_cat_statue",
+      "title": "Concrete cat statue",
+      "file": "/library/figures/concrete_cat_statue.png",
+      "source": "Poly Haven",
+      "licence": "CC0",
+      "url": "https://polyhaven.com/a/concrete_cat_statue",
+      "credit": "Concrete cat statue, Poly Haven, CC0"
+    },
+    {
+      "id": "cross_pein_hammer",
+      "title": "Cross-pein hammer",
+      "file": "/library/figures/cross_pein_hammer.png",
+      "source": "Poly Haven",
+      "licence": "CC0",
+      "url": "https://polyhaven.com/a/cross_pein_hammer",
+      "credit": "Cross-pein hammer, Poly Haven, CC0"
+    },
+    {
+      "id": "dandelion_01",
+      "title": "Dandelion",
+      "file": "/library/figures/dandelion_01.png",
+      "source": "Poly Haven",
+      "licence": "CC0",
+      "url": "https://polyhaven.com/a/dandelion_01",
+      "credit": "Dandelion, Poly Haven, CC0"
+    },
+    {
+      "id": "fishermans_hat",
+      "title": "Fisherman's hat",
+      "file": "/library/figures/fishermans_hat.png",
+      "source": "Poly Haven",
+      "licence": "CC0",
+      "url": "https://polyhaven.com/a/fishermans_hat",
+      "credit": "Fisherman's hat, Poly Haven, CC0"
+    },
+    {
+      "id": "gothic_statue",
+      "title": "Gothic statue",
+      "file": "/library/figures/gothic_statue.png",
+      "source": "Poly Haven",
+      "licence": "CC0",
+      "url": "https://polyhaven.com/a/gothic_statue",
+      "credit": "Gothic statue, Poly Haven, CC0"
+    },
+    {
+      "id": "hatchet",
+      "title": "Hatchet",
+      "file": "/library/figures/hatchet.png",
+      "source": "Poly Haven",
+      "licence": "CC0",
+      "url": "https://polyhaven.com/a/hatchet",
+      "credit": "Hatchet, Poly Haven, CC0"
+    },
+    {
+      "id": "horse_head",
+      "title": "Horse head",
+      "file": "/library/figures/horse_head.png",
+      "source": "Poly Haven",
+      "licence": "CC0",
+      "url": "https://polyhaven.com/a/horse_head",
+      "credit": "Horse head, Poly Haven, CC0"
+    },
+    {
+      "id": "horse_statue_01",
+      "title": "Horse statue",
+      "file": "/library/figures/horse_statue_01.png",
+      "source": "Poly Haven",
+      "licence": "CC0",
+      "url": "https://polyhaven.com/a/horse_statue_01",
+      "credit": "Horse statue, Poly Haven, CC0"
+    },
+    {
+      "id": "jug_01",
+      "title": "Jug",
+      "file": "/library/figures/jug_01.png",
+      "source": "Poly Haven",
+      "licence": "CC0",
+      "url": "https://polyhaven.com/a/jug_01",
+      "credit": "Jug, Poly Haven, CC0"
+    },
+    {
+      "id": "lambis_shell",
+      "title": "Lambis shell",
+      "file": "/library/figures/lambis_shell.png",
+      "source": "Poly Haven",
+      "licence": "CC0",
+      "url": "https://polyhaven.com/a/lambis_shell",
+      "credit": "Lambis shell, Poly Haven, CC0"
+    },
+    {
+      "id": "lion_head",
+      "title": "Lion head",
+      "file": "/library/figures/lion_head.png",
+      "source": "Poly Haven",
+      "licence": "CC0",
+      "url": "https://polyhaven.com/a/lion_head",
+      "credit": "Lion head, Poly Haven, CC0"
+    },
+    {
+      "id": "marble_bust_01",
+      "title": "Marble bust",
+      "file": "/library/figures/marble_bust_01.png",
+      "source": "Poly Haven",
+      "licence": "CC0",
+      "url": "https://polyhaven.com/a/marble_bust_01",
+      "credit": "Marble bust, Poly Haven, CC0"
+    },
+    {
+      "id": "rubber_boots",
+      "title": "Rubber boots",
+      "file": "/library/figures/rubber_boots.png",
+      "source": "Poly Haven",
+      "licence": "CC0",
+      "url": "https://polyhaven.com/a/rubber_boots",
+      "credit": "Rubber boots, Poly Haven, CC0"
+    },
+    {
+      "id": "rubber_duck_toy",
+      "title": "Rubber duck",
+      "file": "/library/figures/rubber_duck_toy.png",
+      "source": "Poly Haven",
+      "licence": "CC0",
+      "url": "https://polyhaven.com/a/rubber_duck_toy",
+      "credit": "Rubber duck, Poly Haven, CC0"
+    },
+    {
+      "id": "seadogs_compass",
+      "title": "Sea dog's compass",
+      "file": "/library/figures/seadogs_compass.png",
+      "source": "Poly Haven",
+      "licence": "CC0",
+      "url": "https://polyhaven.com/a/seadogs_compass",
+      "credit": "Sea dog's compass, Poly Haven, CC0"
+    },
+    {
+      "id": "wooden_bowl_01",
+      "title": "Wooden bowl",
+      "file": "/library/figures/wooden_bowl_01.png",
+      "source": "Poly Haven",
+      "licence": "CC0",
+      "url": "https://polyhaven.com/a/wooden_bowl_01",
+      "credit": "Wooden bowl, Poly Haven, CC0"
+    }
+  ],
+  "patterns": [
+    {
+      "id": "coptic-443300",
+      "title": "Coptic Textile Fragment",
+      "file": "/library/patterns/coptic-443300.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/443300",
+      "date": "late 3rd–5th century",
+      "credit": "Coptic Textile Fragment, late 3rd–5th century, The Met, CC0"
+    },
+    {
+      "id": "coptic-444296",
+      "title": "Vertical Band from a Tunic",
+      "file": "/library/patterns/coptic-444296.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/444296",
+      "date": "7th century",
+      "credit": "Vertical Band from a Tunic, 7th century, The Met, CC0"
+    },
+    {
+      "id": "coptic-446011",
+      "title": "Coptic Textile Fragment with Image of a Goddess",
+      "file": "/library/patterns/coptic-446011.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/446011",
+      "date": "late 3rd–4th century",
+      "credit": "Coptic Textile Fragment with Image of a Goddess, late 3rd–4th century, The Met, CC0"
+    },
+    {
+      "id": "iznik-447013",
+      "title": "Tile Panel",
+      "file": "/library/patterns/iznik-447013.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/447013",
+      "date": "second half 16th century",
+      "credit": "Tile Panel, second half 16th century, The Met, CC0"
+    },
+    {
+      "id": "iznik-447014",
+      "title": "Tile Panel",
+      "file": "/library/patterns/iznik-447014.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/447014",
+      "date": "second half 16th century",
+      "credit": "Tile Panel, second half 16th century, The Met, CC0"
+    },
+    {
+      "id": "iznik-447015",
+      "title": "Tile Panel",
+      "file": "/library/patterns/iznik-447015.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/447015",
+      "date": "second half 16th century",
+      "credit": "Tile Panel, second half 16th century, The Met, CC0"
+    },
+    {
+      "id": "iznik-447017",
+      "title": "Tile Panel",
+      "file": "/library/patterns/iznik-447017.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/447017",
+      "date": "early 17th century",
+      "credit": "Tile Panel, early 17th century, The Met, CC0"
+    },
+    {
+      "id": "katagami-53913",
+      "title": "Horse trapping",
+      "file": "/library/patterns/katagami-53913.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/53913",
+      "date": "19th century",
+      "credit": "Horse trapping, 19th century, The Met, CC0"
+    },
+    {
+      "id": "katagami-61835",
+      "title": "Robe (Kosode) with Cherry Blossoms and Butterflies",
+      "file": "/library/patterns/katagami-61835.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/61835",
+      "date": "late 18th–early 19th century",
+      "credit": "Robe (Kosode) with Cherry Blossoms and Butterflies, late 18th–early 19th century, The Met, CC0"
+    },
+    {
+      "id": "katagami-61838",
+      "title": "Robe (Kosode) with Ferns",
+      "file": "/library/patterns/katagami-61838.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/61838",
+      "date": "late 18th–early 19th century",
+      "credit": "Robe (Kosode) with Ferns, late 18th–early 19th century, The Met, CC0"
+    },
+    {
+      "id": "katagami-64388",
+      "title": "Stencil with Pattern of Seascape on White Ground",
+      "file": "/library/patterns/katagami-64388.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/64388",
+      "date": "19th century",
+      "credit": "Stencil with Pattern of Seascape on White Ground, 19th century, The Met, CC0"
+    },
+    {
+      "id": "katagami-65078",
+      "title": "Stencil",
+      "file": "/library/patterns/katagami-65078.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/65078",
+      "date": "19th century",
+      "credit": "Stencil, 19th century, The Met, CC0"
+    },
+    {
+      "id": "katagami-65305",
+      "title": "Stencil with Continuous Fret Pattern (sayagata)",
+      "file": "/library/patterns/katagami-65305.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/65305",
+      "date": "19th century",
+      "credit": "Stencil with Continuous Fret Pattern (sayagata), 19th century, The Met, CC0"
+    },
+    {
+      "id": "katagami-65306",
+      "title": "Stencil with Bats on a Lattice",
+      "file": "/library/patterns/katagami-65306.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/65306",
+      "date": "19th century",
+      "credit": "Stencil with Bats on a Lattice, 19th century, The Met, CC0"
+    },
+    {
+      "id": "katagami-69299",
+      "title": "Stencil with Theme from Matsukaze",
+      "file": "/library/patterns/katagami-69299.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/69299",
+      "date": "19th century",
+      "credit": "Stencil with Theme from Matsukaze, 19th century, The Met, CC0"
+    },
+    {
+      "id": "katagami-69935",
+      "title": "Stencil",
+      "file": "/library/patterns/katagami-69935.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/69935",
+      "date": "19th century",
+      "credit": "Stencil, 19th century, The Met, CC0"
+    },
+    {
+      "id": "morris-337071",
+      "title": "Pink and Rose",
+      "file": "/library/patterns/morris-337071.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/337071",
+      "date": "ca. 1890",
+      "credit": "Pink and Rose, ca. 1890, The Met, CC0"
+    },
+    {
+      "id": "morris-365338",
+      "title": "Fruit (or Pomegranate)",
+      "file": "/library/patterns/morris-365338.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/365338",
+      "date": "ca. 1866",
+      "credit": "Fruit (or Pomegranate), ca. 1866, The Met, CC0"
+    },
+    {
+      "id": "morris-383485",
+      "title": "Jasmine",
+      "file": "/library/patterns/morris-383485.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/383485",
+      "date": "1872",
+      "credit": "Jasmine, 1872, The Met, CC0"
+    },
+    {
+      "id": "morris-384017",
+      "title": "Daisy",
+      "file": "/library/patterns/morris-384017.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/384017",
+      "date": "1864",
+      "credit": "Daisy, 1864, The Met, CC0"
+    },
+    {
+      "id": "morris-384022",
+      "title": "Willow Bough",
+      "file": "/library/patterns/morris-384022.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/384022",
+      "date": "1887",
+      "credit": "Willow Bough, 1887, The Met, CC0"
+    },
+    {
+      "id": "morris-398344",
+      "title": "Willow",
+      "file": "/library/patterns/morris-398344.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/398344",
+      "date": "1874",
+      "credit": "Willow, 1874, The Met, CC0"
+    },
+    {
+      "id": "ornament-230019",
+      "title": "Italian",
+      "file": "/library/patterns/ornament-230019.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/230019",
+      "date": "ca. 1873",
+      "credit": "Italian, ca. 1873, The Met, CC0"
+    },
+    {
+      "id": "ornament-334214",
+      "title": "Triumph of Grammar",
+      "file": "/library/patterns/ornament-334214.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/334214",
+      "date": "17th century",
+      "credit": "Triumph of Grammar, 17th century, The Met, CC0"
+    },
+    {
+      "id": "ornament-700091",
+      "title": "The grammar of ornament",
+      "file": "/library/patterns/ornament-700091.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/700091",
+      "date": "1868",
+      "credit": "The grammar of ornament, 1868, The Met, CC0"
+    },
+    {
+      "id": "ornament-814025",
+      "title": "The grammar of ornament",
+      "file": "/library/patterns/ornament-814025.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/814025",
+      "date": "1856",
+      "credit": "The grammar of ornament, 1856, The Met, CC0"
+    },
+    {
+      "id": "ornament-891631",
+      "title": "Nineveh and Persia No. 1, plate XII from The Grammar of Ornament, 3rd edn.",
+      "file": "/library/patterns/ornament-891631.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/891631",
+      "date": "1868",
+      "credit": "Nineveh and Persia No. 1, plate XII from The Grammar of Ornament, 3rd edn., 1868, The Met, CC0"
+    },
+    {
+      "id": "ornament-891632",
+      "title": "Nineveh and Persia No. 2, plate XIII from The Grammar of Ornament, 3rd edn.",
+      "file": "/library/patterns/ornament-891632.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/891632",
+      "date": "1868",
+      "credit": "Nineveh and Persia No. 2, plate XIII from The Grammar of Ornament, 3rd edn., 1868, The Met, CC0"
+    },
+    {
+      "id": "ottoman-445264",
+      "title": "Textile Fragment",
+      "file": "/library/patterns/ottoman-445264.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/445264",
+      "date": "16th century",
+      "credit": "Textile Fragment, 16th century, The Met, CC0"
+    },
+    {
+      "id": "ottoman-446871",
+      "title": "Textile Fragment",
+      "file": "/library/patterns/ottoman-446871.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/446871",
+      "date": "early 17th century",
+      "credit": "Textile Fragment, early 17th century, The Met, CC0"
+    },
+    {
+      "id": "ottoman-450517",
+      "title": "Textile Fragment",
+      "file": "/library/patterns/ottoman-450517.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/450517",
+      "date": "16th century",
+      "credit": "Textile Fragment, 16th century, The Met, CC0"
+    },
+    {
+      "id": "ottoman-451099",
+      "title": "Textile Fragment",
+      "file": "/library/patterns/ottoman-451099.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/451099",
+      "date": "16th century",
+      "credit": "Textile Fragment, 16th century, The Met, CC0"
+    },
+    {
+      "id": "wallpaper-359990",
+      "title": "Satyrs Jousting",
+      "file": "/library/patterns/wallpaper-359990.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/359990",
+      "date": "ca. 1790",
+      "credit": "Satyrs Jousting, ca. 1790, The Met, CC0"
+    },
+    {
+      "id": "wallpaper-643063",
+      "title": "Design for the Gardens of the Château de Savigny-lès-Beaune",
+      "file": "/library/patterns/wallpaper-643063.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/643063",
+      "date": "ca. 1782–90",
+      "credit": "Design for the Gardens of the Château de Savigny-lès-Beaune, ca. 1782–90, The Met, CC0"
+    },
+    {
+      "id": "wallpaper-663122",
+      "title": "Christ in the House of Martha and Mary",
+      "file": "/library/patterns/wallpaper-663122.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/663122",
+      "date": "18th century",
+      "credit": "Christ in the House of Martha and Mary, 18th century, The Met, CC0"
+    },
+    {
+      "id": "wallpaper-9663",
+      "title": "Wallpaper Panel",
+      "file": "/library/patterns/wallpaper-9663.png",
+      "source": "The Metropolitan Museum of Art, Open Access",
+      "licence": "CC0",
+      "url": "https://www.metmuseum.org/art/collection/search/9663",
+      "date": "1700–1730",
+      "credit": "Wallpaper Panel, 1700–1730, The Met, CC0"
+    }
+  ]
+}
