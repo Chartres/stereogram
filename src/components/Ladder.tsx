@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { conversion, track } from '@/analytics'
 import { DEFAULT_PARAMS, type Params } from '@/domain/params'
-import { FIGURES, PATTERNS } from '@/library'
+import { FEATURED_FIRST, PATTERNS } from '@/library'
 import { StereogramView } from './StereogramView'
 
 // The patient eye: six rungs from shallow and wide to the default, staged like the orthoptists'
@@ -16,7 +16,7 @@ interface Rung {
 }
 
 function rungs(): Rung[] {
-  const fig = FIGURES[0]
+  const fig = FEATURED_FIRST[0]
   const pat = PATTERNS[0]
   return [
     { title: '1 · A shallow ball', hint: 'Wide strips, little depth. Look through the page until the two dots become three.', params: { scene: { kind: 'shape', shape: 'sphere' }, depth: 0.12, eyeSeparation: 200 } },
