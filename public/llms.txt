@@ -1,0 +1,29 @@
+# Stereogram
+
+> A free stereogram (Magic Eye) generator that runs entirely in the browser. Pick a shape, type a
+> word, paint a relief or upload a depth map; choose random dots or a pattern; download a PNG at
+> screen, phone-wallpaper or A4 print size. English interface. No account, no ads, nothing is
+> uploaded, and the page works offline once loaded.
+
+## What it is
+- Single-image stereograms (autostereograms) after Thimbleby, Inglis & Witten (IEEE Computer, 1994), with hidden-surface removal, parallel or cross-eyed viewing, adjustable eye separation and depth of field.
+- Depth sources: eight built-in shapes, hidden text, a soft-brush drawing, or any greyscale picture (white = near).
+- Patterns: black-and-white random dots with adjustable density, colour dots, three procedural tiles, or a picture of your own.
+- Reproducible: a seed and a shareable link recreate the same picture pixel for pixel.
+- Open source, MIT.
+
+## How to use it
+- https://stereogram.dravec.org/ — make one; the first picture appears without any input.
+- https://stereogram.dravec.org/?text=HELLO — a link with parameters opens that exact picture (shape, text, seed, size, pattern, depth, mode).
+- https://stereogram.dravec.org/#/see — how to see a stereogram, including the honest note that about one person in twenty cannot.
+
+## Data & provenance
+- No data set. All rendering is deterministic code in the page; nothing leaves the browser except anonymous first-party usage counts (no cookies).
+
+## Links
+- App: https://stereogram.dravec.org/
+- Source: https://github.com/Chartres/stereogram
+- Sitemap: https://stereogram.dravec.org/sitemap.xml
+
+## Contact
+- Issues: https://github.com/Chartres/stereogram/issues

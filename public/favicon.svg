@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Stereogram mark: a paper square, a dot field, and the two fused eyes (helper dots) above a raised disc. -->
+  <rect width="512" height="512" rx="96" fill="#f4f1ea"/>
+  <g fill="#1c1a17">
+    <circle cx="96" cy="128" r="10"/><circle cx="160" cy="112" r="10"/><circle cx="352" cy="120" r="10"/><circle cx="416" cy="136" r="10"/>
+    <circle cx="80" cy="256" r="10"/><circle cx="432" cy="256" r="10"/><circle cx="112" cy="392" r="10"/><circle cx="400" cy="392" r="10"/>
+    <circle cx="176" cy="432" r="10"/><circle cx="336" cy="432" r="10"/><circle cx="256" cy="456" r="10"/><circle cx="256" cy="64" r="10"/>
+  </g>
+  <circle cx="256" cy="272" r="118" fill="none" stroke="#0f5a63" stroke-width="28"/>
+  <circle cx="196" cy="128" r="26" fill="#0f5a63" stroke="#f4f1ea" stroke-width="10"/>
+  <circle cx="316" cy="128" r="26" fill="#0f5a63" stroke="#f4f1ea" stroke-width="10"/>
+</svg>

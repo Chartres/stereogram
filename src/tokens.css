@@ -1,0 +1,23 @@
+/* Design tokens — the only place a colour enters. Contrast is measured from these hex values
+   by src/design/contrast.test.ts (4.5:1 text, 3:1 control edges), never asserted in prose. */
+@theme {
+  --color-paper: #f4f1ea;
+  --color-paper-2: #e8e3d7;
+  --color-ink: #1c1a17;
+  --color-ink-soft: #5b564e;
+  --color-accent: #0f5a63;
+  --color-edge: #857d70;
+
+  --font-display: 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* four type steps, nothing else (taste.md "Bold, still minimalist") */
+  --text-display: 28px;
+  --text-display--line-height: 32px;
+  --text-title: 20px;
+  --text-title--line-height: 26px;
+  --text-body: 17px;
+  --text-body--line-height: 26px;
+  --text-label: 13px;
+  --text-label--line-height: 18px;
+}
