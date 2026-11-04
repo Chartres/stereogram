@@ -2,13 +2,14 @@
 import type { Rgba } from './depth'
 import { mulberry32 } from './prng'
 
-export const TILES = ['confetti', 'pebbles', 'weave'] as const
+export const TILES = ['confetti', 'pebbles', 'weave', 'modrotlac'] as const
 export type Tile = (typeof TILES)[number]
 
 export const TILE_LABELS: Record<Tile, string> = {
   confetti: 'Confetti',
   pebbles: 'Pebbles',
   weave: 'Weave',
+  modrotlac: 'Modrotlač (blueprint)',
 }
 
 const PALETTES: Record<Tile, [number, number, number][]> = {
@@ -32,6 +33,12 @@ const PALETTES: Record<Tile, [number, number, number][]> = {
     [196, 160, 60],
     [160, 44, 48],
     [240, 234, 216],
+  ],
+  // blueprint resist printing (modrotlač): white reserve on indigo. Redrawn, not traced:
+  // the ÚĽUV block photographs carry no licence. UNESCO 2018 (CZ/SK/AT/DE/HU).
+  modrotlac: [
+    [244, 241, 234],
+    [27, 58, 107],
   ],
 }
 
@@ -67,6 +74,24 @@ export function proceduralTile(tile: Tile, size: number, seed: number): Rgba {
   } else if (tile === 'pebbles') {
     const n = Math.round(size * size * 0.004)
     for (let k = 0; k < n; k++) circle(rnd() * size, rnd() * size, size * (0.03 + rnd() * 0.07), pal[Math.floor(rnd() * (pal.length - 1))])
+  } else if (tile === 'modrotlac') {
+    // a staggered grid of sprigs: a stem, two leaves, a berry; small dots between (the printers' "pepper")
+    const cell = Math.max(12, Math.round(size / 6))
+    const white = pal[0]
+    const dot = (x: number, y: number) => circle(x, y, Math.max(1, size / 140), white)
+    for (let gy = 0; gy < size; gy += cell)
+      for (let gx = 0; gx < size; gx += cell) {
+        const cx = gx + cell / 2 + ((gy / cell) % 2 ? cell / 2 : 0)
+        const cy = gy + cell / 2
+        for (let t = -cell * 0.3; t <= cell * 0.3; t += 1) dot(cx + t * 0.15, cy + t) // stem, slightly leaning
+        circle(cx - cell * 0.18, cy - cell * 0.05, cell * 0.11, white)
+        circle(cx + cell * 0.18, cy + 0.08 * cell, cell * 0.11, white)
+        circle(cx + cell * 0.04, cy - cell * 0.32, cell * 0.07, white) // berry
+        dot(gx + cell * 0.1, gy + cell * 0.1)
+        dot(gx + cell * 0.9, gy + cell * 0.1)
+      }
+    const n = Math.round(size * size * 0.002)
+    for (let k = 0; k < n; k++) dot(rnd() * size, rnd() * size)
   } else {
     // weave: alternating diagonal bands with speckle, so vertical repetition reads as cloth
     const band = Math.max(4, Math.round(size / 10))

@@ -1,6 +1,8 @@
 # Stereogram — backlog (mini-scrum, flywheel `docs/standards/mini-scrum.md`)
 
 ## inbox
+- 2026-11-04 (sweep two): `separation()` rounds to whole pixels, so a 256-level map shows 19 depth planes at the defaults. Candidate: sub-pixel separation by colour interpolation, or bake to reachable planes and say so. Needs a test; the founder-case fingerprint changes. P3/P7.
+- 2026-11-04 (sweep two): FFT each library tile and warn when its own period sits near the repeat width (false fusions). P7.
 - 2026-11-04 (author, from the first shots): textured tiles smear in the left half on steep relief — TIW paints right-to-left so distortion accumulates leftwards. Persona P1 (text for a friend) with a tile pattern. → candidate: centre-out painting.
 - 2026-11-04 (author): helper dots are small on a phone (radius 5 px at 390 wide). P4. Measure on a real phone before changing.
 - 2026-11-04 (author): the "This screen" preset ignores device pixel ratio; on a 2× phone the picture is upscaled 2×, which is fine for viewing but soft for a download. P2/P4. Decide: render at DPR and show at CSS size?

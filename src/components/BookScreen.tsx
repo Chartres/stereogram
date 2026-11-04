@@ -4,6 +4,7 @@ import { encodeParams } from '@/domain/params'
 import { figureById, patternById } from '@/library'
 import { plateParams, plates } from '@/book/plates'
 import { FeedbackCard } from './FeedbackCard'
+import { PrintPlate } from './PrintPlate'
 import { StereogramView } from './StereogramView'
 
 const btn = 'min-h-11 rounded-md border border-edge px-4'
@@ -18,6 +19,7 @@ export function BookScreen({ n }: { n: number }) {
   const [size, setSize] = useState({ width: 960, height: 600 })
   const [answer, setAnswer] = useState(false)
   const [note, setNote] = useState<string | null>(null)
+  const [printSrc, setPrintSrc] = useState<string | null>(null)
 
   useEffect(() => {
     const el = frame.current
@@ -98,7 +100,20 @@ export function BookScreen({ n }: { n: number }) {
         <button type="button" onClick={share} className={`${btn} flex-1 whitespace-nowrap sm:flex-none`}>
           Share
         </button>
+        <button
+          type="button"
+          onClick={() => {
+            if (!canvas.current) return
+            setPrintSrc(canvas.current.toDataURL('image/png'))
+            track('key_action', { action: 'print_plate', plate: plate.n })
+            setTimeout(() => window.print(), 150)
+          }}
+          className={`${btn} flex-1 whitespace-nowrap sm:flex-none`}
+        >
+          Print
+        </button>
       </div>
+      <PrintPlate src={printSrc} params={params} title={`Plate ${plate.n}`} />
 
       <section className="mt-6 text-ink-soft">
         <p>

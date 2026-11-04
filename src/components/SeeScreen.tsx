@@ -1,5 +1,6 @@
 import { FeedbackCard } from './FeedbackCard'
 import { Ladder } from './Ladder'
+import { Spectacles } from './Spectacles'
 
 export function SeeScreen() {
   return (
@@ -52,6 +53,8 @@ export function SeeScreen() {
         in 1979. The algorithm here is the one Thimbleby, Inglis and Witten published in 1994, including
         their hidden-surface removal.
       </p>
+
+      <Spectacles />
 
       <Ladder />
 

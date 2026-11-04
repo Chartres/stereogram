@@ -226,6 +226,15 @@
       "credit": "Sea dog's compass, Poly Haven, CC0"
     },
     {
+      "id": "chartres",
+      "title": "The labyrinth of Chartres Cathedral",
+      "file": "/library/figures/chartres.png",
+      "source": "Wikimedia Commons",
+      "licence": "CC BY-SA 3.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Labyrinthus.svg",
+      "credit": "The labyrinth of Chartres Cathedral (c. 1200), drawing by Ssolbergj, Wikimedia Commons, CC BY-SA 3.0"
+    },
+    {
       "id": "wooden_bowl_01",
       "title": "Wooden bowl",
       "file": "/library/figures/wooden_bowl_01.png",

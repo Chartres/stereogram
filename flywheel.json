@@ -71,6 +71,55 @@
         "from": "USGS 3DEP/SRTM, LRO LOLA",
         "status": "proposed",
         "metric": "key_action pick_figure"
+      },
+      {
+        "name": "Comenius's spectacles: a plate whose depth inverts between parallel and crossed viewing",
+        "from": "Comenius, Labyrinth of the World ch. IV (1623)",
+        "status": "building",
+        "approved_on": "2026-11-04",
+        "metric": "key_action spectacles_open"
+      },
+      {
+        "name": "Colophon on a Van de Graaf page: the printed plate with renderer, seed, sources, licence",
+        "from": "Tschichold; private-press colophons",
+        "status": "building",
+        "approved_on": "2026-11-04",
+        "metric": "key_action print_plate"
+      },
+      {
+        "name": "Relief shelf: CC0 reliefs (Cleveland, SMK casts) as figures",
+        "from": "Cleveland Open Access; SMK",
+        "status": "approved",
+        "approved_on": "2026-11-04",
+        "metric": "key_action pick_figure"
+      },
+      {
+        "name": "How fine can you see depth: calibrated stereoacuity with its error band printed",
+        "from": "ASTEROID 2019; UW virtual chinrest",
+        "status": "approved",
+        "approved_on": "2026-11-04",
+        "metric": "key_action acuity_done"
+      },
+      {
+        "name": "Modrotlač: a redrawn blueprint tile with the UNESCO line",
+        "from": "Blueprint resist printing, UNESCO 2018",
+        "status": "building",
+        "approved_on": "2026-11-04",
+        "metric": "key_action pick_pattern"
+      },
+      {
+        "name": "The Chartres path: the 11-circuit labyrinth as a figure",
+        "from": "Chartres cathedral c. 1200",
+        "status": "building",
+        "approved_on": "2026-11-04",
+        "metric": "key_action pick_figure"
+      },
+      {
+        "name": "Public Domain Day: new plates every 1 January from authors dead 70 years",
+        "from": "Public Domain Day",
+        "status": "approved",
+        "approved_on": "2026-11-04",
+        "metric": "key_action plate_open"
       }
     ]
   },

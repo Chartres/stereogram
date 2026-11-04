@@ -84,3 +84,41 @@ public-domain *flat* art free of new copyright; 3D scans still need a model-by-m
 - Lada plates before 1 Jan 2028 (still in copyright).
 - A shareable stereo "score" labelled normal/abnormal (clinical claim, ×4.3 retest band, a leaderboard pointed at the 7 %).
 - AI depth estimation from photos of reliefs or manuscripts (guessed depth with no source; undoes "provenance under every picture").
+
+---
+
+# Sweep two — forced connections, SCAMPER, Oblique Strategies (4 Nov 2026, late)
+
+Method: 50 random Wikipedia pages via the MediaWiki random generator (11 kept), SCAMPER on the
+product as it is, ten Oblique Strategies cards drawn at random from the published deck.
+
+## The one that touches the code
+- **19 depth planes.** `separation()` rounds the 1994 equation to whole pixels; at the defaults (E 180, μ ⅓) a 256-grey depth map collapses to 19 planes (90 → 72 px), about 14 on the book's 0.25-depth plates. The curve is close to its tangent over that range, so the terracing is the rounding, not the formula. Two honest responses: bake maps to the reachable planes and say so, or sub-pixel separation by colour interpolation between neighbours. Needs a test first; the founder-case fingerprint will change with a DECISIONS line. (https://en.wikipedia.org/wiki/Linear_approximation)
+
+## Keepers from the random pages
+- **Heirloom algorithms** — one plate each for Julesz 1959 (the pair), Tyler & Clarke 1979 (single image), Thimbleby 1994 (hidden surfaces), dated and cited, the way Sean Brock brought back Carolina Gold rice as a named variety. M
+- **Barnes ensembles** — library pages that pair an ornament tile and a sculpture from different centuries because they share a curve, as the Barnes hangs its walls. Curation on material already here. M
+- **Chronopolis** — deposit the depth maps, plates and sources at Zenodo (DOI), the Internet Archive and Software Heritage; the DOI goes in the colophon. S
+- **The ropeway plate** — one very long vertical plate scrolled while fused (a cathedral elevation foot to vault; a Met frieze). The repeat runs horizontally, so vertical scrolling keeps fusion. M
+- **Bach's canon** — the course ends with a plate the reader makes, with something hidden only a trained eye resolves, as Bach held his admission canon in the Haussmann portrait. Also: grade every depth source as measured scan / cast / built by hand. S
+- **Valerie Thomas** — her 1980 illusion transmitter (real image from concave mirrors) beside the stereogram's virtual image, in the course, with her in the lineage. S
+- **Mahaut** — facing-page Czech/Slovak and English in the course; a monthly plate over an Atom feed people pull themselves, no email, no counters. S
+- **Abou-Khalil** — hear one row as rhythm: each repeat a beat, nearer depth a shorter period; disparity taught by ear. M
+- **Aunt Jemima** — a written review step for the library and a public "withdrawn" list with reasons (the Met sets include stereotyped figures); never delete silently. S
+- **Kondo** — one recorded pass over the library, sculptures then tiles then plates, one line per removal; easy before sentimental also orders the course. S
+
+## SCAMPER, the lines worth keeping
+- Depth as time: Prague Castle's phases by century, nearer = older.
+- A tile set from Comenius's text in a book face: type up close, depth when fused.
+- Cross-stitch chart export; a plate facing a Liber Usualis incipit with the neume line hidden; a Stoic morning minute with one plate, logged on paper.
+- Pardubice perník and springerle moulds as low-relief sources; each plate's depth map printed on the back (control of error); an A5 farní zpravodaj plate.
+- A 2×3 m corridor plate with the repeat computed for 3 m; a 5 cm bookmark with three repeats; one floating word.
+- Proof comparison by free fusion (typesetters' and philatelists' trick); a print-registration test sheet; a screen-break plate with no health claim.
+- Eliminate: random noise from the book, sliders from the book view, colour (engraving-style monochrome).
+- Reverse: seal and impression in one plate (parallel = intaglio, crossed = relief); pencil-shaded depth maps photographed, the opposite of AI depth; answer first, then the plate.
+
+## Oblique Strategies
+Scissors and two photocopies as a rung (abandon normal instruments); Julesz's 1959 pair as a plate (use an old idea); posture and breathing as rung one (get your neck massaged); a night plate, dim dots on black; a blank control plate with nothing hidden, labelled (seeing nothing is a result); the period ruled in the margin like a typographer's measure; no sound, no confetti on success; ordinary hidden objects, a stone, a bowl; FFT the tile and warn when its period sits near the repeat (spectrum analysis); the plates themselves declared CC0 on the colophon (what wouldn't you do: sell them).
+
+## Refused
+Phone portrait or LiDAR depth (mostly ML-estimated); a daily-plate streak with push reminders; a guide character for children.

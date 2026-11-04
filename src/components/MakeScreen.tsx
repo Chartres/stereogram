@@ -8,6 +8,7 @@ import { randomSeed } from '@/domain/prng'
 import { FIGURES, PATTERNS, figureById, patternById } from '@/library'
 import { DepthPainter } from './DepthPainter'
 import { FeedbackCard } from './FeedbackCard'
+import { PrintPlate } from './PrintPlate'
 import { StereogramView } from './StereogramView'
 
 const field = 'mt-1 block w-full min-h-11 rounded-md bg-paper-2 px-3 py-2'
@@ -36,8 +37,16 @@ export function MakeScreen() {
   const [tileRgba, setTileRgba] = useState<Rgba | null>(null)
   const [reveal, setReveal] = useState(false)
   const [note, setNote] = useState<string | null>(null)
+  const [printSrc, setPrintSrc] = useState<string | null>(null)
   const frame = useRef<HTMLDivElement>(null)
   const canvas = useRef<HTMLCanvasElement>(null)
+
+  function printPlate() {
+    if (!canvas.current) return
+    setPrintSrc(canvas.current.toDataURL('image/png'))
+    track('key_action', { action: 'print_plate', scene: sceneName })
+    setTimeout(() => window.print(), 150)
+  }
 
   const set = useCallback(<K extends keyof Params>(key: K, value: Params[K]) => setParams((p) => ({ ...p, [key]: value })), [])
 
@@ -166,7 +175,11 @@ export function MakeScreen() {
         <button type="button" onClick={() => set('seed', randomSeed())} className="min-h-12 flex-1 whitespace-nowrap rounded-md border border-edge px-3 sm:flex-none sm:px-4">
           Shuffle
         </button>
+        <button type="button" onClick={printPlate} className="min-h-12 flex-1 whitespace-nowrap rounded-md border border-edge px-3 sm:flex-none sm:px-4">
+          Print plate
+        </button>
       </div>
+      <PrintPlate src={printSrc} params={params} title={credit ? 'Stereogram' : `Stereogram: ${sceneName}`} />
 
       <section aria-label="Scene" className="mt-12">
         <h2 className={label}>Scene</h2>
