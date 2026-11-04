@@ -46,35 +46,42 @@
     "reviewed_on": null,
     "moves": [
       {
-        "name": "The patient eye: a six-step viewing ladder with self-set \"seen it\" marks",
-        "from": "Julesz 1971; Montessori, control of error",
+        "name": "The museum's hidden figures: ~50 CC0 sculptures and ~40 ornament tiles with provenance",
+        "from": "Met Open Access, Smithsonian, Poly Haven; ad fontes",
+        "status": "proposed",
+        "metric": "key_action pick_figure"
+      },
+      {
+        "name": "A book of plates: ~100 pre-generated stereograms paged like a book, answer and share-a-guess links",
+        "from": "London Stereoscopic Company 1862; Magic Eye books; Holbein",
+        "status": "proposed",
+        "metric": "key_action plate_open"
+      },
+      {
+        "name": "The patient eye: six-step viewing course with relax step and shimmer, self-marked",
+        "from": "Wheatstone 1838; NHS orthoptics; Thimbleby 1993; Montessori",
         "status": "proposed",
         "metric": "key_action ladder_step"
       },
       {
-        "name": "From the paper: the 1994 formula and row links shown live",
-        "from": "Thimbleby, Inglis & Witten 1994; ad fontes",
+        "name": "Landscapes from the Earth and the Moon (elevation tiles)",
+        "from": "USGS 3DEP/SRTM, LRO LOLA",
         "status": "proposed",
-        "metric": "key_action paper_open"
-      },
-      {
-        "name": "Message card: a hidden-word greeting with a note, A6 print preset",
-        "from": "Holbein 1533; Wheatstone cards",
-        "status": "proposed",
-        "metric": "key_action card_sent"
+        "metric": "key_action pick_figure"
       }
     ]
   },
   "remains": {
     "kinds": [
+      "data",
       "surface"
     ],
-    "what": "A deterministic, offline, print-resolution renderer with reproducible seeds and shareable links, usable with no model at all; \"method\" follows once the viewing ladder (signature A) is approved and live.",
+    "what": "A curated, licence-checked library of real sculpture and ornament baked to depth maps and tiles with provenance (data), rendered offline at print size with reproducible links (surface); the viewing course adds method once approved.",
     "source": "docs/PRD.md §6c (2026-11-04)"
   },
   "next_gate": {
     "set": "2026-11-04",
     "statement": "building → soft-launch: live at stereogram.dravec.org, CI green, one approved signature move live and measured, analytics verified in flywheel-core, ≥1 feedback row; decide by 2026-11-18."
   },
-  "notes": "Scaffolded 2026-11-04 per /flywheel:scaffold. Algorithm: Thimbleby–Inglis–Witten 1994 with hidden-surface removal, pure TS in src/domain, rendered in a Web Worker. Signature proposal (3 options, recommendation A \"The patient eye\") awaits Pavol; the core generator is the obvious part and shipped. One-liner and track were set by the agent as defaults; Pavol to confirm. Deployed 2026-11-04 to the Cloudflare Pages project (stereogram.pages.dev, tag deploy-2026-11-04); the custom domain waits on the hub token gaining Zone·DNS·Edit (inbox cf-token-dns-edit)."
+  "notes": "Scaffolded 2026-11-04 per /flywheel:scaffold. Algorithm: Thimbleby–Inglis–Witten 1994 with hidden-surface removal, pure TS in src/domain, rendered in a Web Worker. Signature proposal (3 options, recommendation A \"The patient eye\") awaits Pavol; the core generator is the obvious part and shipped. One-liner and track were set by the agent as defaults; Pavol to confirm. Deployed 2026-11-04 to the Cloudflare Pages project (stereogram.pages.dev, tag deploy-2026-11-04); the custom domain waits on the hub token gaining Zone·DNS·Edit (inbox cf-token-dns-edit). Landscape 2026-11-04 (docs/discovery/stereogram-landscape.md): crowded market (Owl3D, Tembrica 2026); unclaimed: real-sculpture library with provenance, book of plates, orthoptic viewing course. Decision pending: A library+book (default) / B course / C all."
 }

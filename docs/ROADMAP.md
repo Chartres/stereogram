@@ -12,14 +12,19 @@ Reading order for a cold start: `AGENTS.md` → this file → `BACKLOG.md` → `
   discoverability kit, 44 unit tests + 11 e2e journeys with committed shots.
 - **In flight:** deploy via the hub's `connect-pages` (slug `stereogram`); `links.live` is set once
   it answers; release tag after the live read-back.
-- **Open decisions (Pavol):** the signature move (`docs/SIGNATURE.md`, three options, recommendation
-  "The patient eye"); confirm the one-liner and the `community` track in the portfolio record.
+- **Landscape done (4 Nov, evening):** `flywheel/docs/discovery/stereogram-landscape.md` and the
+  page `docs/landscape-2026-11-04.html`. Verdict: crowded (Owl3D, Tembrica, KilledByAPixel in 2026);
+  nobody has a library of real sculpture, pattern provenance, a book of plates or a viewing course.
+- **Open decisions (Pavol):** which signature move first (`docs/SIGNATURE.md`: A library + book,
+  B course, C all three; default A); confirm the one-liner and the `community` track.
 
 ## Next (each with its test)
 
 | When | Item | Kill / success test |
 |---|---|---|
-| after the signature review | Build the move Pavol picks | its metric event arrives in flywheel-core within a week of deploy |
+| after the signature review (default A) | Bake pipeline: ~50 CC0 sculptures → depth PNGs, ~40 Met/ambientCG/in-house tiles, `provenance.json`; CI asserts every asset has a credit | `pick_figure` / `pick_pattern` events arrive; licence check green |
+| with A | `#/book`: ~100 plates rendered at build, paged, caption + answer + share-a-guess links | `plate_open` arrives within a week of deploy |
+| next sprint | The patient eye: six-step course, shimmer, 7 % note (fix the guide's "one in twenty" to "about one in fourteen") | `ladder_step` arrives; P4 journey gains the ladder |
 | 2026-11-11 | Centre-out painting for tile patterns (the left half of textured pictures smears; TIW paints right-to-left) | P1 heart + confetti shot has no diagonal tearing; founder case #2 row fingerprint changes with a DECISIONS line |
 | 2026-11-11 | Stereo pair (left/right) export for people who cannot fuse autostereograms, and anaglyph red-cyan | P4 journey gains a "pair" step; the download is two PNGs |
 | 2026-11-18 | Sean Ellis micro-survey arrives (the FeedbackCard already carries it); check rows in `flywheel-core.feedback` | ≥1 feedback row before the building time-box ends |

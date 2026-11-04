@@ -37,8 +37,8 @@ export function SeeScreen() {
 
       <h2 className="mt-12 font-display text-title">An honest note</h2>
       <p className="mt-4">
-        Roughly one person in twenty cannot fuse stereograms at all, because their eyes do not work together
-        in the way this trick needs. It is not a matter of effort, and it says nothing about eyesight in
+        About one adult in fourteen cannot fuse stereograms at all (Chopin, Bavelier and Levi, 2019), because
+        their eyes do not work together in the way this trick needs. It is not a matter of effort, and it says nothing about eyesight in
         general. If after a few tries there is nothing, that is a fair result, and the picture is still a
         pleasant pattern.
       </p>

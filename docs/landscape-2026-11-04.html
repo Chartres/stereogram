@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stereogram — landscape and signature, 4 Nov 2026</title>
+<style>
+  :root { --paper:#f4f1ea; --paper2:#e8e3d7; --ink:#1c1a17; --soft:#5b564e; --accent:#0f5a63; --edge:#857d70; }
+  html { background:var(--paper); color:var(--ink); font: 17px/26px ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  body { margin:0; padding:24px 20px 80px; max-width: 1100px; margin-inline:auto; }
+  h1,h2,h3 { font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif; font-weight:600; }
+  h1 { font-size:28px; line-height:32px; margin:0 0 8px; }
+  h2 { font-size:20px; line-height:26px; margin:48px 0 8px; }
+  p { margin:8px 0; }
+  .lede { color:var(--soft); }
+  table { border-collapse:collapse; width:100%; font-size:15px; line-height:22px; margin-top:8px; }
+  th, td { text-align:left; vertical-align:top; padding:8px 10px; border-bottom:1px solid var(--paper2); }
+  th { font-size:13px; line-height:18px; text-transform:uppercase; letter-spacing:.06em; color:var(--soft); font-weight:600; }
+  td.y { color:var(--accent); font-weight:600; }
+  td.n { color:var(--soft); }
+  tr.us td { background:var(--paper2); }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px; margin-top:8px; }
+  .card { background:var(--paper2); border-radius:8px; padding:16px 18px; }
+  .card.default { outline:2px solid var(--accent); }
+  .card h3 { margin:0 0 6px; font-size:20px; line-height:26px; }
+  .label { font-size:13px; line-height:18px; text-transform:uppercase; letter-spacing:.06em; color:var(--soft); }
+  .tag { display:inline-block; background:var(--accent); color:var(--paper); border-radius:4px; padding:0 8px; font-size:13px; line-height:22px; margin-left:8px; vertical-align:middle; }
+  .strip { display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; }
+  .tile { width:96px; height:96px; border-radius:6px; background-size:16px 16px; border:1px solid var(--edge); }
+  .cap { font-size:13px; line-height:18px; color:var(--soft); }
+  ul { padding-left:22px; } li { margin:4px 0; }
+  a { color:var(--accent); }
+  .bar { height:10px; background:var(--accent); border-radius:3px; }
+  .bars div { display:grid; grid-template-columns: 220px 1fr 60px; align-items:center; gap:10px; margin:6px 0; font-size:15px; }
+  figure { margin:12px 0 0; }
+  svg text { font-family: ui-sans-serif, system-ui, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Stereogram — what is on the market, and what only we would build</h1>
+<p class="lede">Three research lanes, 4 Nov 2026: 20 competitors verified, 32 fringe sources, asset licences read on the source pages. Record: <code>flywheel/docs/discovery/stereogram-landscape.md</code>. Decision asked of Pavol at the bottom.</p>
+
+<h2>1. The market, side by side</h2>
+<table>
+<thead><tr><th>Tool</th><th>Since</th><th>Free, no mark</th><th>Print size</th><th>3D model library</th><th>Pattern library</th><th>Gallery</th><th>Viewing course</th><th>Explains failure</th><th>Weak spot</th></tr></thead>
+<tbody>
+<tr><td><a href="https://owl3d.com/tools/magic-eye-maker">Owl3D Magic Eye Maker</a></td><td>2026</td><td class="n">watermark</td><td class="y">3300×2400</td><td class="n">22 scenes, no library</td><td class="n">~18 presets</td><td class="n">picker only</td><td class="n">—</td><td class="n">—</td><td>inside a 3D-monitor shop; 27–50 MB model download</td></tr>
+<tr><td><a href="https://tembrica.com/en/stereo-pictures">Tembrica</a></td><td>2026</td><td class="y">yes</td><td class="n">1920 cap</td><td class="n">100 depth presets</td><td class="n">1 custom slot</td><td class="n">presets</td><td class="n">—</td><td class="n">—</td><td>Premium upsell, analytics cookies</td></tr>
+<tr><td><a href="https://killedbyapixel.github.io/stereogram/">KilledByAPixel</a></td><td>2026</td><td class="y">yes</td><td class="n">4K screen</td><td class="n">6 shapes</td><td class="y">6 kinds, tunable</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td>no privacy statement, dev-tool feel</td></tr>
+<tr><td><a href="https://tools.devcomma.com/tools/magic-eye-generator">devcomma (KR)</a></td><td>?</td><td class="y">yes</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">Easy/Normal/Hard</td><td class="n">—</td><td>quiz share links are the one good idea</td></tr>
+<tr><td><a href="https://apps.apple.com/us/app/depthweaver/id6764146054">DepthWeaver (iOS)</a></td><td>2026</td><td class="y">tips</td><td class="y">hi-res</td><td class="n">imports .obj, no library</td><td class="y">texture library</td><td class="n">presets</td><td class="n">—</td><td class="n">—</td><td>Apple only, LiDAR needs a Pro phone, 1 rating</td></tr>
+<tr><td><a href="https://www.easystereogrambuilder.com">EasyStereogramBuilder</a></td><td>≤2010</td><td class="y">yes</td><td class="n">—</td><td class="n">—</td><td class="n">mask/pattern tabs</td><td class="n">tabs</td><td class="n">—</td><td class="n">—</td><td>last touched Dec 2021, Google Analytics</td></tr>
+<tr><td><a href="https://hidden-3d.com">Hidden-3d.com</a></td><td>2007</td><td class="y">yes</td><td class="n">—</td><td class="n">—</td><td class="n">dropdown</td><td class="y">yes, sells posters</td><td class="n">—</td><td class="n">—</td><td>parts still Flash</td></tr>
+<tr><td><a href="https://github.com/gnudles/stereograma">Stereograma (desktop)</a></td><td>≤2025</td><td class="y">GPL</td><td class="n">—</td><td class="n">loads .obj</td><td class="n">—</td><td class="n">samples</td><td class="n">—</td><td class="n">—</td><td>build it yourself with Qt</td></tr>
+<tr><td><a href="https://www.magiceye.com">Magic Eye Inc.</a></td><td>1991</td><td class="n">books, posters</td><td class="y">print is the product</td><td class="n">—</td><td class="n">—</td><td class="y">image of the week</td><td class="n">—</td><td class="n">—</td><td>no tool; the trademark we must not use as a name</td></tr>
+<tr class="us"><td><strong>Stereogram (ours, today)</strong></td><td>2026</td><td class="y">yes</td><td class="y">A4 300 dpi</td><td class="n">8 shapes</td><td class="n">3 tiles + own</td><td class="n">—</td><td class="n">guide text</td><td class="n">—</td><td>today it is Owl3D with fewer scenes and no watermark</td></tr>
+<tr class="us"><td><strong>Stereogram (proposed)</strong></td><td></td><td class="y">yes</td><td class="y">A4 300 dpi</td><td class="y">~50 real sculptures, CC0, with provenance</td><td class="y">~40 Met / ambientCG / in-house tiles, with provenance</td><td class="y">a book of ~100 plates</td><td class="y">6-step orthoptic ladder</td><td class="y">7 % note, depth map one tap away</td><td>the work is a bake pipeline and licence hygiene</td></tr>
+</tbody>
+</table>
+<p class="cap">Rows verified on the pages linked; Reddit refused every fetch, so user complaints are secondhand. Full citations in the landscape record.</p>
+
+<h2>2. Where the gaps are (count of the 9 tools that have each)</h2>
+<div class="bars">
+  <div><span>Free without a watermark</span><div class="bar" style="width:66%"></div><span>6 / 9</span></div>
+  <div><span>Print-size output</span><div class="bar" style="width:33%"></div><span>3 / 9</span></div>
+  <div><span>Tunable pattern library</span><div class="bar" style="width:22%"></div><span>2 / 9</span></div>
+  <div><span>Any viewing course</span><div class="bar" style="width:11%"></div><span>1 / 9</span></div>
+  <div><span>Library of real 3D sculpture</span><div class="bar" style="width:0%"></div><span>0 / 9</span></div>
+  <div><span>Pattern provenance</span><div class="bar" style="width:0%"></div><span>0 / 9</span></div>
+  <div><span>Pre-generated gallery as a book</span><div class="bar" style="width:0%"></div><span>0 / 9</span></div>
+  <div><span>Explains why a picture failed</span><div class="bar" style="width:0%"></div><span>0 / 9</span></div>
+</div>
+
+<h2>3. Three differentiators nobody claims</h2>
+<div class="grid">
+  <div class="card default">
+    <h3>The museum's hidden figures <span class="tag">default, build first</span></h3>
+    <p class="label">from the asset lane and the founder lens · §6c kind: data</p>
+    <p>About 50 real sculptures baked to depth maps at build time: Poly Haven's bronze ray, whale and shark statues, marble bust, gothic statue, horse head (CC0); Smithsonian casts (CC0 per item); Kenney animals (CC0); Met 3D scans where CC0. About 40 backgrounds from the Met Open Access API: katagami stencils, William Morris, Iznik, <em>The Grammar of Ornament</em>; fabric and bark from ambientCG; Truchet and wallpaper-group tilings written in-house in the product's palette. Every picture prints its provenance line.</p>
+    <p class="cap">Cost: one evening of agent time, a Node bake script, no runtime 3D library (three.js would be 155 kB gzip; we ship ~3 MB of depth PNGs and ~6 MB of lazy-loaded tiles instead). Risk: licence hygiene; CI asserts each asset has a credit.</p>
+  </div>
+  <div class="card default">
+    <h3>A book of plates <span class="tag">default, with the library</span></h3>
+    <p class="label">from the London Stereoscopic Company 1862 and the Magic Eye books · the "battery of pre-generated stereograms"</p>
+    <p>~100 plates rendered at deploy time from the library, paged one per screen at <code>#/book</code>: a caption with the figure and the pattern, "find the angle" in Holbein's sense, a one-tap answer, and "make your own from this plate". Share-a-guess links carry parameters only, never the image (the geocachers' use). The first screen holds 12 plates; the rest lazy-load.</p>
+    <p class="cap">Cost: same pipeline as the library plus one screen and one journey. Metric: <code>plate_open</code>, <code>plate_answer</code>, conversion via book.</p>
+  </div>
+  <div class="card">
+    <h3>The patient eye <span class="tag">next sprint</span></h3>
+    <p class="label">from NHS orthoptics, Wheatstone 1838 "requires practice", Thimbleby 1993 shimmer, Montessori · §6c kind: method</p>
+    <p>A six-step course on the See page, staged like the orthoptists' cat → bucket → ABC/123: shallow wide sphere, a block, letters, the default, a plate from the book, a drawn one, with a relax step between and the viewer marking "seen it" themself. A screen-only shimmer toggle from the algorithm's own authors. The last rung states the honest figure: about 7 % of adults under 60 are stereoblind (Chopin et al. 2019), so our guide's "one in twenty" is corrected to "about one in fourteen".</p>
+    <p class="cap">Cost: ~150 lines, one journey. Competitors offer Easy/Normal/Hard at most.</p>
+  </div>
+</div>
+
+<h2>4. Beautiful backgrounds: what "beautiful" means here</h2>
+<p>The art-world reading of a stereogram is a magic carpet (Breedon's woven autostereogram), so the backgrounds are ornament, not neon noise. Sources with licences read on the page:</p>
+<div class="strip">
+  <div><div class="tile" style="background:repeating-linear-gradient(45deg,#1c1a17 0 3px,#f4f1ea 3px 8px)"></div><div class="cap">Katagami stencils<br>Met, CC0, 971 hits</div></div>
+  <div><div class="tile" style="background:radial-gradient(circle at 30% 30%,#0f5a63 0 18%,transparent 19%),radial-gradient(circle at 70% 70%,#857d70 0 18%,transparent 19%),#e8e3d7"></div><div class="cap">William Morris<br>Met, CC0, 266 hits</div></div>
+  <div><div class="tile" style="background:conic-gradient(from 45deg,#0f5a63 0 25%,#f4f1ea 0 50%,#a02c30 0 75%,#f4f1ea 0);background-size:24px 24px"></div><div class="cap">Iznik, Ottoman<br>Met, CC0, 117+103</div></div>
+  <div><div class="tile" style="background:repeating-linear-gradient(90deg,#5b564e 0 2px,#e8e3d7 2px 6px),repeating-linear-gradient(0deg,#5b564e 0 2px,transparent 2px 6px)"></div><div class="cap">Fabric, bark, tiles<br>ambientCG, CC0, 2,039</div></div>
+  <div><div class="tile" style="background:linear-gradient(135deg,#f4f1ea 50%,#0f5a63 50%);background-size:16px 16px"></div><div class="cap">Truchet, wallpaper groups<br>in-house, 0 kB assets</div></div>
+  <div><div class="tile" style="background:linear-gradient(#857d70,#f4f1ea 40%,#0f5a63 60%,#1c1a17)"></div><div class="cap">Earth and Moon relief<br>USGS / LOLA, public domain</div></div>
+</div>
+<p class="cap">One caveat from the asset lane, untested on real pictures: strongly periodic horizontal ornament creates false matches. The bake step measures horizontal autocorrelation and keeps mid-frequency, non-repeating tiles; the renderer already refits each tile to the strip width.</p>
+
+<h2>5. Other ideas from the fringe, parked with their source</h2>
+<ul>
+  <li><strong>Landscapes from public-domain elevation tiles</strong>: Grand Canyon, Etna, the Tatras, Tycho crater. Nobody does this. (Terrarium tiles, USGS)</li>
+  <li><strong>Every export in three versions</strong>: parallel, cross-eyed, depth map, as Young Rival did for their video, because people manage only one method.</li>
+  <li><strong>Text-only <code>.txt</code> stereogram</strong> for geocachers and puzzle makers (CacheSleuth, the Czech "Magické oko" cache).</li>
+  <li><strong>A decoder beside the generator</strong>, and the demo "a picture your AI cannot read": frontier models misread hidden shapes in Edwardsson's 2026 test.</li>
+  <li><strong>Dual-scene and animated stereograms</strong>, with the 1996 TU Wien taxonomy and the Hackaday rule (re-randomise the pattern per frame or tiles slide).</li>
+  <li><strong>Physical export</strong>: woven, knitted or laser-cut from the same depth map (Breedon; UW illusion knitting).</li>
+  <li><strong>The Dalí halo</strong>: Julesz's random-dot torus used as a saint's halo, told in the book as the first religious-art hidden figure.</li>
+</ul>
+
+<h2>6. Refused on purpose</h2>
+<ul>
+  <li>On-device AI depth estimation as the headline (Owl3D, Tembrica): a 28–50 MB model and the same product as everyone else. Users bring depth maps; the page stays deterministic.</li>
+  <li>"Magic Eye" in the product name: a live trademark. Descriptive use in copy only.</li>
+  <li>Watermarks, upsells, accounts, badges, eye-exercise claims beyond the 2013 Latvia thesis.</li>
+</ul>
+
+<h2>7. The decision</h2>
+<div class="grid">
+  <div class="card default"><h3>A — Library + book now, course next <span class="tag">default</span></h3><p>One evening. Passes the soft-launch gate with something no competitor has.</p></div>
+  <div class="card"><h3>B — Course first</h3><p>Cheapest, but leaves the product looking like Owl3D with fewer scenes.</p></div>
+  <div class="card"><h3>C — All three in one push</h3><p>About two evenings.</p></div>
+</div>
+<p class="cap">Silence picks A. Reply with one letter, or with the names of figures and ornament you want in the first fifty.</p>
+</body>
+</html>
