@@ -15,6 +15,7 @@ Landscape: flywheel `docs/discovery/stereogram-landscape.md` (4 Nov 2026).
 | Lancashire NHS orthoptics, home stereogram exercises ([link](https://www.lancsteachinghospitals.nhs.uk//media/.leaflets/6554e16b48a483.99772925.pdf)) | current | The staged sequence (cat, bucket, ABC/123, relax step) is the ladder's shape. |
 | Hans Holbein, *The Ambassadors* ([link](https://www.printmag.com/3d-visualization/holbein-to-niemann-a-500-year-old-marvel-lives/)) | 1533 | "Find the angle": the found moment is a reward for patience; every plate carries that line. |
 | Met Open Access: katagami stencils, William Morris, Iznik, *The Grammar of Ornament* ([link](https://metmuseum.github.io/)) | 19th c. and earlier | Backgrounds are real ornament with provenance, the Breedon "magic carpet" reading of the tile. |
+| Santiago Ramón y Cajal, paired random-mark messages ([link](https://pmc.ncbi.nlm.nih.gov/articles/PMC12035379/)) | c. 1870 | The hidden message for one person ("Cajal's letter") has a precedent eighty years before Julesz. |
 | Maria Montessori, control of error ([link](https://digital.library.upenn.edu/women/montessori/method/method.html)) | 1912 | The viewer marks their own "seen it"; nothing verifies, scores or nags. |
 
 ## Refused
@@ -33,6 +34,11 @@ Landscape: flywheel `docs/discovery/stereogram-landscape.md` (4 Nov 2026).
 | The museum's hidden figures | A shape picker of ~50 real sculptures (bronze ray, marble bust, gothic statue, Smithsonian casts, Kenney animals) and ~40 patterns (katagami, Morris, Iznik, Grammar of Ornament, fabric, bark, in-house tilings), each with a provenance line that prints under the picture. | Met Open Access, Smithsonian, Poly Haven; *ad fontes* | `key_action` action=`pick_figure` / `pick_pattern` with the asset id | approved 2026-11-04 |
 | A book of plates | `#/book`: ~100 pre-generated plates at deploy time, paged like a book, one plate per screen with a caption, a "find the angle" line, a one-tap answer and "make your own from this plate". Share-a-guess links carry parameters only. | London Stereoscopic Company 1862; the Magic Eye books; Holbein | `key_action` action=`plate_open`, `plate_answer`; `conversion` via=`book` | approved 2026-11-04 |
 | The patient eye | A six-step course on the See page: shallow wide sphere → bucket-like block → letters → the default → a plate from the book → a drawn one; a relax step between; shimmer toggle; the viewer marks "seen it" themself; the last rung says the 7 % figure. | Wheatstone 1838; NHS orthoptics; Thimbleby 1993; Montessori | `key_action` action=`ladder_step`; `conversion` via=`ladder` | approved 2026-11-04 |
+| Comenius's spectacles | One plate on the See page whose depth inverts between parallel and crossed viewing, with Delusion's spectacles from *Labyrinth of the World* ch. IV as the caption. | Comenius 1623 | `key_action` action=`spectacles_open` | proposed (sweep 4 Nov, rank 1) |
+| Advent Jesse book and the Mikuláš plate | 24 printable plates, one Jesse-tree symbol a day from 29 Nov, no streak; a 5 Dec plate where parallel brings the angel forward and crossed the čert. | Vyšehrad Codex c. 1085; the Czech Mikuláš | `key_action` action=`plate_open` (advent ids) | proposed (rank 2) |
+| Colophon on a Van de Graaf page | The PDF plate: 2:3 page, margins 2:3:4:6, the picture in the type area, renderer, seed, sources and licence in the foot margin. | Tschichold; private-press colophons | `key_action` action=`download` (pdf) | proposed (rank 3) |
+| Relief shelf | Cleveland's CC0 reliquary and Coptic panel, SMK's casts, as figures; reliefs bake better than statues. | Cleveland Open Access, SMK | `key_action` action=`pick_figure` | proposed (rank 4) |
+| How fine can you see depth | A calibrated stereoacuity measurement with the retest band and the pixel floor printed, labelled "not a clinical test". | ASTEROID (2019); UW virtual chinrest | `key_action` action=`acuity_done` | proposed (rank 5) |
 | Landscapes from the Earth and the Moon | Hidden reliefs from public-domain elevation tiles: Grand Canyon, Etna, Tatras, Tycho crater. | USGS 3DEP / SRTM, LRO LOLA | `key_action` action=`pick_figure` (landscape ids) | proposed, later |
 
 Status: `proposed` → `approved` (dated) → `live` → or `changed` / `reverted`.
@@ -76,3 +82,4 @@ see it, no AI-depth headline, no watermark, no trademark borrowed.
 |---|---|---|---|
 | 2026-11-04 | first proposal: patient eye / from the paper / message card | — | superseded the same evening by the landscape research |
 | 2026-11-04 | A library + book / B course first / C all three | **C, all three**, 50-minute box | "Great, all three please" (21:06 CET) |
+| 2026-11-04 | five ranked moves from the lateral sweep (`docs/IDEAS.md`) | — | awaiting review; default: 1 and 3 next |

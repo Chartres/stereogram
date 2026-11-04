@@ -9,6 +9,7 @@
 - (waiting on Pavol, default A) the library + the book of plates — `docs/SIGNATURE.md`.
 
 ## parked (`persona:?`, one signal only)
+- 45 lateral ideas with sources in `docs/IDEAS.md` (4 Nov); the five ranked there go to Pavol as signature proposals.
 - Landscapes from elevation tiles (Terrarium / USGS / LOLA). Nobody does it; no persona yet.
 - Text-only `.txt` stereogram for geocachers (CacheSleuth precedent; Czech cache GC1NT7W).
 - Three-version export (parallel / cross / depth map) per Young Rival.
