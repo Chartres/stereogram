@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.4.2 — 2026-11-05
+
+Link cards that show a stereogram. The site's card is the Discobolus hidden in an Iznik tile
+panel, with the name on a centred band that survives the square crop of iMessage and
+WhatsApp; it is a 271 KB JPEG. Every book plate has its own page, /plate/<n>/, with the plate
+itself as its card, rendered at build by the app's own renderer; the book's Share links there.
+The sitemap lists all 100 plates. Two mount-crop tiles that a bake had fetched back are out
+again, and the bake now refuses removed tiles.
+
 ## 0.4.1 — 2026-11-05
 
 On phones the main button is now "Share picture": the system share sheet with the PNG itself

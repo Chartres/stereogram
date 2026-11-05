@@ -3,6 +3,7 @@ import { track } from '@/analytics'
 import { encodeParams } from '@/domain/params'
 import { figureById, patternById } from '@/library'
 import { plateParams, plates } from '@/book/plates'
+import { platePath } from '@/book/plateMeta'
 import { FeedbackCard } from './FeedbackCard'
 import { PrintPlate } from './PrintPlate'
 import { StereogramView } from './StereogramView'
@@ -59,7 +60,8 @@ export function BookScreen({ n }: { n: number }) {
   const makeHref = `/?${encodeParams(params)}`
 
   async function share() {
-    const url = `${location.origin}/#/book/${plate.n}`
+    // a real path, so WhatsApp and iMessage show this plate as the card (hash links cannot)
+    const url = `${location.origin}${platePath(plate.n)}`
     // the system sheet where there is one (phones), else copy the link
     if (navigator.share) {
       try {

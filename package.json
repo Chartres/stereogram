@@ -6,7 +6,7 @@
   "description": "Free stereogram (Magic Eye) generator in the browser: shapes, text, a drawn or uploaded depth map; random dots or a pattern; print-size PNG; no account.",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && node scripts/prerender-plates.mjs",
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",

@@ -15,7 +15,7 @@
 ## How to use it
 - https://stereogram.dravec.org/ — make one; the first picture appears without any input.
 - https://stereogram.dravec.org/?text=HELLO — a link with parameters opens that exact picture (shape, text, seed, size, pattern, depth, mode).
-- https://stereogram.dravec.org/#/book/1 — a book of 100 plates, one per screen, with the answer one tap away and a link to make your own from any plate.
+- https://stereogram.dravec.org/plate/1/ to /plate/100/ — a book of 100 plates (each its own page), one per screen, with the answer one tap away and a link to make your own from any plate.
 - https://stereogram.dravec.org/#/see — how to see a stereogram, a six-step practice ladder, and the honest note that about one adult in fourteen cannot.
 
 ## Data & provenance

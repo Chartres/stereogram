@@ -61,3 +61,10 @@ describe('figures in params', () => {
     expect(d.data[50 * 200 + 10]).toBe(0)
   })
 })
+
+describe('refused tiles stay out', () => {
+  it('no mount crop or non-pattern hit removed by a person is back in the library', () => {
+    const refused = ['katagami-61835', 'katagami-61838', 'floral-207665', 'floral-436525', 'floral-437999', 'floral-73142', 'floral-76988', 'floral-910072']
+    for (const id of refused) expect(prov.patterns.some((p) => p.id === id), id).toBe(false)
+  })
+})

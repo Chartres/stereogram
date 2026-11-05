@@ -34,7 +34,7 @@ export default defineConfig({
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,woff2,png}'],
         // the ornament tiles are 7.6 MB: fetched on first use and kept, not precached on first visit
-        globIgnores: ['**/library/patterns/**'],
+        globIgnores: ['**/library/patterns/**', '**/og/**', '**/plate/**'],
         navigateFallback: '/index.html',
         cleanupOutdatedCaches: true,
         runtimeCaching: [

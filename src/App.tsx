@@ -5,8 +5,10 @@ import { AcuityScreen } from './components/AcuityScreen'
 import { BookScreen } from './components/BookScreen'
 import { MakeScreen } from './components/MakeScreen'
 import { SeeScreen } from './components/SeeScreen'
+import { plateFromPath } from './book/plateMeta'
 
 function routeFromHash(): Route {
+  if (plateFromPath(location.pathname) && !location.hash) return 'book'
   if (location.hash.startsWith('#/see')) return 'see'
   if (location.hash.startsWith('#/book')) return 'book'
   if (location.hash.startsWith('#/depth')) return 'acuity'
@@ -15,7 +17,8 @@ function routeFromHash(): Route {
 
 function plateFromHash(): number {
   const m = location.hash.match(/^#\/book\/(\d+)/)
-  return m ? Number(m[1]) : 1
+  if (m) return Number(m[1])
+  return plateFromPath(location.pathname) ?? 1
 }
 
 export function App() {

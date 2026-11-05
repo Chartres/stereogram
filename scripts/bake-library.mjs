@@ -311,6 +311,10 @@ async function bakeFigures() {
 }
 
 // ---------- Met → tiles ----------
+// Tiles a person removed stay removed: a re-run must not fetch them back (4–5 Nov 2026: the floral
+// bake re-downloaded two mount crops that had been deleted, and plate 1 used one of them).
+const REFUSED = new Set(['katagami-61835', 'katagami-61838', 'floral-207665', 'floral-436525', 'floral-437999', 'floral-73142', 'floral-76988', 'floral-910072'])
+
 async function bakePatterns() {
   for (const [q, n, tag] of PATTERNS) {
     let hits
@@ -321,6 +325,7 @@ async function bakePatterns() {
     for (const oid of hits.objectIDs || []) {
       if (taken >= n) break
       const id = `${tag}-${oid}`
+      if (REFUSED.has(id)) continue
       const file = `${OUT_P}/${id}.png`
       if (existsSync(file)) { taken++; continue }
       try {
