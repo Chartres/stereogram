@@ -43,6 +43,17 @@ const ICONS = {
   print: 'M6 9V3h12v6M6 17H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2M6 14h12v7H6z',
   shuffle: 'M3 7h4l10 10h4M17 5l4 2-4 2M3 17h4l2-2M13 9l4-4h4M17 19l4-2-4-2',
   eye: 'M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12zM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6z',
+  download: 'M12 3v12M7 10l5 5 5-5M4 19h16',
+}
+
+/** True where the system share sheet takes files (iOS, Android, some desktops): there it is the main action. */
+export function canShareFiles(nav: Navigator | undefined = typeof navigator !== 'undefined' ? navigator : undefined): boolean {
+  try {
+    const probe = new File([new Uint8Array([0])], 'probe.png', { type: 'image/png' })
+    return !!nav?.canShare?.({ files: [probe] })
+  } catch {
+    return false
+  }
 }
 
 export function MakeScreen() {
@@ -55,6 +66,8 @@ export function MakeScreen() {
   const [reveal, setReveal] = useState(false)
   const [note, setNote] = useState<string | null>(null)
   const [printSrc, setPrintSrc] = useState<string | null>(null)
+  const [shareMain] = useState(() => canShareFiles())
+  const prepared = useRef<Promise<Blob> | null>(null)
   const frame = useRef<HTMLDivElement>(null)
   const canvas = useRef<HTMLCanvasElement>(null)
   const tileFile = useRef<HTMLInputElement>(null)
@@ -95,6 +108,28 @@ export function MakeScreen() {
   function flash(msg: string) {
     setNote(msg)
     setTimeout(() => setNote(null), 4000)
+  }
+  // Share is the main action on phones. The PNG is prepared on pointer-down so the share call
+  // stays inside Safari's user-activation window; a refusal falls back to the download.
+  function prepare() {
+    if (canvas.current) prepared.current = canvasToBlob(canvas.current)
+  }
+  async function sharePicture() {
+    if (!canvas.current) return
+    const blob = await (prepared.current ?? canvasToBlob(canvas.current))
+    prepared.current = null
+    const file = new File([blob], fileName, { type: 'image/png' })
+    const link = isShareable(params) ? `${location.origin}/?${encodeParams(params)}` : location.origin
+    const credit = provenanceLine(params)
+    const text = `A stereogram${credit ? ` (${credit})` : ''}. Look through it until the two dots become three. ${link}`
+    try {
+      await navigator.share({ files: [file], title: 'Stereogram', text })
+      track('key_action', { action: 'share', scene: sceneName, pattern: params.pattern })
+      conversion('share')
+    } catch (e) {
+      if ((e as DOMException)?.name === 'AbortError') return // the person closed the sheet
+      download()
+    }
   }
   async function download() {
     if (!canvas.current) return
@@ -183,10 +218,21 @@ export function MakeScreen() {
       </p>
 
       <div className="mt-2 flex flex-wrap gap-2">
-        <button type="button" onClick={download} className="min-h-12 min-w-0 basis-full whitespace-nowrap rounded-md bg-accent px-4 font-display text-title text-paper sm:basis-auto sm:flex-1">
-          Download PNG
-        </button>
-        <button type="button" onClick={copyImage} className={icon} aria-label="Copy picture"><Svg d={ICONS.copy} title="Copy picture" /></button>
+        {shareMain ? (
+          <>
+            <button type="button" onPointerDown={prepare} onClick={sharePicture} className="min-h-12 min-w-0 basis-full whitespace-nowrap rounded-md bg-accent px-4 font-display text-title text-paper sm:basis-auto sm:flex-1">
+              Share picture
+            </button>
+            <button type="button" onClick={download} className={icon} aria-label="Download PNG"><Svg d={ICONS.download} title="Download PNG" /></button>
+          </>
+        ) : (
+          <>
+            <button type="button" onClick={download} className="min-h-12 min-w-0 basis-full whitespace-nowrap rounded-md bg-accent px-4 font-display text-title text-paper sm:basis-auto sm:flex-1">
+              Download PNG
+            </button>
+            <button type="button" onClick={copyImage} className={icon} aria-label="Copy picture"><Svg d={ICONS.copy} title="Copy picture" /></button>
+          </>
+        )}
         <button type="button" onClick={copyLink} disabled={!isShareable(params)} className={`${icon} disabled:opacity-40`} aria-label="Copy link"><Svg d={ICONS.link} title="Copy link" /></button>
         <button type="button" onClick={printPlate} className={icon} aria-label="Print plate"><Svg d={ICONS.print} title="Print plate" /></button>
         <button type="button" onClick={() => set('seed', randomSeed())} className={icon} aria-label="Shuffle"><Svg d={ICONS.shuffle} title="Shuffle" /></button>

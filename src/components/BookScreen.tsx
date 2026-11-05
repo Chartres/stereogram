@@ -60,6 +60,16 @@ export function BookScreen({ n }: { n: number }) {
 
   async function share() {
     const url = `${location.origin}/#/book/${plate.n}`
+    // the system sheet where there is one (phones), else copy the link
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: `Stereogram, plate ${plate.n}`, text: 'Look through it until the two dots become three.', url })
+        track('key_action', { action: 'plate_share', plate: plate.n, via: 'sheet' })
+        return
+      } catch (e) {
+        if ((e as DOMException)?.name === 'AbortError') return
+      }
+    }
     try {
       await navigator.clipboard.writeText(url)
       setNote('Link copied. The picture is not in the link; only its recipe.')

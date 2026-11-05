@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.4.1 — 2026-11-05
+
+On phones the main button is now "Share picture": the system share sheet with the PNG itself
+(save to Photos, Messages, WhatsApp, AirDrop, print), the link in the text. Download stays one
+tap away as an icon, and is still the main button where the browser cannot share files. The
+book's share icon uses the same sheet for a plate's link.
+
 ## 0.4.0 — 2026-11-04
 
 Book, See and the depth test take the Make page's shape (one slab, icon actions, reading folded

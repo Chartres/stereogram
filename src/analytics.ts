@@ -16,8 +16,8 @@ export function track(event: string, props?: Record<string, unknown>): void {
 export const feedback = fw.feedback
 export const logError = fw.logError
 
-/** The aha moment: the person took a stereogram away (download or copy). Once per session. */
-export function conversion(via: 'download' | 'copy' | 'ladder' | 'book'): void {
+/** The aha moment: the person took a stereogram away (share, download or copy). Once per session. */
+export function conversion(via: 'download' | 'copy' | 'share' | 'ladder' | 'book'): void {
   try {
     if (sessionStorage.getItem('fw:converted')) return
     sessionStorage.setItem('fw:converted', '1')

@@ -51,9 +51,9 @@ pins this). A visual change ends with the e2e shots re-read by eye, not just gre
 
 ## Analytics (Common Platform)
 Vendored client: `src/platform/flywheel-client.ts`. Fire the shared taxonomy only: `page_view` (per
-route), `key_action` with an `action` prop (`download`, `copy_image`, `share_link`, `preset`,
-`upload_depth`, `upload_tile`, `reveal`), `conversion` (the aha moment: a picture taken away by download
-or copy, once per session; `activation_event: "conversion"` in the portfolio record), `feedback_given`,
+route), `key_action` with an `action` prop (`share`, `download`, `copy_image`, `share_link`, `preset`,
+`upload_depth`, `upload_tile`, `reveal`), `conversion` (the aha moment: a picture taken away by share, download
+or copy, once per session, `via` says which; `activation_event: "conversion"` in the portfolio record), `feedback_given`,
 `error`. Signals contract (flywheel `docs/standards/signals-contract.md`): send only names on
 `src/platform/flywheel-events.json` (the contract test fails otherwise; a new name goes to the
 flywheel allow-list first), and main's CI runs `scripts/check-analytics.mjs dist`.

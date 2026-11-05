@@ -182,3 +182,34 @@ test('desktop: default page and every shape render', async ({ page }) => {
   await rendered(page)
   await shot(page, 'desktop-heart-confetti')
 })
+
+test('P12 Marek on a phone: the main button shares the picture itself, with the link in the text', async ({ page }) => {
+  // emulate a phone's share sheet: canShare accepts files, share records what it was given
+  await page.addInitScript(() => {
+    const w = window as unknown as { __shared?: { files: { name: string; type: string; size: number }[]; text?: string } }
+    Object.defineProperty(navigator, 'canShare', { value: (d: { files?: File[] }) => !!d.files?.length, configurable: true })
+    Object.defineProperty(navigator, 'share', {
+      value: async (d: { files?: File[]; text?: string }) => {
+        w.__shared = { files: (d.files ?? []).map((f) => ({ name: f.name, type: f.type, size: f.size })), text: d.text }
+      },
+      configurable: true,
+    })
+  })
+  await page.setViewportSize({ width: 390, height: 844 })
+  await page.goto('/?shape=heart&seed=42')
+  await rendered(page)
+  const share = page.getByRole('button', { name: 'Share picture' })
+  await expect(share).toBeVisible()
+  const box = (await share.boundingBox())!
+  expect(box.y + box.height).toBeLessThanOrEqual(844)
+  await expect(page.getByRole('button', { name: 'Download PNG' })).toBeVisible() // still one tap away, as an icon
+  await share.click()
+  const shared = await page.waitForFunction(() => (window as unknown as { __shared?: unknown }).__shared)
+  const got = (await shared.jsonValue()) as { files: { name: string; type: string; size: number }[]; text: string }
+  expect(got.files).toHaveLength(1)
+  expect(got.files[0].type).toBe('image/png')
+  expect(got.files[0].name).toMatch(/^stereogram-heart-42\.png$/)
+  expect(got.files[0].size).toBeGreaterThan(1000)
+  expect(got.text).toContain('shape=heart')
+  await shot(page, 'persona-p12-share-main')
+})
