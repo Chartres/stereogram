@@ -47,6 +47,12 @@ pins this). A visual change ends with the e2e shots re-read by eye, not just gre
   (hub workflow `connect-pages`, slug `stereogram`); no deploy job and no Cloudflare secrets here.
   Platform env on Pages and on this repo's Actions: `VITE_SUPABASE_URL`, `VITE_SUPABASE_PUBLISHABLE_KEY`.
 - After the live URL serves the new commit: `~/my-git/flywheel/scripts/release-tag.sh deploy` (FLYWHEEL-STANDARD §5).
+  Wait on content, not on the deployment list: a deployment appears in `wrangler pages deployment
+  list` while it is still building, and its URL answers "Deployment Not Found" until it is done
+  (5 Nov: a release was read back too early and looked broken). Poll a file this commit changed on
+  `https://<deployment-id>.stereogram.pages.dev/`, then read the custom domain back with `?rb=<n>`.
+- Link cards: every plate has /plate/<n>/ with its own og:image, rendered by `scripts/prerender-plates.mjs`
+  during `npm run build`. Unfurlers cache a URL's card; check a changed card with `?v=2`.
 - Bump `VERSION` + `CHANGELOG.md` and `public/sitemap.xml` `lastmod` in the commit that changes user-visible content.
 
 ## Analytics (Common Platform)
