@@ -19,10 +19,10 @@ function rungs(): Rung[] {
   const fig = FEATURED_FIRST[0]
   const pat = PATTERNS[0]
   return [
-    { title: '1 · A shallow ball', hint: 'Wide strips, little depth. Look through the page until the two dots become three.', params: { scene: { kind: 'shape', shape: 'sphere' }, depth: 0.12, eyeSeparation: 200 } },
-    { title: '2 · A block of stairs', hint: 'Flat steps are easier to lock onto than curves. Hold the middle dot steady.', params: { scene: { kind: 'shape', shape: 'stairs' }, depth: 0.18, eyeSeparation: 190 } },
-    { title: '3 · Letters', hint: 'Large letters, like the orthoptists’ ABC card. Read them once they rise.', params: { scene: { kind: 'text', text: 'ABC' }, depth: 0.25, eyeSeparation: 180 } },
-    { title: '4 · The default', hint: 'Eye separation 180 px, depth of field one third: the 1994 paper’s own numbers.', params: { scene: { kind: 'shape', shape: 'sphere' }, depth: 1 / 3, eyeSeparation: 180 } },
+    { title: '1 · A shallow ball', hint: 'Wide strips, little depth. Look through the page until the two dots become three.', params: { pattern: 'dots', scene: { kind: 'shape', shape: 'sphere' }, depth: 0.12, eyeSeparation: 200 } },
+    { title: '2 · A block of stairs', hint: 'Flat steps are easier to lock onto than curves. Hold the middle dot steady.', params: { pattern: 'dots', scene: { kind: 'shape', shape: 'stairs' }, depth: 0.18, eyeSeparation: 190 } },
+    { title: '3 · Letters', hint: 'Large letters, like the orthoptists’ ABC card. Read them once they rise.', params: { pattern: 'dots', scene: { kind: 'text', text: 'ABC' }, depth: 0.25, eyeSeparation: 180 } },
+    { title: '4 · The default', hint: 'Eye separation 180 px, depth of field one third: the 1994 paper’s own numbers.', params: { pattern: 'dots', scene: { kind: 'shape', shape: 'sphere' }, depth: 1 / 3, eyeSeparation: 180 } },
     { title: '5 · A plate from the book', hint: fig && pat ? `${fig.title} hidden in ornament from The Met.` : 'A sculpture hidden in ornament.', params: fig && pat ? { scene: { kind: 'figure', id: fig.id }, pattern: `lib:${pat.id}`, depth: 1 / 3 } : { scene: { kind: 'shape', shape: 'torus' }, depth: 1 / 3 } },
     { title: '6 · Deep and narrow', hint: 'The hardest rung: narrow strips, deep relief, colour.', params: { scene: { kind: 'shape', shape: 'torus' }, pattern: 'color', depth: 0.45, eyeSeparation: 140 } },
   ]

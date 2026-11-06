@@ -5,11 +5,13 @@
 
 /** ISO/IEC 7810 ID-1 card width, the ruler everyone has. */
 export const CARD_MM = 85.6
+/** Its short side: on a phone the long side is wider than the screen, so the card stands upright. */
+export const CARD_SHORT_MM = 53.98
 /** The blind spot sits about 13.5° temporal of fixation (UW "virtual chinrest", Li et al. 2020). */
 export const BLIND_SPOT_DEG = 13.5
 const ARCSEC = Math.PI / 180 / 3600
 
-export const pxPerMm = (cardWidthPx: number) => cardWidthPx / CARD_MM
+export const pxPerMm = (cardWidthPx: number, mm: number = CARD_MM) => cardWidthPx / mm
 
 /** Viewing distance from the fixation→vanish separation on screen. */
 export function distanceMm(separationPx: number, pxPerMmValue: number): number {

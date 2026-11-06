@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { track } from '@/analytics'
-import { arcsecToPx, band, CARD_MM, distanceMm, floors, pxPerMm, startStaircase, step, threshold, type Staircase } from '@/domain/acuity'
+import { arcsecToPx, band, CARD_MM, CARD_SHORT_MM, distanceMm, floors, pxPerMm, startStaircase, step, threshold, type Staircase } from '@/domain/acuity'
 import { mulberry32 } from '@/domain/prng'
 import { FeedbackCard } from './FeedbackCard'
 
@@ -27,6 +27,9 @@ export function AcuityScreen() {
   const [stage, setStage] = useState<Stage>('card')
   const [cardPx, setCardPx] = useState<number>(() => readNum('acuity:cardPx') ?? 320)
   const [ppm, setPpm] = useState<number | null>(() => readNum('acuity:ppm'))
+  // a card's long side (85.6 mm) is wider than a phone screen, so phones measure the short side upright
+  const [upright] = useState(() => typeof window !== 'undefined' && window.innerWidth < 600)
+  const cardMm = upright ? CARD_SHORT_MM : CARD_MM
   const [dist, setDist] = useState<number | null>(null)
   const [stair, setStair] = useState<Staircase>(startStaircase)
   const [trialSeed, setTrialSeed] = useState(1)
@@ -39,7 +42,7 @@ export function AcuityScreen() {
   }, [])
 
   function confirmCard() {
-    const p = pxPerMm(cardPx)
+    const p = pxPerMm(cardPx, cardMm)
     setPpm(p)
     try {
       localStorage.setItem('acuity:cardPx', String(cardPx))
@@ -86,10 +89,17 @@ export function AcuityScreen() {
       {stage === 'card' && (
         <section className="mt-12">
           <h2 className="font-display text-title">1 · A bank card against the screen</h2>
-          <p className="mt-2 text-ink-soft">Hold any ID-1 card ({CARD_MM} mm wide) against the box and drag until they match.</p>
-          <div data-testid="card-box" className="mt-4 h-14 rounded-sm bg-accent" style={{ width: cardPx }} />
+          <p className="mt-2 text-ink-soft">
+            Lay a bank or ID card flat on the screen,{' '}
+            {upright ? <strong>standing upright (portrait), short side across</strong> : <strong>lying on its long side (landscape)</strong>}, with its left
+            edge on the box's left edge. Drag the slider until the box is exactly as wide as the card ({cardMm} mm).
+          </p>
+          <div data-testid="card-box" className="relative mt-4 rounded-[10px] bg-accent" style={{ width: cardPx, aspectRatio: upright ? '53.98 / 85.6' : '85.6 / 53.98' }}>
+            <div className={`absolute rounded-[3px] bg-paper/70 ${upright ? 'left-[30%] top-[9%] h-[14%] w-[22%]' : 'left-[9%] top-[30%] h-[22%] w-[14%]'}`} aria-hidden="true" />
+            <span className="absolute bottom-2 right-3 text-label uppercase tracking-wide text-paper">{upright ? 'short side ↔' : 'long side ↔'}</span>
+          </div>
           <input type="range" aria-label="Card width" min={160} max={Math.min(700, Math.floor(window.innerWidth * 0.9))} value={cardPx} onChange={(e) => setCardPx(Number(e.target.value))} />
-          <p className={label}>{cardPx} px for {CARD_MM} mm → {pxPerMm(cardPx).toFixed(2)} px per mm</p>
+          <p className={label}>{cardPx} px for {cardMm} mm → {pxPerMm(cardPx, cardMm).toFixed(2)} px per mm</p>
           <button type="button" className={`${slab} mt-4`} onClick={confirmCard}>
             It matches
           </button>

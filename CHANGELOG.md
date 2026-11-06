@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.4.3 — 2026-11-06
+
+From Pavol's desktop pass: the page opens on the Discobolus hidden in an Iznik tile panel; the
+navigation sits at the top on desktops (bottom on phones); the figure and pattern strips have
+arrows for a mouse; the depth test's card step says how to hold the card and, on phones, measures
+its short side upright, because the long side does not fit; the drawing brush starts smaller.
+
 ## 0.4.2 — 2026-11-05
 
 Link cards that show a stereogram. The site's card is the Discobolus hidden in an Iznik tile

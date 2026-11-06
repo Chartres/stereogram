@@ -6,7 +6,7 @@ const W = 480
 /** Paint a depth map with a soft brush: white is near, black is far. Emits a DepthMap on every stroke. */
 export function DepthPainter({ aspect, onChange }: { aspect: number; onChange: (d: DepthMap) => void }) {
   const ref = useRef<HTMLCanvasElement>(null)
-  const [radius, setRadius] = useState(40)
+  const [radius, setRadius] = useState(18)
   const [height, setHeight] = useState(1)
   const drawing = useRef(false)
   const H = Math.max(80, Math.round(W / aspect))

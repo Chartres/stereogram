@@ -5,6 +5,9 @@ describe('stereoacuity arithmetic', () => {
   it('a card 324 px wide on a 96-dpi screen is 3.78 px/mm', () => {
     expect(pxPerMm(324)).toBeCloseTo(3.785, 2)
   })
+  it('on a phone the card stands upright: its 53.98 mm short side at 345 px is 6.39 px/mm', () => {
+    expect(pxPerMm(345, 53.98)).toBeCloseTo(6.39, 2)
+  })
   it('blind spot 450 px from fixation at 3.78 px/mm puts the eye about 50 cm away', () => {
     expect(distanceMm(450, 3.785)).toBeCloseTo(495, -1)
   })

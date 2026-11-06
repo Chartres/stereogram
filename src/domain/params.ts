@@ -66,15 +66,21 @@ export const LIMITS = {
   text: 60,
 }
 
+// The landing picture (Pavol, 6 Nov: "start not with just a sphere but with one of the nicest
+// figures, and a nicer pattern"): the Discobolus in an Iznik tile panel, the same pair as the
+// site's link card. Falls back to the sphere on random dots if the library lacks either.
+const LANDING_FIGURE = 'smk_discobolus'
+const LANDING_TILE = 'iznik-447013'
+
 export const DEFAULT_PARAMS: Params = {
-  scene: { kind: 'shape', shape: 'sphere' }, // founder case #4: a bare link is the default sphere
+  scene: FIGURE_IDS.includes(LANDING_FIGURE) ? { kind: 'figure', id: LANDING_FIGURE } : { kind: 'shape', shape: 'sphere' }, // founder case #4
   width: 960,
   height: 600,
   eyeSeparation: 180,
   depth: 1 / 3,
   mode: 'parallel',
   hiddenSurface: true,
-  pattern: 'dots',
+  pattern: PATTERN_IDS.includes(LANDING_TILE) ? `lib:${LANDING_TILE}` : 'dots',
   density: 0.5,
   seed: 1994,
   helpers: true,

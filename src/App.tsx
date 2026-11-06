@@ -46,7 +46,7 @@ export function App() {
 
   return (
     <>
-      {route === 'see' ? <SeeScreen /> : route === 'book' ? <BookScreen n={plate} /> : route === 'acuity' ? <AcuityScreen /> : <MakeScreen />}
+      <div className="sm:pt-14">{route === 'see' ? <SeeScreen /> : route === 'book' ? <BookScreen n={plate} /> : route === 'acuity' ? <AcuityScreen /> : <MakeScreen />}</div>
       <BottomNav route={route} />
     </>
   )

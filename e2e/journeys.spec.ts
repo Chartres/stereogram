@@ -56,7 +56,7 @@ test('P2 Lenka: downloads an A4 print at 300 dpi', async ({ page }) => {
   const dl = page.waitForEvent('download')
   await page.getByRole('button', { name: 'Download PNG' }).click()
   const file = await dl
-  expect(file.suggestedFilename()).toMatch(/^stereogram-sphere-\d+\.png$/)
+  expect(file.suggestedFilename()).toMatch(/^stereogram-smk_discobolus-\d+\.png$/)
   const buf = await (await import('node:fs/promises')).readFile(await file.path())
   expect(pngSize(buf)).toEqual({ width: 3508, height: 2480 })
   await shot(page, 'persona-p2-print')
@@ -174,6 +174,7 @@ test('desktop: default page and every shape render', async ({ page }) => {
   await page.goto('/')
   await rendered(page)
   await shot(page, 'desktop-make', true)
+  await page.getByRole('button', { name: 'Shape', exact: true }).click()
   for (const shape of ['torus', 'pyramid', 'ripple', 'stairs', 'hills', 'heart']) {
     await page.locator(`[role=radiogroup][aria-label="Shape"] [data-id="${shape}"]`).click()
     await rendered(page)
@@ -212,4 +213,20 @@ test('P12 Marek on a phone: the main button shares the picture itself, with the 
   expect(got.files[0].size).toBeGreaterThan(1000)
   expect(got.text).toContain('shape=heart')
   await shot(page, 'persona-p12-share-main')
+})
+
+test('P13 Pavol at a desktop: lands on a figure in ornament, nav at the top, the strips page with arrows', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 })
+  await page.goto('/')
+  await rendered(page)
+  await expect(page.getByTestId('provenance')).toContainText('Discobolus')
+  expect(await page.evaluate(() => window.scrollY), 'the page must not jump down to the strip on load').toBe(0)
+  await expect(page.getByTestId('provenance')).toContainText('The Met')
+  const nav = (await page.getByRole('navigation', { name: 'Main' }).boundingBox())!
+  expect(nav.y).toBeLessThan(10) // at the top on a desktop
+  const strip = page.locator('[role=radiogroup][aria-label="Figure"]')
+  const before = await strip.evaluate((el) => el.scrollLeft)
+  await page.getByRole('button', { name: 'Scroll Figure right' }).click()
+  await expect.poll(() => strip.evaluate((el) => el.scrollLeft)).toBeGreaterThan(before + 100)
+  await shot(page, 'persona-p13-desktop')
 })

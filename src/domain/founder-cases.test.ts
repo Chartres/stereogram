@@ -27,7 +27,9 @@ describe('founder cases', () => {
     for (let x = 0; x + far < far * 4; x++) expect(img.data[x * 4]).toBe(img.data[(x + far) * 4])
   })
 
-  it('#4 a shared link with no parameters is the default sphere', () => {
+  it('#4 a shared link with no parameters is the landing picture: the Discobolus in Iznik ornament', () => {
+    expect(DEFAULT_PARAMS.scene).toEqual({ kind: 'figure', id: 'smk_discobolus' })
+    expect(DEFAULT_PARAMS.pattern).toBe('lib:iznik-447013')
     expect(decodeParams('')).toEqual(DEFAULT_PARAMS)
   })
 })

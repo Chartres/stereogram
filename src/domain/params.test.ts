@@ -19,7 +19,7 @@ describe('params ↔ link', () => {
     expect(p.eyeSeparation).toBe(DEFAULT_PARAMS.eyeSeparation)
     expect(p.depth).toBe(0.7)
     expect(p.scene).toEqual(DEFAULT_PARAMS.scene)
-    expect(p.pattern).toBe('dots')
+    expect(p.pattern).toBe(DEFAULT_PARAMS.pattern)
     expect(p.seed).toBe(999_999_999)
     expect(p.mode).toBe('parallel')
   })

@@ -199,8 +199,8 @@ export function MakeScreen() {
 
   return (
     <main className="mx-auto max-w-5xl overflow-x-hidden px-4 pb-24 pt-2">
-      <header className="flex items-baseline justify-between">
-        <h1 className="font-display text-title">Stereogram</h1>
+      <header className="flex items-baseline justify-between sm:justify-end">
+        <h1 className="font-display text-title sm:sr-only">Stereogram</h1>
         <FeedbackCard context="make" />
       </header>
 
