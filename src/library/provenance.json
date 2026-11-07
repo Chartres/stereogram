@@ -564,36 +564,6 @@
   ],
   "patterns": [
     {
-      "id": "coptic-443300",
-      "title": "Coptic Textile Fragment",
-      "file": "/library/patterns/coptic-443300.png",
-      "source": "The Metropolitan Museum of Art, Open Access",
-      "licence": "CC0",
-      "url": "https://www.metmuseum.org/art/collection/search/443300",
-      "date": "late 3rd–5th century",
-      "credit": "Coptic Textile Fragment, late 3rd–5th century, The Met, CC0"
-    },
-    {
-      "id": "coptic-444296",
-      "title": "Vertical Band from a Tunic",
-      "file": "/library/patterns/coptic-444296.png",
-      "source": "The Metropolitan Museum of Art, Open Access",
-      "licence": "CC0",
-      "url": "https://www.metmuseum.org/art/collection/search/444296",
-      "date": "7th century",
-      "credit": "Vertical Band from a Tunic, 7th century, The Met, CC0"
-    },
-    {
-      "id": "coptic-446011",
-      "title": "Coptic Textile Fragment with Image of a Goddess",
-      "file": "/library/patterns/coptic-446011.png",
-      "source": "The Metropolitan Museum of Art, Open Access",
-      "licence": "CC0",
-      "url": "https://www.metmuseum.org/art/collection/search/446011",
-      "date": "late 3rd–4th century",
-      "credit": "Coptic Textile Fragment with Image of a Goddess, late 3rd–4th century, The Met, CC0"
-    },
-    {
       "id": "floral-125953",
       "title": "Kimono",
       "file": "/library/patterns/floral-125953.png",
@@ -604,26 +574,6 @@
       "credit": "Kimono, 19th century, The Met, CC0"
     },
     {
-      "id": "floral-13608",
-      "title": "Embroidered coverlet",
-      "file": "/library/patterns/floral-13608.png",
-      "source": "The Metropolitan Museum of Art, Open Access",
-      "licence": "CC0",
-      "url": "https://www.metmuseum.org/art/collection/search/13608",
-      "date": "ca. 1720",
-      "credit": "Embroidered coverlet, ca. 1720, The Met, CC0"
-    },
-    {
-      "id": "floral-13612",
-      "title": "Embroidered bed hangings",
-      "file": "/library/patterns/floral-13612.png",
-      "source": "The Metropolitan Museum of Art, Open Access",
-      "licence": "CC0",
-      "url": "https://www.metmuseum.org/art/collection/search/13612",
-      "date": "ca. 1760–75",
-      "credit": "Embroidered bed hangings, ca. 1760–75, The Met, CC0"
-    },
-    {
       "id": "floral-13869",
       "title": "Chintz appliquéd quilt",
       "file": "/library/patterns/floral-13869.png",
@@ -632,16 +582,6 @@
       "url": "https://www.metmuseum.org/art/collection/search/13869",
       "date": "ca. 1835–40",
       "credit": "Chintz appliquéd quilt, ca. 1835–40, The Met, CC0"
-    },
-    {
-      "id": "floral-13874",
-      "title": "Chintz appliquéd quilt",
-      "file": "/library/patterns/floral-13874.png",
-      "source": "The Metropolitan Museum of Art, Open Access",
-      "licence": "CC0",
-      "url": "https://www.metmuseum.org/art/collection/search/13874",
-      "date": "ca. 1820–30",
-      "credit": "Chintz appliquéd quilt, ca. 1820–30, The Met, CC0"
     },
     {
       "id": "floral-16359",
@@ -672,16 +612,6 @@
       "url": "https://www.metmuseum.org/art/collection/search/221867",
       "date": "ca. 1775, patched, quilted and reassembled in current form ca. 1875",
       "credit": "Floral Chintz Quilt, ca. 1775, patched, quilted and reassembled in current form ca. 1875, The Met, CC0"
-    },
-    {
-      "id": "floral-228211",
-      "title": "Embroidered band sampler",
-      "file": "/library/patterns/floral-228211.png",
-      "source": "The Metropolitan Museum of Art, Open Access",
-      "licence": "CC0",
-      "url": "https://www.metmuseum.org/art/collection/search/228211",
-      "date": "17th century",
-      "credit": "Embroidered band sampler, 17th century, The Met, CC0"
     },
     {
       "id": "floral-285343",
@@ -732,16 +662,6 @@
       "url": "https://www.metmuseum.org/art/collection/search/445265",
       "date": "16th century",
       "credit": "Brocade, 16th century, The Met, CC0"
-    },
-    {
-      "id": "floral-447418",
-      "title": "Brocade",
-      "file": "/library/patterns/floral-447418.png",
-      "source": "The Metropolitan Museum of Art, Open Access",
-      "licence": "CC0",
-      "url": "https://www.metmuseum.org/art/collection/search/447418",
-      "date": "ca. 1600",
-      "credit": "Brocade, ca. 1600, The Met, CC0"
     },
     {
       "id": "floral-447741",
@@ -894,36 +814,6 @@
       "credit": "Tile Panel, early 17th century, The Met, CC0"
     },
     {
-      "id": "katagami-53913",
-      "title": "Horse trapping",
-      "file": "/library/patterns/katagami-53913.png",
-      "source": "The Metropolitan Museum of Art, Open Access",
-      "licence": "CC0",
-      "url": "https://www.metmuseum.org/art/collection/search/53913",
-      "date": "19th century",
-      "credit": "Horse trapping, 19th century, The Met, CC0"
-    },
-    {
-      "id": "katagami-64388",
-      "title": "Stencil with Pattern of Seascape on White Ground",
-      "file": "/library/patterns/katagami-64388.png",
-      "source": "The Metropolitan Museum of Art, Open Access",
-      "licence": "CC0",
-      "url": "https://www.metmuseum.org/art/collection/search/64388",
-      "date": "19th century",
-      "credit": "Stencil with Pattern of Seascape on White Ground, 19th century, The Met, CC0"
-    },
-    {
-      "id": "katagami-65078",
-      "title": "Stencil",
-      "file": "/library/patterns/katagami-65078.png",
-      "source": "The Metropolitan Museum of Art, Open Access",
-      "licence": "CC0",
-      "url": "https://www.metmuseum.org/art/collection/search/65078",
-      "date": "19th century",
-      "credit": "Stencil, 19th century, The Met, CC0"
-    },
-    {
       "id": "katagami-65305",
       "title": "Stencil with Continuous Fret Pattern (sayagata)",
       "file": "/library/patterns/katagami-65305.png",
@@ -974,36 +864,6 @@
       "credit": "Pink and Rose, ca. 1890, The Met, CC0"
     },
     {
-      "id": "morris-365338",
-      "title": "Fruit (or Pomegranate)",
-      "file": "/library/patterns/morris-365338.png",
-      "source": "The Metropolitan Museum of Art, Open Access",
-      "licence": "CC0",
-      "url": "https://www.metmuseum.org/art/collection/search/365338",
-      "date": "ca. 1866",
-      "credit": "Fruit (or Pomegranate), ca. 1866, The Met, CC0"
-    },
-    {
-      "id": "morris-383485",
-      "title": "Jasmine",
-      "file": "/library/patterns/morris-383485.png",
-      "source": "The Metropolitan Museum of Art, Open Access",
-      "licence": "CC0",
-      "url": "https://www.metmuseum.org/art/collection/search/383485",
-      "date": "1872",
-      "credit": "Jasmine, 1872, The Met, CC0"
-    },
-    {
-      "id": "morris-384017",
-      "title": "Daisy",
-      "file": "/library/patterns/morris-384017.png",
-      "source": "The Metropolitan Museum of Art, Open Access",
-      "licence": "CC0",
-      "url": "https://www.metmuseum.org/art/collection/search/384017",
-      "date": "1864",
-      "credit": "Daisy, 1864, The Met, CC0"
-    },
-    {
       "id": "morris-384022",
       "title": "Willow Bough",
       "file": "/library/patterns/morris-384022.png",
@@ -1032,26 +892,6 @@
       "url": "https://www.metmuseum.org/art/collection/search/230019",
       "date": "ca. 1873",
       "credit": "Italian, ca. 1873, The Met, CC0"
-    },
-    {
-      "id": "ornament-334214",
-      "title": "Triumph of Grammar",
-      "file": "/library/patterns/ornament-334214.png",
-      "source": "The Metropolitan Museum of Art, Open Access",
-      "licence": "CC0",
-      "url": "https://www.metmuseum.org/art/collection/search/334214",
-      "date": "17th century",
-      "credit": "Triumph of Grammar, 17th century, The Met, CC0"
-    },
-    {
-      "id": "ornament-700091",
-      "title": "The grammar of ornament",
-      "file": "/library/patterns/ornament-700091.png",
-      "source": "The Metropolitan Museum of Art, Open Access",
-      "licence": "CC0",
-      "url": "https://www.metmuseum.org/art/collection/search/700091",
-      "date": "1868",
-      "credit": "The grammar of ornament, 1868, The Met, CC0"
     },
     {
       "id": "ornament-814025",
@@ -1124,16 +964,6 @@
       "credit": "Textile Fragment, 16th century, The Met, CC0"
     },
     {
-      "id": "wallpaper-359990",
-      "title": "Satyrs Jousting",
-      "file": "/library/patterns/wallpaper-359990.png",
-      "source": "The Metropolitan Museum of Art, Open Access",
-      "licence": "CC0",
-      "url": "https://www.metmuseum.org/art/collection/search/359990",
-      "date": "ca. 1790",
-      "credit": "Satyrs Jousting, ca. 1790, The Met, CC0"
-    },
-    {
       "id": "wallpaper-643063",
       "title": "Design for the Gardens of the Château de Savigny-lès-Beaune",
       "file": "/library/patterns/wallpaper-643063.png",
@@ -1152,16 +982,6 @@
       "url": "https://www.metmuseum.org/art/collection/search/663122",
       "date": "18th century",
       "credit": "Christ in the House of Martha and Mary, 18th century, The Met, CC0"
-    },
-    {
-      "id": "wallpaper-9663",
-      "title": "Wallpaper Panel",
-      "file": "/library/patterns/wallpaper-9663.png",
-      "source": "The Metropolitan Museum of Art, Open Access",
-      "licence": "CC0",
-      "url": "https://www.metmuseum.org/art/collection/search/9663",
-      "date": "1700–1730",
-      "credit": "Wallpaper Panel, 1700–1730, The Met, CC0"
     }
   ]
 }

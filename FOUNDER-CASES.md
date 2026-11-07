@@ -8,3 +8,4 @@ Asserted by `src/domain/founder-cases.test.ts` in CI. A case changes only with a
 | 2 | Does the default sphere, seed 1994, look the same on every machine? | Yes — row 0 starts `0001101001000010` (black = 1) at 240 px wide | exact |
 | 3 | On the A4 preset, does the background repeat strictly? | Yes — every pixel equals the one 200 px to its right (E = 600) | exact |
 | 4 | What does a bare link open? | The landing picture, the Discobolus in an Iznik tile panel, with all defaults | exact |
+| 5 | Does a plate link someone received keep its picture? | Yes: the book is frozen as of 6 Nov (plate 6 the Discobolus, plate 11 Moses, plate 1 a gothic statue on a katagami stencil); a removed tile is replaced from its own family | exact |

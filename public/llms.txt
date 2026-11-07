@@ -7,8 +7,8 @@
 
 ## What it is
 - Single-image stereograms (autostereograms) after Thimbleby, Inglis & Witten (IEEE Computer, 1994), with hidden-surface removal, parallel or cross-eyed viewing, adjustable eye separation and depth of field.
-- Depth sources: 26 real sculptures (CC0, Poly Haven) baked to depth maps, eight built-in shapes, hidden text, a soft-brush drawing, or any greyscale picture (white = near).
-- Patterns: 36 ornament tiles from The Metropolitan Museum of Art's Open Access collection (CC0: katagami stencils, Iznik tiles, Coptic textiles, wallpapers), black-and-white random dots with adjustable density, colour dots, three procedural tiles, or a picture of your own. Every picture prints the provenance of its figure and pattern.
+- Depth sources: 51 real sculptures and reliefs (Poly Haven, SMK plaster casts, Smithsonian Open Access; CC0 or public domain) baked to depth maps, eight built-in shapes, hidden text, a soft-brush drawing, or any greyscale picture (white = near).
+- Patterns: 42 ornament tiles from The Metropolitan Museum of Art's Open Access collection (CC0: katagami stencils, Iznik tiles, Coptic textiles, wallpapers), black-and-white random dots with adjustable density, colour dots, five procedural tiles (a pen drawing, a hexagonal Truchet, confetti, pebbles, modrotlač), or a picture of your own. Every picture prints the provenance of its figure and pattern.
 - Reproducible: a seed and a shareable link recreate the same picture pixel for pixel.
 - Open source, MIT.
 

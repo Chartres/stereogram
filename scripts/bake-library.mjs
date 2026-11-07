@@ -313,7 +313,9 @@ async function bakeFigures() {
 // ---------- Met → tiles ----------
 // Tiles a person removed stay removed: a re-run must not fetch them back (4–5 Nov 2026: the floral
 // bake re-downloaded two mount crops that had been deleted, and plate 1 used one of them).
-const REFUSED = new Set(['katagami-61835', 'katagami-61838', 'floral-207665', 'floral-436525', 'floral-437999', 'floral-73142', 'floral-76988', 'floral-910072'])
+// 7 Nov: tiles that fail src/domain/tileQuality.ts (blank paper, solid ground, stripes, repeats);
+// src/library/tiles.quality.test.ts fails CI if a bake brings in another one.
+const REFUSED = new Set(['katagami-61835', 'katagami-61838', 'floral-207665', 'floral-436525', 'floral-437999', 'floral-73142', 'floral-76988', 'floral-910072', 'coptic-443300', 'coptic-444296', 'coptic-446011', 'floral-13608', 'floral-13612', 'floral-13874', 'floral-228211', 'floral-447418', 'katagami-53913', 'katagami-64388', 'katagami-65078', 'morris-365338', 'morris-383485', 'morris-384017', 'ornament-334214', 'ornament-700091', 'wallpaper-359990', 'wallpaper-9663'])
 
 async function bakePatterns() {
   for (const [q, n, tag] of PATTERNS) {

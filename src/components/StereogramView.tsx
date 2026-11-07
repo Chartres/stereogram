@@ -4,7 +4,7 @@ import { textDepth } from '@/app/sources'
 import { blurDepth, depthFromRgba, depthToRgba, fitDepth, flatDepth, resampleDepth, shapeDepth, type DepthMap, type Rgba } from '@/domain/depth'
 import type { Params } from '@/domain/params'
 import { proceduralTile, type Tile } from '@/domain/pattern'
-import { helperDots, type PatternSpec } from '@/domain/stereogram'
+import { helperDots, separation, type PatternSpec } from '@/domain/stereogram'
 import { loadFigure, loadPattern } from '@/library'
 
 export interface Sources {
@@ -60,8 +60,9 @@ export function useResolved(params: Params, sources: Sources = {}) {
     if (p === 'color') return { kind: 'color' }
     if (p === 'image') return sources.tileRgba ? { kind: 'tile', tile: sources.tileRgba } : { kind: 'dots', density: params.density }
     if (p.startsWith('lib:')) return tile && tile.id === p.slice(4) ? { kind: 'tile', tile: tile.rgba } : { kind: 'dots', density: params.density }
-    return { kind: 'tile', tile: proceduralTile(p as Tile, 128, params.seed) }
-  }, [params.pattern, params.density, params.seed, sources.tileRgba, tile])
+    // drawn at the strip's real width (one far-plane separation), so lines stay crisp at print size
+    return { kind: 'tile', tile: proceduralTile(p as Tile, separation(0, params.eyeSeparation, params.depth), params.seed) }
+  }, [params.pattern, params.density, params.seed, params.eyeSeparation, params.depth, sources.tileRgba, tile])
 
   const loading = (!!figureId && figure?.id !== figureId) || (!!tileId && tile?.id !== tileId)
   return { depth, pattern, loading }

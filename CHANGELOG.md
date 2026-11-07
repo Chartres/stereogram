@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.5.0 — 2026-11-07
+
+Patterns that work. Every tile is now checked against what a stereogram needs (docs/PATTERNS.md):
+texture everywhere, brightness contrast, detail across the rows, no repeat inside the strip. The
+check removed 18 of 60 museum tiles (samplers and stencils on blank paper, a striped band, a
+low-contrast pomegranate) and fixed four procedural ones: the Hex Truchet now has two columns of
+hexagons per tile with toned grounds, modrotlač scatters its sprigs, pebbles leave no bare ground,
+weave is gone. New: a pen-drawing tile, ballpoint lines on paper. Procedural tiles are drawn at
+the strip's real width, so they stay crisp at print size. CI runs the check on every tile.
+
 ## 0.4.3 — 2026-11-06
 
 From Pavol's desktop pass: the page opens on the Discobolus hidden in an Iznik tile panel; the

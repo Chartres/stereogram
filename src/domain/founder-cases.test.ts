@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest'
 import { flatDepth, shapeDepth } from './depth'
 import { renderStereogram, separation } from './stereogram'
 import { DEFAULT_PARAMS, decodeParams } from './params'
+import { plates } from '@/book/plates'
 
 describe('founder cases', () => {
   it('#1 default settings follow the 1994 paper: E=180, μ=1/3, far strip 90 px, near 72 px', () => {
@@ -31,5 +32,17 @@ describe('founder cases', () => {
     expect(DEFAULT_PARAMS.scene).toEqual({ kind: 'figure', id: 'smk_discobolus' })
     expect(DEFAULT_PARAMS.pattern).toBe('lib:iznik-447013')
     expect(decodeParams('')).toEqual(DEFAULT_PARAMS)
+  })
+})
+
+
+describe('founder cases: links already sent', () => {
+  it('#5 plate links keep their picture: plate 6 is the Discobolus, plate 11 Moses, plate 1 a gothic statue on a katagami stencil', () => {
+    const p = plates()
+    expect(p[5].figure).toBe('smk_discobolus')
+    expect(p[10].figure).toBe('smk_moses')
+    expect(p[0].figure).toBe('gothic_statue')
+    expect(p[0].pattern).toMatch(/^katagami-/)
+    expect(p.map((x) => x.seed)).toEqual(Array.from({ length: 100 }, (_, i) => 1000 + (i + 1) * 37))
   })
 })

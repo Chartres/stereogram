@@ -64,7 +64,7 @@ describe('figures in params', () => {
 
 describe('refused tiles stay out', () => {
   it('no mount crop or non-pattern hit removed by a person is back in the library', () => {
-    const refused = ['katagami-61835', 'katagami-61838', 'floral-207665', 'floral-436525', 'floral-437999', 'floral-73142', 'floral-76988', 'floral-910072']
+    const refused = ['katagami-61835', 'katagami-61838', 'floral-207665', 'floral-436525', 'floral-437999', 'floral-73142', 'floral-76988', 'floral-910072', 'coptic-443300', 'coptic-444296', 'coptic-446011', 'floral-13608', 'floral-13612', 'floral-13874', 'floral-228211', 'floral-447418', 'katagami-53913', 'katagami-64388', 'katagami-65078', 'morris-365338', 'morris-383485', 'morris-384017', 'ornament-334214', 'ornament-700091', 'wallpaper-359990', 'wallpaper-9663']
     for (const id of refused) expect(prov.patterns.some((p) => p.id === id), id).toBe(false)
   })
 })

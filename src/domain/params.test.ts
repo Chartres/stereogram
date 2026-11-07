@@ -3,7 +3,7 @@ import { DEFAULT_PARAMS, decodeParams, encodeParams, isShareable, type Params } 
 
 describe('params ↔ link', () => {
   it('round-trips a shape scene', () => {
-    const p: Params = { ...DEFAULT_PARAMS, scene: { kind: 'shape', shape: 'torus' }, seed: 42, depth: 0.5, pattern: 'weave', helpers: false, mode: 'cross' }
+    const p: Params = { ...DEFAULT_PARAMS, scene: { kind: 'shape', shape: 'torus' }, seed: 42, depth: 0.5, pattern: 'pen', helpers: false, mode: 'cross' }
     expect(decodeParams(encodeParams(p))).toEqual(p)
   })
 

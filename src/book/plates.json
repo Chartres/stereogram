@@ -1,0 +1,702 @@
+[
+ {
+  "n": 1,
+  "figure": "gothic_statue",
+  "pattern": "katagami-69935",
+  "seed": 1037,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 2,
+  "figure": "si_western_paradise",
+  "pattern": "floral-854573",
+  "seed": 1074,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 3,
+  "figure": "concrete_cat_statue",
+  "pattern": "floral-221867",
+  "seed": 1111,
+  "depth": 0.25
+ },
+ {
+  "n": 4,
+  "figure": "lion_head",
+  "pattern": "floral-448178",
+  "seed": 1148,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 5,
+  "figure": "dandelion_01",
+  "pattern": "floral-449105",
+  "seed": 1185,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 6,
+  "figure": "smk_discobolus",
+  "pattern": "ottoman-450517",
+  "seed": 1222,
+  "depth": 0.25
+ },
+ {
+  "n": 7,
+  "figure": "si_lincoln_hands",
+  "pattern": "ottoman-451099",
+  "seed": 1259,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 8,
+  "figure": "bronze_ray_statue",
+  "pattern": "iznik-447013",
+  "seed": 1296,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 9,
+  "figure": "smk_zuccone",
+  "pattern": "ottoman-446871",
+  "seed": 1333,
+  "depth": 0.25
+ },
+ {
+  "n": 10,
+  "figure": "seadogs_compass",
+  "pattern": "iznik-447014",
+  "seed": 1370,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 11,
+  "figure": "smk_moses",
+  "pattern": "ornament-814025",
+  "seed": 1407,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 12,
+  "figure": "chartres",
+  "pattern": "morris-337071",
+  "seed": 1444,
+  "depth": 0.25
+ },
+ {
+  "n": 13,
+  "figure": "food_pears_asian_01",
+  "pattern": "floral-445265",
+  "seed": 1481,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 14,
+  "figure": "smk_demosthenes",
+  "pattern": "floral-449105",
+  "seed": 1518,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 15,
+  "figure": "smk_kneeling_venus",
+  "pattern": "floral-125953",
+  "seed": 1555,
+  "depth": 0.25
+ },
+ {
+  "n": 16,
+  "figure": "horse_statue_01",
+  "pattern": "floral-449105",
+  "seed": 1592,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 17,
+  "figure": "si_roosevelt_relief",
+  "pattern": "ornament-891631",
+  "seed": 1629,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 18,
+  "figure": "bronze_shark_statue",
+  "pattern": "katagami-69299",
+  "seed": 1666,
+  "depth": 0.25
+ },
+ {
+  "n": 19,
+  "figure": "si_lincoln_life_mask",
+  "pattern": "morris-398344",
+  "seed": 1703,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 20,
+  "figure": "antique_ceramic_vase_01",
+  "pattern": "ornament-891632",
+  "seed": 1740,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 21,
+  "figure": "smk_risen_christ",
+  "pattern": "katagami-65305",
+  "seed": 1777,
+  "depth": 0.25
+ },
+ {
+  "n": 22,
+  "figure": "rubber_duck_toy",
+  "pattern": "morris-384022",
+  "seed": 1814,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 23,
+  "figure": "si_helen_keller",
+  "pattern": "morris-398344",
+  "seed": 1851,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 24,
+  "figure": "smk_sphinx",
+  "pattern": "floral-125953",
+  "seed": 1888,
+  "depth": 0.25
+ },
+ {
+  "n": 25,
+  "figure": "smk_laocoon",
+  "pattern": "katagami-69299",
+  "seed": 1925,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 26,
+  "figure": "carved_wooden_elephant",
+  "pattern": "floral-367795",
+  "seed": 1962,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 27,
+  "figure": "marble_bust_01",
+  "pattern": "morris-337071",
+  "seed": 1999,
+  "depth": 0.25
+ },
+ {
+  "n": 28,
+  "figure": "smk_leda",
+  "pattern": "floral-384018",
+  "seed": 2036,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 29,
+  "figure": "smk_apostle_peter",
+  "pattern": "morris-384022",
+  "seed": 2073,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 30,
+  "figure": "bronze_whale_statue",
+  "pattern": "ottoman-445264",
+  "seed": 2110,
+  "depth": 0.25
+ },
+ {
+  "n": 31,
+  "figure": "bull_head",
+  "pattern": "floral-448954",
+  "seed": 2147,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 32,
+  "figure": "jug_01",
+  "pattern": "ornament-814025",
+  "seed": 2184,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 33,
+  "figure": "smk_belvedere_torso",
+  "pattern": "floral-367805",
+  "seed": 2221,
+  "depth": 0.25
+ },
+ {
+  "n": 34,
+  "figure": "lambis_shell",
+  "pattern": "ornament-891631",
+  "seed": 2258,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 35,
+  "figure": "smk_barberini_faun",
+  "pattern": "wallpaper-643063",
+  "seed": 2295,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 36,
+  "figure": "smk_dying_gaul",
+  "pattern": "wallpaper-643063",
+  "seed": 2332,
+  "depth": 0.25
+ },
+ {
+  "n": 37,
+  "figure": "food_apple_01",
+  "pattern": "floral-78206",
+  "seed": 2369,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 38,
+  "figure": "wooden_bowl_01",
+  "pattern": "floral-449105",
+  "seed": 2406,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 39,
+  "figure": "smk_apollo_belvedere",
+  "pattern": "floral-447741",
+  "seed": 2443,
+  "depth": 0.25
+ },
+ {
+  "n": 40,
+  "figure": "fishermans_hat",
+  "pattern": "wallpaper-663122",
+  "seed": 2480,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 41,
+  "figure": "chess_set",
+  "pattern": "katagami-65306",
+  "seed": 2517,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 42,
+  "figure": "gothic_statue",
+  "pattern": "floral-125953",
+  "seed": 2554,
+  "depth": 0.25
+ },
+ {
+  "n": 43,
+  "figure": "si_western_paradise",
+  "pattern": "ottoman-450517",
+  "seed": 2591,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 44,
+  "figure": "concrete_cat_statue",
+  "pattern": "ottoman-451099",
+  "seed": 2628,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 45,
+  "figure": "lion_head",
+  "pattern": "iznik-447013",
+  "seed": 2665,
+  "depth": 0.25
+ },
+ {
+  "n": 46,
+  "figure": "dandelion_01",
+  "pattern": "ottoman-446871",
+  "seed": 2702,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 47,
+  "figure": "smk_discobolus",
+  "pattern": "iznik-447014",
+  "seed": 2739,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 48,
+  "figure": "si_lincoln_hands",
+  "pattern": "ornament-230019",
+  "seed": 2776,
+  "depth": 0.25
+ },
+ {
+  "n": 49,
+  "figure": "bronze_ray_statue",
+  "pattern": "morris-337071",
+  "seed": 2813,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 50,
+  "figure": "smk_zuccone",
+  "pattern": "floral-445265",
+  "seed": 2850,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 51,
+  "figure": "seadogs_compass",
+  "pattern": "iznik-447013",
+  "seed": 2887,
+  "depth": 0.25
+ },
+ {
+  "n": 52,
+  "figure": "smk_moses",
+  "pattern": "floral-367805",
+  "seed": 2924,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 53,
+  "figure": "chartres",
+  "pattern": "floral-449105",
+  "seed": 2961,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 54,
+  "figure": "food_pears_asian_01",
+  "pattern": "ornament-891631",
+  "seed": 2998,
+  "depth": 0.25
+ },
+ {
+  "n": 55,
+  "figure": "smk_demosthenes",
+  "pattern": "katagami-65306",
+  "seed": 3035,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 56,
+  "figure": "smk_kneeling_venus",
+  "pattern": "morris-398344",
+  "seed": 3072,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 57,
+  "figure": "horse_statue_01",
+  "pattern": "ornament-891632",
+  "seed": 3109,
+  "depth": 0.25
+ },
+ {
+  "n": 58,
+  "figure": "si_roosevelt_relief",
+  "pattern": "katagami-65305",
+  "seed": 3146,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 59,
+  "figure": "bronze_shark_statue",
+  "pattern": "morris-398344",
+  "seed": 3183,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 60,
+  "figure": "si_lincoln_life_mask",
+  "pattern": "morris-337071",
+  "seed": 3220,
+  "depth": 0.25
+ },
+ {
+  "n": 61,
+  "figure": "antique_ceramic_vase_01",
+  "pattern": "floral-125953",
+  "seed": 3257,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 62,
+  "figure": "smk_risen_christ",
+  "pattern": "katagami-69299",
+  "seed": 3294,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 63,
+  "figure": "rubber_duck_toy",
+  "pattern": "floral-367795",
+  "seed": 3331,
+  "depth": 0.25
+ },
+ {
+  "n": 64,
+  "figure": "si_helen_keller",
+  "pattern": "morris-384022",
+  "seed": 3368,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 65,
+  "figure": "smk_sphinx",
+  "pattern": "floral-384018",
+  "seed": 3405,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 66,
+  "figure": "smk_laocoon",
+  "pattern": "morris-384022",
+  "seed": 3442,
+  "depth": 0.25
+ },
+ {
+  "n": 67,
+  "figure": "carved_wooden_elephant",
+  "pattern": "ottoman-445264",
+  "seed": 3479,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 68,
+  "figure": "marble_bust_01",
+  "pattern": "floral-448954",
+  "seed": 3516,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 69,
+  "figure": "smk_leda",
+  "pattern": "ornament-814025",
+  "seed": 3553,
+  "depth": 0.25
+ },
+ {
+  "n": 70,
+  "figure": "smk_apostle_peter",
+  "pattern": "floral-367805",
+  "seed": 3590,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 71,
+  "figure": "bronze_whale_statue",
+  "pattern": "ornament-814025",
+  "seed": 3627,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 72,
+  "figure": "bull_head",
+  "pattern": "wallpaper-643063",
+  "seed": 3664,
+  "depth": 0.25
+ },
+ {
+  "n": 73,
+  "figure": "jug_01",
+  "pattern": "wallpaper-663122",
+  "seed": 3701,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 74,
+  "figure": "smk_belvedere_torso",
+  "pattern": "floral-78206",
+  "seed": 3738,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 75,
+  "figure": "lambis_shell",
+  "pattern": "iznik-447013",
+  "seed": 3775,
+  "depth": 0.25
+ },
+ {
+  "n": 76,
+  "figure": "smk_barberini_faun",
+  "pattern": "floral-447741",
+  "seed": 3812,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 77,
+  "figure": "smk_dying_gaul",
+  "pattern": "wallpaper-663122",
+  "seed": 3849,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 78,
+  "figure": "food_apple_01",
+  "pattern": "katagami-65306",
+  "seed": 3886,
+  "depth": 0.25
+ },
+ {
+  "n": 79,
+  "figure": "wooden_bowl_01",
+  "pattern": "iznik-447017",
+  "seed": 3923,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 80,
+  "figure": "smk_apollo_belvedere",
+  "pattern": "floral-75909",
+  "seed": 3960,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 81,
+  "figure": "fishermans_hat",
+  "pattern": "iznik-447015",
+  "seed": 3997,
+  "depth": 0.25
+ },
+ {
+  "n": 82,
+  "figure": "chess_set",
+  "pattern": "floral-447746",
+  "seed": 4034,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 83,
+  "figure": "gothic_statue",
+  "pattern": "ottoman-446871",
+  "seed": 4071,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 84,
+  "figure": "si_western_paradise",
+  "pattern": "iznik-447014",
+  "seed": 4108,
+  "depth": 0.25
+ },
+ {
+  "n": 85,
+  "figure": "concrete_cat_statue",
+  "pattern": "ornament-891632",
+  "seed": 4145,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 86,
+  "figure": "lion_head",
+  "pattern": "morris-337071",
+  "seed": 4182,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 87,
+  "figure": "dandelion_01",
+  "pattern": "floral-445265",
+  "seed": 4219,
+  "depth": 0.25
+ },
+ {
+  "n": 88,
+  "figure": "smk_discobolus",
+  "pattern": "katagami-69935",
+  "seed": 4256,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 89,
+  "figure": "si_lincoln_hands",
+  "pattern": "floral-449105",
+  "seed": 4293,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 90,
+  "figure": "bronze_ray_statue",
+  "pattern": "floral-449105",
+  "seed": 4330,
+  "depth": 0.25
+ },
+ {
+  "n": 91,
+  "figure": "smk_zuccone",
+  "pattern": "ornament-891631",
+  "seed": 4367,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 92,
+  "figure": "seadogs_compass",
+  "pattern": "katagami-65305",
+  "seed": 4404,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 93,
+  "figure": "smk_moses",
+  "pattern": "morris-398344",
+  "seed": 4441,
+  "depth": 0.25
+ },
+ {
+  "n": 94,
+  "figure": "chartres",
+  "pattern": "ornament-891632",
+  "seed": 4478,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 95,
+  "figure": "food_pears_asian_01",
+  "pattern": "katagami-65305",
+  "seed": 4515,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 96,
+  "figure": "smk_demosthenes",
+  "pattern": "morris-337071",
+  "seed": 4552,
+  "depth": 0.25
+ },
+ {
+  "n": 97,
+  "figure": "smk_kneeling_venus",
+  "pattern": "morris-384022",
+  "seed": 4589,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 98,
+  "figure": "horse_statue_01",
+  "pattern": "floral-125953",
+  "seed": 4626,
+  "depth": 0.3333333333333333
+ },
+ {
+  "n": 99,
+  "figure": "si_roosevelt_relief",
+  "pattern": "katagami-69299",
+  "seed": 4663,
+  "depth": 0.25
+ },
+ {
+  "n": 100,
+  "figure": "bronze_shark_statue",
+  "pattern": "floral-367795",
+  "seed": 4700,
+  "depth": 0.3333333333333333
+ }
+]

@@ -29,6 +29,8 @@ Layout: `src/domain/` is pure and framework-free (the Thimbleby–Inglis–Witte
 patterns, URL params) and is where new logic goes with its test; `src/app/` holds the Worker shim and the
 canvas-only depth sources (text, uploads); `src/components/` is the UI. `FOUNDER-CASES.md` rows are
 asserted by `src/domain/founder-cases.test.ts`; change a row only with a line in `docs/DECISIONS.md`.
+A pattern ships only if it passes `src/domain/tileQuality.ts` (the rules are in `docs/PATTERNS.md`);
+`src/library/tiles.quality.test.ts` and `src/domain/tileQuality.test.ts` enforce it in CI.
 
 Perf/size asks name a number (bundle kB, p95 ms, suite seconds), re-measure each round, stop at
 target — "optimize" without a number is not actionable. Multi-finding reviews use the clean-room

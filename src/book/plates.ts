@@ -1,9 +1,14 @@
-// The book of plates: a fixed, deterministic set of (figure, pattern, seed) specs. Every plate is
-// reproduced pixel for pixel by the client renderer, so the book ships as a few hundred bytes of
-// specs plus the library, not as 100 PNGs. ponytail: pairing is index arithmetic, curate later.
+// The book of plates: 100 (figure, pattern, seed) specs, frozen in plates.json. Every plate is
+// reproduced pixel for pixel by the client renderer, so the book ships as specs plus the library.
+//
+// Frozen because a plate link travels: people received /plate/<n>/ by email and WhatsApp on
+// 6 Nov 2026, and a reshuffle (the 7 Nov tile pruning moved 29 plates) would change the picture
+// behind a link they already have. The list is the book as deployed on 6 Nov. If a figure or
+// tile later leaves the library, that plate alone takes another from the same family (katagami
+// for katagami), chosen by plate number, so the rest of the book does not move.
 import { FIGURES, PATTERNS } from '@/library'
 import { DEFAULT_PARAMS, type Params } from '@/domain/params'
-import { mulberry32 } from '@/domain/prng'
+import frozen from './plates.json'
 
 export interface Plate {
   n: number
@@ -15,28 +20,20 @@ export interface Plate {
 
 export const PLATE_COUNT = 100
 
+const family = (id: string) => id.split(/[-_]/)[0]
+
+function substitute(id: string, pool: string[], n: number): string {
+  if (pool.includes(id)) return id
+  const same = pool.filter((p) => family(p) === family(id))
+  const from = same.length ? same : pool
+  return from[(n * 7) % from.length]
+}
+
 export function plates(): Plate[] {
-  const out: Plate[] = []
-  if (!FIGURES.length || !PATTERNS.length) return out
-  // a seeded walk through figures and patterns: every figure appears before any repeats,
-  // and the pairing does not depend on the counts sharing a factor (it did: 7 and 42)
-  const rnd = mulberry32(1862)
-  const shuffled = <T,>(a: T[]) => a.map((v) => [rnd(), v] as const).sort((x, y) => x[0] - y[0]).map((x) => x[1])
-  // interleave kinds (figure, animal, relief, object, bust…) so no run of busts: round-robin over per-kind queues
-  const eligible = FIGURES.filter((f) => f.book !== false)
-  const byKind = new Map<string, typeof eligible>()
-  for (const f of shuffled(eligible)) byKind.set(f.kind ?? 'object', [...(byKind.get(f.kind ?? 'object') ?? []), f])
-  const queues = [...byKind.values()]
-  const figs: typeof eligible = []
-  for (let i = 0; figs.length < eligible.length; i++) for (const q of queues) if (q[Math.floor(i / 1)] && figs.length < eligible.length) figs.push(q[i])
-  const pats = shuffled(PATTERNS)
-  for (let n = 1; n <= PLATE_COUNT; n++) {
-    const f = figs[(n - 1) % figs.length]
-    const cycle = Math.floor((n - 1) / figs.length)
-    const p = pats[(n * 11 + cycle * 13) % pats.length]
-    out.push({ n, figure: f.id, pattern: p.id, seed: 1000 + n * 37, depth: n % 3 === 0 ? 0.25 : 1 / 3 })
-  }
-  return out
+  if (!FIGURES.length || !PATTERNS.length) return []
+  const figs = FIGURES.map((f) => f.id).sort()
+  const pats = PATTERNS.map((p) => p.id).sort()
+  return (frozen as Plate[]).map((p) => ({ ...p, figure: substitute(p.figure, figs, p.n), pattern: substitute(p.pattern, pats, p.n) }))
 }
 
 export function plateParams(plate: Plate, width: number, height: number): Params {
