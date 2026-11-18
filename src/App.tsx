@@ -6,6 +6,7 @@ import { BookScreen } from './components/BookScreen'
 import { MakeScreen } from './components/MakeScreen'
 import { SeeScreen } from './components/SeeScreen'
 import { plateFromPath } from './book/plateMeta'
+import { entrySource } from './domain/referrer'
 
 function routeFromHash(): Route {
   if (plateFromPath(location.pathname) && !location.hash) return 'book'
@@ -26,7 +27,9 @@ export function App() {
   const [plate, setPlate] = useState<number>(plateFromHash)
 
   useEffect(() => {
-    track('page_view', { route })
+    // ref: the entry source (channel attribution for the distribution predictions); hash routes
+    // keep document.referrer, so every page_view of a visit carries the same value
+    track('page_view', { route, ref: entrySource(document.referrer, location.search, location.hostname) })
   }, [route])
 
   useEffect(() => {
